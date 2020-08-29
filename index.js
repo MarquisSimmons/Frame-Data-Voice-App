@@ -248,7 +248,7 @@ const GetSpecialMoveFrames_Handler = {
 		}
 		say += slotStatus;
 
-		return responseBuilder.speak(say).reprompt('try again, ' + say).getResponse();
+		return responseBuilder.speak(say).getResponse();
 	},
 };
 
@@ -430,7 +430,7 @@ const GetNormalMoveFrames_Handler = {
 
 		say += slotStatus;
 
-		return responseBuilder.speak(say).reprompt('try again, ' + say).getResponse();
+		return responseBuilder.speak(say).getResponse();
 	},
 };
 
@@ -537,7 +537,7 @@ const GetVSystemMoveFrames_Handler = {
 
 		say += slotStatus;
 
-		return responseBuilder.speak(say).reprompt('try again, ' + say).getResponse();
+		return responseBuilder.speak(say).getResponse();
 	},
 };
 
@@ -788,7 +788,8 @@ exports.handler = skillBuilder
 		LaunchRequest_Handler,
 		SessionEndedHandler
 	)
-	.addErrorHandlers(ErrorHandler);
+	.addErrorHandlers(ErrorHandler)
+	.lambda();
 
 // End of Skill code -------------------------------------------------------------
 // Static Language Model for reference
