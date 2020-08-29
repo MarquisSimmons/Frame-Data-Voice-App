@@ -1,0 +1,22 @@
+{
+  "name": "frame-data-voice-app",
+  "version": "1.0.0",
+  "description": "This app serves as an resource for players who are unfamiliar with character's frame data in Street Fighter 5. This is a quick way for users to get the frame data on a specific character's move without having to google it. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Street",
+    "Fighter",
+    "Frame",
+    "data",
+    "frames"
+  ],
+  "author": "Marquis Simmons",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk": "^2.9.0",
+    "fs": "0.0.1-security"
+  }
+}
