@@ -751,7 +751,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "V-\tGohadoken": {
+      "V-Gohadoken": {
         "moveCommand": "",
         "startUpFrames": "11",
         "activeFrames": "",
@@ -763,7 +763,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "V-\tSekia Goshoha": {
+      "V-Sekia Goshoha": {
         "moveCommand": "",
         "startUpFrames": "21",
         "activeFrames": "",

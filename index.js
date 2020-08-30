@@ -126,19 +126,19 @@ const GetSpecialMoveFrames_Handler = {
 		// getSlotValues returns .heardAs, .resolved, and .isValidated for each slot, according to request slot status codes ER_SUCCESS_MATCH, ER_SUCCESS_NO_MATCH, or traditional simple request slot without resolutions
 
 		// console.log('***** slotValues: ' +  JSON.stringify(slotValues, null, 2));
+
 		//   SLOT: Character
 		if (slotValues.Character.ERstatus === 'ER_SUCCESS_MATCH') {
 			characterName = slotValues.Character.resolved;
 		}
 		else if (slotValues.Character.ERstatus === 'ER_SUCCESS_NO_MATCH') {
 			console.log('***** consider adding "' + slotValues.Character.heardAs + '" to the custom slot type used by slot Character! ');
-			say =
-				'There was no frame data found for ' +
-				slotValues.Character.heardAs +
-				'A few valid characters are, ' +
-				sayArray(getExampleSlotValues('GetSpecialMoveFrames', 'Character'), 'or') +
-				'please try again.';
-			return responseBuilder.speak(say).getResponse();
+			say = 'There was no frame data found for ' + slotValues.Character.heardAs + '. please try saying the character name again.';
+			return responseBuilder
+				.speak(say)
+				.reprompt('please try saying the character name again.')
+				.addElicitSlotDirective('Character')
+				.getResponse();
 		}
 		//   SLOT: VSystem
 		if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_MATCH') {
@@ -163,7 +163,7 @@ const GetSpecialMoveFrames_Handler = {
 		}
 		//   SLOT: SpecialMove
 		if (slotValues.SpecialMove.ERstatus === 'ER_SUCCESS_MATCH') {
-			specialMove = slotValues.SpecialMove.resolved;
+			specialMoveName = slotValues.SpecialMove.resolved;
 		}
 		if (slotValues.SpecialMove.ERstatus === 'ER_SUCCESS_NO_MATCH') {
 			console.log('***** consider adding "' + slotValues.SpecialMove.heardAs + '" to the custom slot type used by slot SpecialMove! ');
@@ -175,8 +175,8 @@ const GetSpecialMoveFrames_Handler = {
 				sayArray(getExampleSlotValues('GetSpecialMoveFrames', 'SpecialMove'), 'or');
 			return responseBuilder.speak(say).getResponse();
 		}
-		say = retrieveSpecialMoveFrameData(characterName, specialMoveName, moveStrength, frameType, vSystem);
 
+		say = retrieveSpecialMoveFrameData(characterName, specialMoveName, moveStrength, frameType, vSystem);
 		return responseBuilder.speak(say).getResponse();
 	},
 };
@@ -702,73 +702,124 @@ function getPreviousSpeechOutput(attrs) {
 function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, frameType, vSystem) {
 	// Retrieve the character's move file from the Model
 	let fullMoveLookup = ' ';
-	let lookupMoveStrength = moveStrength ? moveStrengthMapping[moveStrength] : undefined;
-	let lookupFrameType = frameType ? frameTypeMapping[frameType] : frameTypeMapping['Startup'];
-	let lookupVSystem = vSystem ? vSystemMapping[vSystem] : undefined;
+	let defaultFrameType = frameType !== ' ' ? frameType : 'Startup';
+
+	const lookupVSystem = vSystemMapping[vSystem];
+	let lookupMoveStrength = moveStrengthMapping[moveStrength];
+	const lookupFrameType = frameTypeMapping[defaultFrameType];
+
+	const data = fs.readFileSync('Model/' + character + '.json');
+	if (!data) {
+		console.log('File: Model/' + character + '.json could not be found');
+		return 'There was a problem retrieving frame data for ' + character + '. You can try another character until this is resolved.';
+	}
+	const returnedData = JSON.parse(data);
+	const characterSpecialMoveList = returnedData[character]['Special Moves'];
 
 	if (!specialMove) {
-		return ' ';
+		return 'There was no special move defined';
+	}
+	if (moveSynonyms.includes(specialMove)) {
+		// Case if the move is heard as Fireball, Tatsu, DP etc.
+		console.log(specialMove + ': ' + 'has been converted to: ' + ' ' + returnedData[character][specialMove]);
+		specialMove = returnedData[character][specialMove];
 	}
 	// Can be "V-L Special Move" or "L Special Move V-Skill 1 Version"
-	switch (vSystem) {
-		case ' ':
-			fullMoveLookup = lookupMoveStrength + ' ' + specialMove;
+	switch (lookupVSystem) {
+		case undefined:
+			fullMoveLookup = lookupMoveStrength ? lookupMoveStrength + ' ' + specialMove : specialMove;
 			break;
-		case ('V-Skill 1', 'V-Skill 2'):
+		case ('V-Skill 1 Version', 'V-Skill 2 Version'):
 			fullMoveLookup = lookupMoveStrength + ' ' + specialMove + lookupVSystem;
 			break;
 		default:
-			fullMoveLookup = lookupVSystem + lookupMoveStrength + ' ' + specialMove;
+			fullMoveLookup = lookupMoveStrength ? lookupVSystem + lookupMoveStrength + ' ' + specialMove : lookupVSystem + specialMove;
 			break;
 	}
+	let move = characterSpecialMoveList[fullMoveLookup];
 
-	fs.readFile('Model/' + character + '.json', (err, data) => {
-		if (err) throw err;
-		let returnedData = JSON.parse(data);
-		let characterMoveList = returnedData[character]['Special Moves'];
-		if (moveSynonyms.includes[specialMove]) {
-			lookupSpecialMove = returnedData[character][specialMove];
-			// Can be "V-L Special Move" or "L Special Move V-Skill 1 Version"
-			switch (vSystem) {
-				case ' ':
-					fullMoveLookup = lookupMoveStrength + ' ' + lookupSpecialMove;
-					break;
-				case ('V-Skill 1', 'V-Skill 2'):
-					fullMoveLookup = lookupMoveStrength + ' ' + lookupSpecialMove + lookupVSystem;
-					break;
-				default:
-					fullMoveLookup = lookupVSystem + lookupMoveStrength + ' ' + lookupSpecialMove;
-					break;
-			}
+	console.log(character, specialMove, moveStrength, lookupFrameType, lookupVSystem);
+
+	// Case we find the move successfully with all of the necessary slots filled out
+	if (move) {
+		console.log(character + "'s " + fullMoveLookup + ' found.');
+		if (frameType == 'On Hit' || frameType == 'On Block') {
+			const frameNumber = move[lookupFrameType] <= 0 ? move[lookupFrameType] : 'plus ' + move[lookupFrameType];
+			const outputWithVSystem =
+				character + 's ' + moveStrength + ' ' + specialMove + ' is ' + frameNumber + ' frames ' + defaultFrameType + ' with ' + vSystem;
+			const output = character + 's ' + moveStrength + ' ' + specialMove + ' is ' + frameNumber + ' frames ' + defaultFrameType;
+			return lookupVSystem ? outputWithVSystem : output;
 		}
-		let move = characterMoveList[fullMoveLookup];
+		else {
+			const outputWithVSystem =
+				character +
+				's ' +
+				moveStrength +
+				' ' +
+				specialMove +
+				' has ' +
+				move[lookupFrameType] +
+				' ' +
+				defaultFrameType +
+				' frames with ' +
+				vSystem;
+
+			const output =
+				character + 's ' + moveStrength + ' ' + specialMove + ' has ' + move[lookupFrameType] + ' ' + defaultFrameType + ' frames.';
+			return lookupVSystem ? outputWithVSystem : output;
+		}
+	}
+	else if (!lookupMoveStrength) {
+		console.log(character + "'s " + fullMoveLookup + ' not found. Looking up move again with move strength');
+		// If we cannot find the move, check if it is because the user did not specify the move strength
+		// If move strength is undefined then default it to Light
+		// - Note: Some moves do not have move strengths which is why we only want to assign a default move strength iff the move could not be found.
+		lookupMoveStrength = 'L';
+		moveStrength = 'Light';
+		switch (lookupVSystem) {
+			case undefined:
+				fullMoveLookup = lookupMoveStrength + ' ' + specialMove;
+				break;
+			case ('V-Skill 1 Version', 'V-Skill 2 Version'):
+				fullMoveLookup = lookupMoveStrength + ' ' + specialMove + lookupVSystem;
+				break;
+			default:
+				fullMoveLookup = lookupVSystem + lookupMoveStrength + ' ' + specialMove;
+				break;
+		}
+		// Retrieve the move again but this time using a default move strength
+		move = characterSpecialMoveList[fullMoveLookup];
 		if (move) {
-			return move[lookupFrameType];
-		}
-		else if (!lookupMoveStrength) {
-			// If move strength is undefined then default it to Light
-			switch (vSystem) {
-				case ' ':
-					fullMoveLookup = 'L ' + specialMove;
-					break;
-				case ('V-Skill 1', 'V-Skill 2'):
-					fullMoveLookup = 'L ' + specialMove + lookupVSystem;
-					break;
-				default:
-					fullMoveLookup = lookupVSystem + ' L ' + specialMove;
-					break;
+			console.log(character + "'s " + fullMoveLookup + ' found after adding move strength.');
+			if (frameType == 'On Hit' || frameType == 'On Block') {
+				const frameNumber = move[lookupFrameType] <= 0 ? move[lookupFrameType] : 'plus ' + move[lookupFrameType];
+				const outputWithVSystem =
+					character + 's ' + moveStrength + ' ' + specialMove + ' is ' + frameNumber + ' frames ' + defaultFrameType + ' with ' + vSystem;
+				const output = character + 's ' + moveStrength + ' ' + specialMove + ' is ' + frameNumber + ' frames ' + defaultFrameType;
+				return lookupVSystem ? outputWithVSystem : output;
 			}
-			// Look the move up again with the L Move Strength
-			move = characterMoveList[fullMoveLookup];
-			if (move) {
-				if (frameType == 'On Hit' || frameType == 'On Block') {
-					return character + 's ' + moveStrength + ' ' + specialMove + ' is ' + move[lookupFrameType] + ' frames ' + frameType;
-				}
-				return character + 's ' + moveStrength + ' ' + specialMove + ' has ' + move[lookupFrameType] + ' ' + frameType + ' frames ';
+			else {
+				const outputWithVSystem =
+					character +
+					's ' +
+					moveStrength +
+					' ' +
+					specialMove +
+					' has ' +
+					move[lookupFrameType] +
+					' ' +
+					defaultFrameType +
+					' frames with ' +
+					vSystem;
+
+				const output =
+					character + 's ' + moveStrength + ' ' + specialMove + ' has ' + move[lookupFrameType] + ' ' + defaultFrameType + ' frames.';
+				return lookupVSystem ? outputWithVSystem : output;
 			}
 		}
-		return 'The frame data for ' + moveStrength + ' ' + specialMove + 'could not be found';
-	});
+	}
+	console.log(character + "'s " + fullMoveLookup + ' not found');
+	return 'The frame data for ' + character + "'s " + moveStrength + ' ' + specialMove + ' could not be found';
 }
 
 /**
@@ -784,7 +835,7 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
 	fs.readFile('Model/' + character + '.json', (err, data) => {
 		if (err) throw err;
 		let returnedData = JSON.parse(data);
-		let characterMoveList = returnedData[character];
+		let characterSpecialMoveList = returnedData[character];
 	});
 }
 // 5. Exports handler function and setup ===================================================
