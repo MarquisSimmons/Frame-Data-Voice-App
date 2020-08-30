@@ -603,7 +603,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "V-V--Trigger Activation Cyclone Lariat": {
+      "V-Trigger Activation Cyclone Lariat": {
         "moveCommand": "",
         "startUpFrames": "9",
         "activeFrames": "",
@@ -615,7 +615,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "V-Cyclone Lariat (during V--Trigger Activation)": {
+      "V-Cyclone Lariat (during V-Trigger Activation)": {
         "moveCommand": "",
         "startUpFrames": "9",
         "activeFrames": "",

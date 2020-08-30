@@ -593,7 +593,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "L Metallic Sphere (V-Skill 2 Version)": {
+      "L Metallic Sphere V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "14",
         "activeFrames": "",
@@ -605,7 +605,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "M Metallic Sphere (V-Skill 2 Version)": {
+      "M Metallic Sphere V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "14",
         "activeFrames": "",
@@ -617,7 +617,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "H Metallic Sphere (V-Skill 2 Version)": {
+      "H Metallic Sphere V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "13",
         "activeFrames": "",
@@ -629,7 +629,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "EX Metallic Sphere L (V-Skill 2 Version)": {
+      "EX Metallic Sphere L V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "12",
         "activeFrames": "",
@@ -641,7 +641,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "EX Metallic Sphere M (V-Skill 2 Version)": {
+      "EX Metallic Sphere M V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "12",
         "activeFrames": "",
@@ -653,7 +653,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "EX Metallic Sphere H (V-Skill 2 Version)": {
+      "EX Metallic Sphere H V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "13",
         "activeFrames": "",

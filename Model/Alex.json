@@ -303,7 +303,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "L Flash Chop (V-Skill 2 Version)": {
+      "L Flash Chop V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "12",
         "activeFrames": "3",
@@ -315,7 +315,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "M Flash Chop (V-Skill 2 Version)": {
+      "M Flash Chop V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "18",
         "activeFrames": "3",
@@ -327,7 +327,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "H Flash Chop (V-Skill 2 Version)": {
+      "H Flash Chop V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "25",
         "activeFrames": "3",
@@ -339,7 +339,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "EX Flash Chop (V-Skill 2 Version)": {
+      "EX Flash Chop V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "11",
         "activeFrames": "5",
@@ -399,7 +399,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "L Slash Elbow (V-Skill 2 Version)": {
+      "L Slash Elbow V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "16",
         "activeFrames": "5",
@@ -411,7 +411,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "M Slash Elbow (V-Skill 2 Version)": {
+      "M Slash Elbow V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "18",
         "activeFrames": "5",
@@ -423,7 +423,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "H Slash Elbow (V-Skill 2 Version)": {
+      "H Slash Elbow V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "24",
         "activeFrames": "5",
@@ -435,7 +435,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "EX Slash Elbow (V-Skill 2 Version)": {
+      "EX Slash Elbow V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "14",
         "activeFrames": "3",
@@ -495,7 +495,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "L Air Knee Smash (V-Skill 2 Version)": {
+      "L Air Knee Smash V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "6",
         "activeFrames": "8",
@@ -507,7 +507,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "M Air Knee Smash (V-Skill 2 Version)": {
+      "M Air Knee Smash V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "9",
         "activeFrames": "10",
@@ -519,7 +519,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "H Air Knee Smash (V-Skill 2 Version)": {
+      "H Air Knee Smash V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "11",
         "activeFrames": "10",
@@ -531,7 +531,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "EX Air Knee Smash (V-Skill 2 Version)": {
+      "EX Air Knee Smash V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "6",
         "activeFrames": "8",
@@ -591,7 +591,7 @@
         "moveProperties": "Mid",
         "moveType": "Special Moves"
       },
-      "L Air Stampede (V-Skill 2 Version)": {
+      "L Air Stampede V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "27",
         "activeFrames": "3",
@@ -603,7 +603,7 @@
         "moveProperties": "Mid",
         "moveType": "Special Moves"
       },
-      "M Air Stampede (V-Skill 2 Version)": {
+      "M Air Stampede V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "30",
         "activeFrames": "3",
@@ -615,7 +615,7 @@
         "moveProperties": "Mid",
         "moveType": "Special Moves"
       },
-      "H Air Stampede (V-Skill 2 Version)": {
+      "H Air Stampede V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "33",
         "activeFrames": "3",
@@ -627,7 +627,7 @@
         "moveProperties": "Mid",
         "moveType": "Special Moves"
       },
-      "EX Air Stampede (V-Skill 2 Version)": {
+      "EX Air Stampede V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "29",
         "activeFrames": "3",
