@@ -351,7 +351,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "L Dash Straight (VS2 Ver.)": {
+      "L Dash Straight V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "12 (*10)",
         "activeFrames": "4",
@@ -363,7 +363,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "M Dash Straight (VS2 Ver.)": {
+      "M Dash Straight V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "16 (*12)",
         "activeFrames": "4",
@@ -375,7 +375,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "H Dash Straight (VS2 Ver.)": {
+      "H Dash Straight V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "25 (*19)",
         "activeFrames": "4",
@@ -399,7 +399,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "EX Dash Straight (VS2 Ver.)": {
+      "EX Dash Straight V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "22 (*9)",
         "activeFrames": "6",

@@ -18,7 +18,15 @@
 				{
 					"name": "HelloWorldIntent",
 					"slots": [],
-					"samples": [ "hello", "how are you", "say hi world", "say hi", "hi", "say hello world", "say hello" ]
+					"samples": [
+						"hello",
+						"how are you",
+						"say hi world",
+						"say hi",
+						"hi",
+						"say hello world",
+						"say hello"
+					]
 				},
 				{
 					"name": "AMAZON.NavigateHomeIntent",
@@ -30,7 +38,16 @@
 						{
 							"name": "Character",
 							"type": "Character",
-							"samples": [ "{Character}" ]
+							"samples": [
+								"{Character}"
+							]
+						},
+						{
+							"name": "SpecialMove",
+							"type": "SpecialMove",
+							"samples": [
+								"{SpecialMove}"
+							]
 						},
 						{
 							"name": "VSystem",
@@ -43,36 +60,20 @@
 						{
 							"name": "MoveStrength",
 							"type": "MoveStrength"
-						},
-						{
-							"name": "SpecialMove",
-							"type": "SpecialMove",
-							"samples": [ "{SpecialMove}" ]
 						}
 					],
 					"samples": [
-						"How many frames is {Character} {SpecialMove} {FrameType} with {VSystem}",
-						"How many frames is {Character} {SpecialMove} {FrameType} during {VSystem}",
+						"How many frames is {Character} {SpecialMove} {FrameType} {VSystem}",
 						"How many {FrameType} is {Character} {MoveStrength} {SpecialMove}",
 						"How many frames is {Character} {MoveStrength} {SpecialMove}",
 						"How many frames is {Character} {SpecialMove}",
 						"How many frames is {Character} {MoveStrength} {SpecialMove} {FrameType}",
 						"Whats {Character} {MoveStrength} {SpecialMove} {FrameType}",
-						"How many {FrameType} is {Character} {MoveStrength} {SpecialMove} in {VSystem}",
-						"How many frames is {Character} {MoveStrength} {SpecialMove} in {VSystem}",
-						"How many frames is {Character} {SpecialMove} in {VSystem}",
-						"How many frames is {Character} {MoveStrength} {SpecialMove} in {VSystem} {FrameType}",
-						"Whats {Character} {MoveStrength} {SpecialMove} {FrameType} in {VSystem}",
-						"How many {FrameType} is {Character} {MoveStrength} {SpecialMove} during {VSystem}",
-						"How many frames is {Character} {MoveStrength} {SpecialMove} during {VSystem}",
-						"How many frames is {Character} {SpecialMove} during {VSystem}",
-						"How many frames is {Character} {MoveStrength} {SpecialMove} during {VSystem} {FrameType}",
-						"Whats {Character} {MoveStrength} {SpecialMove} {FrameType} during {VSystem}",
-						"How many {FrameType} is {Character} {MoveStrength} {SpecialMove} with {VSystem}",
-						"How many frames is {Character} {MoveStrength} {SpecialMove} with {VSystem}",
-						"How many frames is {Character} {SpecialMove} with {VSystem}",
-						"How many frames is {Character} {MoveStrength} {SpecialMove} with {VSystem} {FrameType}",
-						"Whats {Character} {MoveStrength} {SpecialMove} {FrameType} with {VSystem}"
+						"How many {FrameType} is {Character} {MoveStrength} {SpecialMove} {VSystem}",
+						"How many frames is {Character} {MoveStrength} {SpecialMove} {VSystem}",
+						"How many frames is {Character} {SpecialMove} {VSystem}",
+						"How many frames is {Character} {MoveStrength} {SpecialMove} {VSystem} {FrameType}",
+						"Whats {Character} {MoveStrength} {SpecialMove} {FrameType} {VSystem}"
 					]
 				},
 				{
@@ -81,7 +82,9 @@
 						{
 							"name": "Character",
 							"type": "Character",
-							"samples": [ "{Character}" ]
+							"samples": [
+								"{Character}"
+							]
 						},
 						{
 							"name": "Position",
@@ -90,7 +93,9 @@
 						{
 							"name": "NormalMove",
 							"type": "NormalMove",
-							"samples": [ "{NormalMove}" ]
+							"samples": [
+								"{NormalMove}"
+							]
 						},
 						{
 							"name": "FrameType",
@@ -111,21 +116,13 @@
 						"How many frames is {Character} {Position} {NormalMove}",
 						"How many frames is {Character} {NormalMove}",
 						"How many frames is {Character} {Position} {NormalMove} {FrameType}",
-						"Whats {Character} {Position} {NormalMove} {FrameType} in {VSystem}",
-						"How many {FrameType} is {Character} {Position} {NormalMove} in {VSystem}",
-						"How many frames is {Character} {Position} {NormalMove} in {VSystem}",
-						"How many frames is {Character} {NormalMove} in {VSystem}",
-						"How many frames is {Character} {Position} {NormalMove} {FrameType} in {VSystem}",
-						"Whats {Character} {Position} {NormalMove} {FrameType} during {VSystem}",
-						"How many {FrameType} is {Character} {Position} {NormalMove} during {VSystem}",
-						"How many frames is {Character} {Position} {NormalMove} during {VSystem}",
-						"How many frames is {Character} {NormalMove} during {VSystem}",
-						"How many frames is {Character} {Position} {NormalMove} during {VSystem} {FrameType}",
-						"Whats {Character} {Position} {NormalMove} {FrameType} with {VSystem}",
-						"How many {FrameType} is {Character} {Position} {NormalMove} with {VSystem}",
-						"How many frames is {Character} {Position} {NormalMove} with {VSystem}",
-						"How many frames is {Character} {NormalMove} with {VSystem}",
-						"How many frames is {Character} {Position} {NormalMove} with {VSystem} {FrameType}",
+						"Whats {Character} {Position} {NormalMove} {FrameType} {VSystem}",
+						"How many {FrameType} is {Character} {Position} {NormalMove} {VSystem}",
+						"How many frames is {Character} {Position} {NormalMove} {VSystem}",
+						"How many frames is {Character} {NormalMove} {VSystem}",
+						"How many frames is {Character} {Position} {NormalMove} {FrameType} {VSystem}",
+						"How many frames is {Character} {Position} {NormalMove} {VSystem}",
+						"How many frames is {Character} {Position} {NormalMove} {VSystem} {FrameType}",
 						"Whats {Character} {Position} {NormalMove} {FrameType} {Item}",
 						"How many {FrameType} is {Character} {Position} {NormalMove} {Item}",
 						"How many frames is {Character} {Position} {NormalMove} {Item}",
@@ -139,12 +136,16 @@
 						{
 							"name": "Character",
 							"type": "Character",
-							"samples": [ "{Character}" ]
+							"samples": [
+								"{Character}"
+							]
 						},
 						{
 							"name": "VSystem",
 							"type": "VSystem",
-							"samples": [ "{VSystem}" ]
+							"samples": [
+								"{VSystem}"
+							]
 						},
 						{
 							"name": "FrameType",
@@ -165,7 +166,10 @@
 						{
 							"name": {
 								"value": "Zeku Young",
-								"synonyms": [ "Young", "Young Zeku" ]
+								"synonyms": [
+									"Young",
+									"Young Zeku"
+								]
 							}
 						},
 						{
@@ -186,13 +190,19 @@
 						{
 							"name": {
 								"value": "Dhalsim",
-								"synonyms": [ "Sim" ]
+								"synonyms": [
+									"Sim"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Fang",
-								"synonyms": [ "F.A.N.G", "Fong", "Fang" ]
+								"synonyms": [
+									"F.A.N.G",
+									"Fong",
+									"Fang"
+								]
 							}
 						},
 						{
@@ -213,7 +223,9 @@
 						{
 							"name": {
 								"value": "M Bison",
-								"synonyms": [ "Bison" ]
+								"synonyms": [
+									"Bison"
+								]
 							}
 						},
 						{
@@ -229,7 +241,10 @@
 						{
 							"name": {
 								"value": "R Mika",
-								"synonyms": [ "Mica", "Mika" ]
+								"synonyms": [
+									"Mica",
+									"Mika"
+								]
 							}
 						},
 						{
@@ -240,19 +255,26 @@
 						{
 							"name": {
 								"value": "Ryu",
-								"synonyms": [ "Reuse", "Ree You" ]
+								"synonyms": [
+									"Reuse",
+									"Ree You"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Vega",
-								"synonyms": [ "Claw" ]
+								"synonyms": [
+									"Claw"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Zangief",
-								"synonyms": [ "gief" ]
+								"synonyms": [
+									"gief"
+								]
 							}
 						},
 						{
@@ -263,13 +285,20 @@
 						{
 							"name": {
 								"value": "Balrog",
-								"synonyms": [ "Rog" ]
+								"synonyms": [
+									"Rog"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Guile",
-								"synonyms": [ "Girls", "Gaul", "Gall", "Guy" ]
+								"synonyms": [
+									"Girls",
+									"Gaul",
+									"Gall",
+									"Guy"
+								]
 							}
 						},
 						{
@@ -285,7 +314,9 @@
 						{
 							"name": {
 								"value": "Urien",
-								"synonyms": [ "Aryan" ]
+								"synonyms": [
+									"Aryan"
+								]
 							}
 						},
 						{
@@ -296,7 +327,9 @@
 						{
 							"name": {
 								"value": "Akuma",
-								"synonyms": [ "Gouki" ]
+								"synonyms": [
+									"Gouki"
+								]
 							}
 						},
 						{
@@ -317,7 +350,10 @@
 						{
 							"name": {
 								"value": "Zeku Old",
-								"synonyms": [ "Old Zeku", "Old" ]
+								"synonyms": [
+									"Old Zeku",
+									"Old"
+								]
 							}
 						},
 						{
@@ -353,7 +389,9 @@
 						{
 							"name": {
 								"value": "E Honda",
-								"synonyms": [ "Honda" ]
+								"synonyms": [
+									"Honda"
+								]
 							}
 						},
 						{
@@ -399,7 +437,10 @@
 						{
 							"name": {
 								"value": "DP",
-								"synonyms": [ "D.P", "Dragon punch" ]
+								"synonyms": [
+									"D.P",
+									"Dragon punch"
+								]
 							}
 						},
 						{
@@ -430,13 +471,17 @@
 						{
 							"name": {
 								"value": "Shooting Peach",
-								"synonyms": [ "Peach" ]
+								"synonyms": [
+									"Peach"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Rainbow Typhoon",
-								"synonyms": [ "Big Swing" ]
+								"synonyms": [
+									"Big Swing"
+								]
 							}
 						},
 						{
@@ -447,7 +492,9 @@
 						{
 							"name": {
 								"value": "Wingless Airplane",
-								"synonyms": [ "Wingless" ]
+								"synonyms": [
+									"Wingless"
+								]
 							}
 						},
 						{
@@ -548,25 +595,33 @@
 						{
 							"name": {
 								"value": "Hadoken Level 2",
-								"synonyms": [ "Level 2 Hadoken" ]
+								"synonyms": [
+									"Level 2 Hadoken"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Hadoken Level 3",
-								"synonyms": [ "Level 3 Hadoken" ]
+								"synonyms": [
+									"Level 3 Hadoken"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "EX Hadoken Level 1",
-								"synonyms": [ "Level 1 EX Hadoken" ]
+								"synonyms": [
+									"Level 1 EX Hadoken"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "EX Hadoken Level 2",
-								"synonyms": [ "Level 2 Hadoken" ]
+								"synonyms": [
+									"Level 2 Hadoken"
+								]
 							}
 						},
 						{
@@ -606,12 +661,18 @@
 						},
 						{
 							"name": {
-								"value": "Hyakuretsukyaku"
+								"value": "Hyakuretsukyaku",
+								"synonyms": [
+									"legs"
+								]
 							}
 						},
 						{
 							"name": {
-								"value": "Airborne Hyakuretsukyaku"
+								"value": "Airborne Hyakuretsukyaku",
+								"synonyms": [
+									"air legs"
+								]
 							}
 						},
 						{
@@ -1022,7 +1083,9 @@
 						{
 							"name": {
 								"value": "Screw Pile Driver",
-								"synonyms": [ "S.P.D" ]
+								"synonyms": [
+									"S.P.D"
+								]
 							}
 						},
 						{
@@ -1208,7 +1271,9 @@
 						{
 							"name": {
 								"value": "Slash Elbow",
-								"synonyms": [ "Elbow" ]
+								"synonyms": [
+									"Elbow"
+								]
 							}
 						},
 						{
@@ -1324,7 +1389,9 @@
 						{
 							"name": {
 								"value": "Dash Straight",
-								"synonyms": [ "Straight" ]
+								"synonyms": [
+									"Straight"
+								]
 							}
 						},
 						{
@@ -1465,13 +1532,17 @@
 						{
 							"name": {
 								"value": "Chariot Tackle",
-								"synonyms": [ "Tackle" ]
+								"synonyms": [
+									"Tackle"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Dangerous Headbutt",
-								"synonyms": [ "Headbutt" ]
+								"synonyms": [
+									"Headbutt"
+								]
 							}
 						},
 						{
@@ -1672,7 +1743,9 @@
 						{
 							"name": {
 								"value": "Psycho Shoot",
-								"synonyms": [ "Psycho Shot" ]
+								"synonyms": [
+									"Psycho Shot"
+								]
 							}
 						},
 						{
@@ -2148,25 +2221,33 @@
 						{
 							"name": {
 								"value": "G Smash Over Level 1",
-								"synonyms": [ "Smash Over Level 1" ]
+								"synonyms": [
+									"Smash Over Level 1"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Smash Over Level 2",
-								"synonyms": [ "Smash Over Level 2" ]
+								"synonyms": [
+									"Smash Over Level 2"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Smash Over Level 3",
-								"synonyms": [ "Smash Over Level 3" ]
+								"synonyms": [
+									"Smash Over Level 3"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Smash Over",
-								"synonyms": [ "Smash Over" ]
+								"synonyms": [
+									"Smash Over"
+								]
 							}
 						},
 						{
@@ -2177,25 +2258,33 @@
 						{
 							"name": {
 								"value": "G Smash Under Level 1",
-								"synonyms": [ "Smash Under Level 1" ]
+								"synonyms": [
+									"Smash Under Level 1"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Smash Under Level 2",
-								"synonyms": [ "Smash Under Level 2" ]
+								"synonyms": [
+									"Smash Under Level 2"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Smash Under Level 3",
-								"synonyms": [ "Smash Under Level 3" ]
+								"synonyms": [
+									"Smash Under Level 3"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Smash Under",
-								"synonyms": [ "Smash Under" ]
+								"synonyms": [
+									"Smash Under"
+								]
 							}
 						},
 						{
@@ -2206,19 +2295,25 @@
 						{
 							"name": {
 								"value": "G Burst Level 1",
-								"synonyms": [ "Burst Level 1" ]
+								"synonyms": [
+									"Burst Level 1"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Burst Level 2",
-								"synonyms": [ "Burst Level 2" ]
+								"synonyms": [
+									"Burst Level 2"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Burst Level 3",
-								"synonyms": [ "Burst Level 3" ]
+								"synonyms": [
+									"Burst Level 3"
+								]
 							}
 						},
 						{
@@ -2234,25 +2329,33 @@
 						{
 							"name": {
 								"value": "G Spin Kick Level 1",
-								"synonyms": [ "Spin Kick Level 1" ]
+								"synonyms": [
+									"Spin Kick Level 1"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Spin Kick Level 2",
-								"synonyms": [ "Spin Kick Level 2" ]
+								"synonyms": [
+									"Spin Kick Level 2"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Spin Kick Level 3",
-								"synonyms": [ "Spin Kick Level 3" ]
+								"synonyms": [
+									"Spin Kick Level 3"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Spin Kick",
-								"synonyms": [ "Spin Kick" ]
+								"synonyms": [
+									"Spin Kick"
+								]
 							}
 						},
 						{
@@ -2263,25 +2366,33 @@
 						{
 							"name": {
 								"value": "G Impact Level 1",
-								"synonyms": [ "Impact Level 1" ]
+								"synonyms": [
+									"Impact Level 1"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Impact Level 2",
-								"synonyms": [ "Impact Level 2" ]
+								"synonyms": [
+									"Impact Level 2"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Impact Level 3",
-								"synonyms": [ "Impact Level 3" ]
+								"synonyms": [
+									"Impact Level 3"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Impact",
-								"synonyms": [ "Impact" ]
+								"synonyms": [
+									"Impact"
+								]
 							}
 						},
 						{
@@ -2292,7 +2403,9 @@
 						{
 							"name": {
 								"value": "G Charge",
-								"synonyms": [ "Charge" ]
+								"synonyms": [
+									"Charge"
+								]
 							}
 						},
 						{
@@ -2308,13 +2421,17 @@
 						{
 							"name": {
 								"value": "G Explosion",
-								"synonyms": [ "Explosion" ]
+								"synonyms": [
+									"Explosion"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "G Rage",
-								"synonyms": [ "Rage" ]
+								"synonyms": [
+									"Rage"
+								]
 							}
 						},
 						{
@@ -2419,7 +2536,10 @@
 						},
 						{
 							"name": {
-								"value": "Hundred Hand Slap"
+								"value": "Hundred Hand Slap",
+								"synonyms": [
+									"hands"
+								]
 							}
 						},
 						{
@@ -2500,19 +2620,25 @@
 						{
 							"name": {
 								"value": "Flipper Shot L",
-								"synonyms": [ "Flipper Shot Light" ]
+								"synonyms": [
+									"Flipper Shot Light"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Flipper Shot M",
-								"synonyms": [ "Flipper Shot Medium" ]
+								"synonyms": [
+									"Flipper Shot Medium"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Flipper Shot H",
-								"synonyms": [ "Flipper Shot Heavy" ]
+								"synonyms": [
+									"Flipper Shot Heavy"
+								]
 							}
 						},
 						{
@@ -2563,19 +2689,25 @@
 						{
 							"name": {
 								"value": "Heart Raid L",
-								"synonyms": [ "Heart Raid Light" ]
+								"synonyms": [
+									"Heart Raid Light"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Heart Raid M",
-								"synonyms": [ "Heart Raid Medium" ]
+								"synonyms": [
+									"Heart Raid Medium"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Heart Raid H",
-								"synonyms": [ "Heart Raid Heavy" ]
+								"synonyms": [
+									"Heart Raid Heavy"
+								]
 							}
 						},
 						{
@@ -2611,19 +2743,25 @@
 						{
 							"name": {
 								"value": "Pyrokinesis L",
-								"synonyms": [ "Pyrokinesis Light" ]
+								"synonyms": [
+									"Pyrokinesis Light"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Pyrokinesis M",
-								"synonyms": [ "Pyrokinesis Medium" ]
+								"synonyms": [
+									"Pyrokinesis Medium"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Pyrokinesis H",
-								"synonyms": [ "Pyrokinesis Heavy" ]
+								"synonyms": [
+									"Pyrokinesis Heavy"
+								]
 							}
 						},
 						{
@@ -2634,19 +2772,25 @@
 						{
 							"name": {
 								"value": "Cryokinesis L",
-								"synonyms": [ "Cryokinesis Light" ]
+								"synonyms": [
+									"Cryokinesis Light"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Cryokinesis M",
-								"synonyms": [ "Cryokinesis Medium" ]
+								"synonyms": [
+									"Cryokinesis Medium"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Cryokinesis H",
-								"synonyms": [ "Cryokinesis Heavy" ]
+								"synonyms": [
+									"Cryokinesis Heavy"
+								]
 							}
 						},
 						{
@@ -2782,7 +2926,11 @@
 						{
 							"name": {
 								"value": "E.X.",
-								"synonyms": [ "e-x", "e.x", "EX" ]
+								"synonyms": [
+									"e-x",
+									"e.x",
+									"EX"
+								]
 							}
 						},
 						{
@@ -2808,49 +2956,71 @@
 						{
 							"name": {
 								"value": "Sweep",
-								"synonyms": [ "crouch heavy kick", "crouching heavy kick", "Low heavy kick" ]
+								"synonyms": [
+									"crouch heavy kick",
+									"crouching heavy kick",
+									"Low heavy kick"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Super",
-								"synonyms": [ "Critical", "Critical Art", "C.A." ]
+								"synonyms": [
+									"Critical",
+									"Critical Art",
+									"C.A."
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Roundhouse",
-								"synonyms": [ "Hard Kick", "Heavy Kick" ]
+								"synonyms": [
+									"Hard Kick",
+									"Heavy Kick"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Forward",
-								"synonyms": [ "Medium Kick" ]
+								"synonyms": [
+									"Medium Kick"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Short",
-								"synonyms": [ "Light Kick" ]
+								"synonyms": [
+									"Light Kick"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Fierce",
-								"synonyms": [ "Hard Punch", "Heavy punch" ]
+								"synonyms": [
+									"Hard Punch",
+									"Heavy punch"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Strong",
-								"synonyms": [ "Medium Punch" ]
+								"synonyms": [
+									"Medium Punch"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Jab",
-								"synonyms": [ "Light Punch" ]
+								"synonyms": [
+									"Light Punch"
+								]
 							}
 						}
 					]
@@ -2881,19 +3051,26 @@
 						{
 							"name": {
 								"value": "Jumping",
-								"synonyms": [ "Jump" ]
+								"synonyms": [
+									"Jump"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Crouching",
-								"synonyms": [ "Crouch", "Low" ]
+								"synonyms": [
+									"Crouch",
+									"Low"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Standing",
-								"synonyms": [ "Stand" ]
+								"synonyms": [
+									"Stand"
+								]
 							}
 						}
 					]
@@ -2904,31 +3081,42 @@
 						{
 							"name": {
 								"value": "On Hit",
-								"synonyms": [ "when hit" ]
+								"synonyms": [
+									"when hit"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "On Block",
-								"synonyms": [ "when blocked" ]
+								"synonyms": [
+									"when blocked"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Recovery",
-								"synonyms": [ "Recovery Frames" ]
+								"synonyms": [
+									"Recovery Frames"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Startup",
-								"synonyms": [ "On startup", "Startup Frames" ]
+								"synonyms": [
+									"On startup",
+									"Startup Frames"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "Active",
-								"synonyms": [ "Active Frames" ]
+								"synonyms": [
+									"Active Frames"
+								]
 							}
 						}
 					]
@@ -2938,22 +3126,42 @@
 					"values": [
 						{
 							"name": {
-								"value": "V-Skill 2"
+								"value": "V-Skill 2",
+								"synonyms": [
+									"in V skill 2",
+									"during V skill 2",
+									"with V skill 2"
+								]
 							}
 						},
 						{
 							"name": {
-								"value": "V-Trigger 2"
+								"value": "V-Trigger 2",
+								"synonyms": [
+									"in V trigger 2",
+									"during V trigger 2",
+									"with V trigger 2"
+								]
 							}
 						},
 						{
 							"name": {
-								"value": "V-Skill 1"
+								"value": "V-Skill 1",
+								"synonyms": [
+									"in V skill 1",
+									"during V skill 1",
+									"with V skill 1"
+								]
 							}
 						},
 						{
 							"name": {
-								"value": "V-Trigger 1"
+								"value": "V-Trigger 1",
+								"synonyms": [
+									"in V trigger 1",
+									"during V trigger 1",
+									"with V trigger 1"
+								]
 							}
 						}
 					]
@@ -2969,13 +3177,19 @@
 						{
 							"name": {
 								"value": "without Orb",
-								"synonyms": [ "without Ball", "without Crystal Ball" ]
+								"synonyms": [
+									"without Ball",
+									"without Crystal Ball"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "with Orb",
-								"synonyms": [ "with Crystal Ball", "with Ball" ]
+								"synonyms": [
+									"with Crystal Ball",
+									"with Ball"
+								]
 							}
 						},
 						{
@@ -3004,6 +3218,15 @@
 							}
 						},
 						{
+							"name": "SpecialMove",
+							"type": "SpecialMove",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.273563289867.645209312172"
+							}
+						},
+						{
 							"name": "VSystem",
 							"type": "VSystem",
 							"confirmationRequired": false,
@@ -3023,15 +3246,6 @@
 							"confirmationRequired": false,
 							"elicitationRequired": false,
 							"prompts": {}
-						},
-						{
-							"name": "SpecialMove",
-							"type": "SpecialMove",
-							"confirmationRequired": false,
-							"elicitationRequired": true,
-							"prompts": {
-								"elicitation": "Elicit.Slot.273563289867.645209312172"
-							}
 						}
 					]
 				},

@@ -592,7 +592,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "L Sonic Scythe (VS2 Ver.)": {
+      "L Sonic Scythe V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "10",
         "activeFrames": "8",
@@ -604,7 +604,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "M Sonic Scythe (VS2 Ver.)": {
+      "M Sonic Scythe V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "15",
         "activeFrames": "6",
@@ -616,7 +616,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "H Sonic Scythe (VS2 Ver.)": {
+      "H Sonic Scythe V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "13",
         "activeFrames": "5",
@@ -640,7 +640,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "EX Sonic Scythe (VS2 Ver.)": {
+      "EX Sonic Scythe V-Skill 2 Version": {
         "moveCommand": "",
         "startUpFrames": "6",
         "activeFrames": "16",

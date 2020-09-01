@@ -1,4 +1,6 @@
+// Static Language Model for reference
 const model = require('./Model/IntentSchema.json');
+
 const Alexa = require('ask-sdk');
 const fs = require('fs');
 const invocationName = 'frame data';
@@ -166,20 +168,20 @@ const GetSpecialMoveFrames_Handler = {
 			specialMoveName = slotValues.SpecialMove.resolved;
 		}
 		if (slotValues.SpecialMove.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			if (slotValues.SpecialMove.heardAs.includes('v skill') || slotValues.SpecialMove.heardAs.includes('v trigger')) {
-				let separateMoves = stripVSystemFromMove(slotValues.SpecialMove.heardAs);
-				if (separateMoves.length === 2) {
-					specialMoveName = separateMoves[0]; // TODO: Some how convert this value to the a valid slot value
-					vSystem = separateMoves[1];
-					say = retrieveSpecialMoveFrameData(characterName, specialMoveName, moveStrength, frameType, vSystem);
-					return responseBuilder.speak(say).getResponse();
-				}
-			}
+			// if (slotValues.SpecialMove.heardAs.includes('v skill') || slotValues.SpecialMove.heardAs.includes('v trigger')) {
+			// 	let separateMoves = stripVSystemFromMove(slotValues.SpecialMove.heardAs);
+			// 	if (separateMoves.length === 2) {
+			// 		specialMoveName = separateMoves[0]; // TODO: Some how convert this value to the a valid slot value
+			// 		vSystem = separateMoves[1];
+			// 		say = retrieveSpecialMoveFrameData(characterName, specialMoveName, moveStrength, frameType, vSystem);
+			// 		return responseBuilder.speak(say).getResponse();
+			// 	}
+			// }
 			console.log('***** consider adding "' + slotValues.SpecialMove.heardAs + '" to the custom slot type used by slot SpecialMove! ');
 			say =
 				'Frame data for, ' +
 				slotValues.SpecialMove.heardAs +
-				' could not be found.' +
+				' could not be found. ' +
 				'A few valid values are, ' +
 				sayArray(getExampleSlotValues('GetSpecialMoveFrames', 'SpecialMove'), 'or');
 			return responseBuilder.speak(say).getResponse();
@@ -703,41 +705,6 @@ function getPreviousSpeechOutput(attrs) {
 	}
 }
 
-/**
- * This function separates the v-system slot from the move name slot incase Alexa interprets them both as one big move 
- * ex. (Charging Buffalo 1 during v trigger 1) -> [ 'Charging Buffalo 1', 'v trigger 1' ]
- * @param {string} move the move string as heard by Alexa
- */
-function stripVSystemFromMove(move) {
-	let splitMove = [];
-	if (move.includes('with')) {
-		splitMove = move.split('with').map((move) => {
-			return move.trim();
-		});
-	}
-	else if (move.includes('during')) {
-		splitMove = move.split('during').map((move) => {
-			return move.trim();
-		});
-	}
-	else if (move.includes('in')) {
-		if (move.includes('v skill')) {
-			const vSystem = move.slice(-9);
-			let remainder = move.slice(0, -9).trim();
-			splitMove = [ remainder.slice(-2).trim(), vSystem ];
-		}
-		else if (move.includes('v trigger')) {
-			const vSystem = move.slice(-11);
-			let remainder = move.slice(0, -11).trim();
-			splitMove = [ remainder.slice(0, -2).trim(), vSystem ];
-		}
-	}
-	else {
-		console.log('Move does not conform to special move + v-system format: ' + move);
-	}
-
-	return splitMove;
-}
 // 4. Frame data retrieval functions =======================================================
 
 /**
@@ -779,7 +746,7 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
 			fullMoveLookup = lookupMoveStrength ? lookupMoveStrength + ' ' + specialMove : specialMove;
 			break;
 		case ('V-Skill 1 Version', 'V-Skill 2 Version'):
-			fullMoveLookup = lookupMoveStrength + ' ' + specialMove + lookupVSystem;
+			fullMoveLookup = lookupMoveStrength + ' ' + specialMove + ' ' + lookupVSystem;
 			break;
 		default:
 			fullMoveLookup = lookupMoveStrength ? lookupVSystem + lookupMoveStrength + ' ' + specialMove : lookupVSystem + specialMove;
@@ -830,7 +797,7 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
 				fullMoveLookup = lookupMoveStrength + ' ' + specialMove;
 				break;
 			case ('V-Skill 1 Version', 'V-Skill 2 Version'):
-				fullMoveLookup = lookupMoveStrength + ' ' + specialMove + lookupVSystem;
+				fullMoveLookup = lookupMoveStrength + ' ' + specialMove + ' ' + lookupVSystem;
 				break;
 			default:
 				fullMoveLookup = lookupVSystem + lookupMoveStrength + ' ' + specialMove;
@@ -906,4 +873,3 @@ exports.handler = skillBuilder
 	.lambda();
 
 // End of Skill code -------------------------------------------------------------
-// Static Language Model for reference
