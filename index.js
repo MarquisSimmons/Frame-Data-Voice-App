@@ -33,18 +33,17 @@ const AMAZON_HelpIntent_Handler = {
 		const responseBuilder = handlerInput.responseBuilder;
 		let sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
 
-		let intents = getCustomIntents();
+		let intents = [
+			'How many frames is Chun-lis standing fierce on block',
+			'How many frames is Kens heavy tatsu on block',
+			'How many startup frames is Mikas peach',
+			'What are the recovery frames for Akumas standing heavy punch',
+			'How many frames is Seths low forward',
+			'How many active frames is Guiles D.P',
+		];
 		let sampleIntent = randomElement(intents);
 
-		let say = 'You asked for help. ';
-
-		// let previousIntent = getPreviousIntent(sessionAttributes);
-		// if (previousIntent && !handlerInput.requestEnvelope.session.new) {
-		//     say += 'Your last intent was ' + previousIntent + '. ';
-		// }
-		// say +=  'I understand  ' + intents.length + ' intents, '
-
-		say += ' Here something you can ask me, ' + getSampleUtterance(sampleIntent);
+		let say = ' Here is something you can ask me. ' + sampleIntent;
 
 		return responseBuilder.speak(say).reprompt('try again, ' + say).getResponse();
 	},
@@ -65,23 +64,6 @@ const AMAZON_StopIntent_Handler = {
 		return responseBuilder.speak(say).withShouldEndSession(true).getResponse();
 	},
 };
-
-const HelloWorldIntent_Handler = {
-	canHandle(handlerInput) {
-		const request = handlerInput.requestEnvelope.request;
-		return request.type === 'IntentRequest' && request.intent.name === 'HelloWorldIntent';
-	},
-	handle(handlerInput) {
-		const request = handlerInput.requestEnvelope.request;
-		const responseBuilder = handlerInput.responseBuilder;
-		let sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
-
-		let say = 'Hello from HelloWorldIntent. ';
-
-		return responseBuilder.speak(say).reprompt('try again, ' + say).getResponse();
-	},
-};
-
 const AMAZON_NavigateHomeIntent_Handler = {
 	canHandle(handlerInput) {
 		const request = handlerInput.requestEnvelope.request;
@@ -120,9 +102,6 @@ const GetSpecialMoveFrames_Handler = {
 		let specialMoveName = ' ';
 
 		let say = '';
-
-		let slotStatus = '';
-		let resolvedSlot;
 
 		let slotValues = getSlotValues(request.intent.slots);
 		// getSlotValues returns .heardAs, .resolved, and .isValidated for each slot, according to request slot status codes ER_SUCCESS_MATCH, ER_SUCCESS_NO_MATCH, or traditional simple request slot without resolutions
@@ -169,13 +148,9 @@ const GetSpecialMoveFrames_Handler = {
 		}
 		if (slotValues.SpecialMove.ERstatus === 'ER_SUCCESS_NO_MATCH') {
 			console.log('***** consider adding "' + slotValues.SpecialMove.heardAs + '" to the custom slot type used by slot SpecialMove! ');
-			say =
-				'Frame data for, ' +
-				slotValues.SpecialMove.heardAs +
-				' could not be found. ' +
-				'A few valid values are, ' +
-				sayArray(getExampleSlotValues('GetSpecialMoveFrames', 'SpecialMove'), 'or');
-			return responseBuilder.speak(say).getResponse();
+			say = 'Frame data for, ' + slotValues.SpecialMove.heardAs + ' could not be found. try saying the move name again';
+
+			return responseBuilder.speak(say).addElicitSlotDirective('SpecialMove').getResponse();
 		}
 
 		say = retrieveSpecialMoveFrameData(characterName, specialMoveName, moveStrength, frameType, vSystem);
@@ -199,167 +174,75 @@ const GetNormalMoveFrames_Handler = {
 			return handlerInput.responseBuilder.addDelegateDirective(currentIntent).getResponse();
 		}
 
-		let say = 'Hello from GetNormalMoveFrames. ';
+		let characterName = ' ';
+		let vSystem = ' ';
+		let frameType = ' ';
+		let position = ' ';
+		let normalMove = ' ';
 
-		let slotStatus = '';
-		let resolvedSlot;
+		let say = '';
 
 		let slotValues = getSlotValues(request.intent.slots);
 		// getSlotValues returns .heardAs, .resolved, and .isValidated for each slot, according to request slot status codes ER_SUCCESS_MATCH, ER_SUCCESS_NO_MATCH, or traditional simple request slot without resolutions
 
 		// console.log('***** slotValues: ' +  JSON.stringify(slotValues, null, 2));
 		//   SLOT: Character
-		if (slotValues.Character.heardAs) {
-			slotStatus += ' slot Character was heard as ' + slotValues.Character.heardAs + '. ';
-		}
-		else {
-			slotStatus += 'slot Character is empty. ';
-		}
 		if (slotValues.Character.ERstatus === 'ER_SUCCESS_MATCH') {
-			slotStatus += 'a valid ';
-			if (slotValues.Character.resolved !== slotValues.Character.heardAs) {
-				slotStatus += 'synonym for ' + slotValues.Character.resolved + '. ';
-			}
-			else {
-				slotStatus += 'match. ';
-			} // else {
-			//
+			characterName = slotValues.Character.resolved;
 		}
-		if (slotValues.Character.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			slotStatus += 'which did not match any slot value. ';
+		else if (slotValues.Character.ERstatus === 'ER_SUCCESS_NO_MATCH') {
 			console.log('***** consider adding "' + slotValues.Character.heardAs + '" to the custom slot type used by slot Character! ');
-		}
-
-		if (slotValues.Character.ERstatus === 'ER_SUCCESS_NO_MATCH' || !slotValues.Character.heardAs) {
-			slotStatus += 'A few valid values are, ' + sayArray(getExampleSlotValues('GetNormalMoveFrames', 'Character'), 'or');
+			say = 'There was no frame data found for ' + slotValues.Character.heardAs + '. please try saying the character name again.';
+			return responseBuilder
+				.speak(say)
+				.reprompt('please try saying the character name again.')
+				.addElicitSlotDirective('Character')
+				.getResponse();
 		}
 		//   SLOT: Position
-		if (slotValues.Position.heardAs) {
-			slotStatus += ' slot Position was heard as ' + slotValues.Position.heardAs + '. ';
-		}
-		else {
-			slotStatus += 'slot Position is empty. ';
-		}
 		if (slotValues.Position.ERstatus === 'ER_SUCCESS_MATCH') {
-			slotStatus += 'a valid ';
-			if (slotValues.Position.resolved !== slotValues.Position.heardAs) {
-				slotStatus += 'synonym for ' + slotValues.Position.resolved + '. ';
-			}
-			else {
-				slotStatus += 'match. ';
-			} // else {
-			//
+			position = slotValues.Position.resolved;
 		}
 		if (slotValues.Position.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			slotStatus += 'which did not match any slot value. ';
 			console.log('***** consider adding "' + slotValues.Position.heardAs + '" to the custom slot type used by slot Position! ');
 		}
-
-		if (slotValues.Position.ERstatus === 'ER_SUCCESS_NO_MATCH' || !slotValues.Position.heardAs) {
-			slotStatus += 'A few valid values are, ' + sayArray(getExampleSlotValues('GetNormalMoveFrames', 'Position'), 'or');
-		}
 		//   SLOT: NormalMove
-		if (slotValues.NormalMove.heardAs) {
-			slotStatus += ' slot NormalMove was heard as ' + slotValues.NormalMove.heardAs + '. ';
-		}
-		else {
-			slotStatus += 'slot NormalMove is empty. ';
-		}
 		if (slotValues.NormalMove.ERstatus === 'ER_SUCCESS_MATCH') {
-			slotStatus += 'a valid ';
-			if (slotValues.NormalMove.resolved !== slotValues.NormalMove.heardAs) {
-				slotStatus += 'synonym for ' + slotValues.NormalMove.resolved + '. ';
-			}
-			else {
-				slotStatus += 'match. ';
-			} // else {
-			//
+			normalMove = slotValues.NormalMove.resolved;
 		}
 		if (slotValues.NormalMove.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			slotStatus += 'which did not match any slot value. ';
 			console.log('***** consider adding "' + slotValues.NormalMove.heardAs + '" to the custom slot type used by slot NormalMove! ');
-		}
-
-		if (slotValues.NormalMove.ERstatus === 'ER_SUCCESS_NO_MATCH' || !slotValues.NormalMove.heardAs) {
-			slotStatus += 'A few valid values are, ' + sayArray(getExampleSlotValues('GetNormalMoveFrames', 'NormalMove'), 'or');
+			say =
+				'Frame data for, ' +
+				slotValues.NormalMove.heardAs +
+				' could not be found. ' +
+				'A few valid values are, ' +
+				sayArray(getExampleSlotValues('GetNormalMoveFrames', 'NormalMove'), 'or');
+			return responseBuilder.speak(say).getResponse();
 		}
 		//   SLOT: FrameType
-		if (slotValues.FrameType.heardAs) {
-			slotStatus += ' slot FrameType was heard as ' + slotValues.FrameType.heardAs + '. ';
-		}
-		else {
-			slotStatus += 'slot FrameType is empty. ';
-		}
 		if (slotValues.FrameType.ERstatus === 'ER_SUCCESS_MATCH') {
-			slotStatus += 'a valid ';
-			if (slotValues.FrameType.resolved !== slotValues.FrameType.heardAs) {
-				slotStatus += 'synonym for ' + slotValues.FrameType.resolved + '. ';
-			}
-			else {
-				slotStatus += 'match. ';
-			} // else {
-			//
+			frameType = slotValues.FrameType.resolved;
 		}
 		if (slotValues.FrameType.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			slotStatus += 'which did not match any slot value. ';
 			console.log('***** consider adding "' + slotValues.FrameType.heardAs + '" to the custom slot type used by slot FrameType! ');
 		}
-
-		if (slotValues.FrameType.ERstatus === 'ER_SUCCESS_NO_MATCH' || !slotValues.FrameType.heardAs) {
-			slotStatus += 'A few valid values are, ' + sayArray(getExampleSlotValues('GetNormalMoveFrames', 'FrameType'), 'or');
-		}
 		//   SLOT: VSystem
-		if (slotValues.VSystem.heardAs) {
-			slotStatus += ' slot VSystem was heard as ' + slotValues.VSystem.heardAs + '. ';
-		}
-		else {
-			slotStatus += 'slot VSystem is empty. ';
-		}
 		if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_MATCH') {
-			slotStatus += 'a valid ';
-			if (slotValues.VSystem.resolved !== slotValues.VSystem.heardAs) {
-				slotStatus += 'synonym for ' + slotValues.VSystem.resolved + '. ';
-			}
-			else {
-				slotStatus += 'match. ';
-			} // else {
-			//
+			vSystem = slotValues.VSystem.resolved;
 		}
 		if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			slotStatus += 'which did not match any slot value. ';
+			console.log('***** consider adding "' + slotValues.VSystem.heardAs + '" to the custom slot type used by slot VSystem! ');
+		}
+		//   SLOT: Item
+		if (slotValues.Item.ERstatus === 'ER_SUCCESS_MATCH') {
+			vSystem = slotValues.Item.resolved;
+		}
+		if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_NO_MATCH') {
 			console.log('***** consider adding "' + slotValues.VSystem.heardAs + '" to the custom slot type used by slot VSystem! ');
 		}
 
-		if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_NO_MATCH' || !slotValues.VSystem.heardAs) {
-			slotStatus += 'A few valid values are, ' + sayArray(getExampleSlotValues('GetNormalMoveFrames', 'VSystem'), 'or');
-		}
-		//   SLOT: Item
-		if (slotValues.Item.heardAs) {
-			slotStatus += ' slot Item was heard as ' + slotValues.Item.heardAs + '. ';
-		}
-		else {
-			slotStatus += 'slot Item is empty. ';
-		}
-		if (slotValues.Item.ERstatus === 'ER_SUCCESS_MATCH') {
-			slotStatus += 'a valid ';
-			if (slotValues.Item.resolved !== slotValues.Item.heardAs) {
-				slotStatus += 'synonym for ' + slotValues.Item.resolved + '. ';
-			}
-			else {
-				slotStatus += 'match. ';
-			} // else {
-			//
-		}
-		if (slotValues.Item.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			slotStatus += 'which did not match any slot value. ';
-			console.log('***** consider adding "' + slotValues.Item.heardAs + '" to the custom slot type used by slot Item! ');
-		}
-
-		if (slotValues.Item.ERstatus === 'ER_SUCCESS_NO_MATCH' || !slotValues.Item.heardAs) {
-			slotStatus += 'A few valid values are, ' + sayArray(getExampleSlotValues('GetNormalMoveFrames', 'Item'), 'or');
-		}
-
-		say += slotStatus;
+		say = retrieveNormalMoveFrameData(characterName, normalMove, position, frameType, vSystem);
 
 		return responseBuilder.speak(say).getResponse();
 	},
@@ -480,7 +363,7 @@ const LaunchRequest_Handler = {
 	handle(handlerInput) {
 		const responseBuilder = handlerInput.responseBuilder;
 
-		let say = 'hello' + ' and welcome to ' + invocationName + ' ! Say help to hear some options.';
+		let say = 'Hey welcome to ' + invocationName + ' what would you like to look up? You can say help to find out your options';
 
 		let skillTitle = capitalize(invocationName);
 
@@ -674,10 +557,6 @@ function getCustomIntents() {
 	return customIntents;
 }
 
-function getSampleUtterance(intent) {
-	return randomElement(intent.samples);
-}
-
 function getPreviousIntent(attrs) {
 	if (attrs.history && attrs.history.length > 1) {
 		return attrs.history[attrs.history.length - 2].IntentRequest;
@@ -748,7 +627,7 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
 	// Case we find the move successfully with all of the necessary slots filled out
 	if (move) {
 		console.log(character + "'s " + fullMoveLookup + ' found.');
-		return createMoveOutput(move, character, specialMove, defaultFrameType, lookupVSystem, moveStrength);
+		return createMoveOutput(move, character, specialMove, defaultFrameType, vSystem, moveStrength);
 	}
 	else if (!lookupMoveStrength) {
 		console.log(character + "'s " + fullMoveLookup + ' not found. Looking up move again with move strength');
@@ -772,7 +651,7 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
 		move = characterSpecialMoveList[fullMoveLookup];
 		if (move) {
 			console.log(character + "'s " + fullMoveLookup + ' found after adding move strength.');
-			return createMoveOutput(move, character, specialMove, defaultFrameType, lookupVSystem, moveStrength);
+			return createMoveOutput(move, character, specialMove, defaultFrameType, vSystem, moveStrength);
 		}
 	}
 	console.log(character + "'s " + fullMoveLookup + ' not found');
@@ -789,9 +668,9 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
  */
 function retrieveNormalMoveFrameData(character, normalMove, position, frameType, vSystem) {
 	// Retrieve the character's move file from the Model
+	let defaultPosition = position;
 	let fullMoveLookup = '';
 	let defaultFrameType = frameType !== ' ' ? frameType : 'Startup';
-	let defaultPosition = position !== ' ' ? position : 'Standing';
 	let move = undefined;
 
 	const lookupVSystem = vSystemMapping[vSystem];
@@ -809,6 +688,7 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
 	const characterNormalMoveList = returnedData[character]['Normal Moves'];
 	// Simple case where we are looking up a typical normal move by its move name
 	if (standardPositions.includes(defaultPosition)) {
+		defaultPosition = position !== ' ' ? position : 'Standing';
 		fullMoveLookup = lookupVSystem ? lookupVSystem + defaultPosition + ' ' + lookupNormalMove : defaultPosition + ' ' + lookupNormalMove;
 		move = characterNormalMoveList[fullMoveLookup];
 	}
@@ -819,14 +699,15 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
 	else if (uniqueMovePositions.includes(defaultPosition)) {
 		// We look up the move by its command here
 		const moveCommand = defaultPosition + ' ' + normalMove;
-		move = lookupMoveByCommand(moveCommand, character);
+		fullMoveLookup = moveCommand;
+		move = lookupMoveByCommand(moveCommand.trim(), character);
 	}
 	if (move) {
 		console.log(character + "'s " + fullMoveLookup + ' found.');
-		return createMoveOutput(move, character, normalMove, defaultFrameType, lookupVSystem, defaultPosition);
+		return createMoveOutput(move, character, normalMove, defaultFrameType, vSystem, defaultPosition);
 	}
 	console.log(character + "'s " + fullMoveLookup + ' not found');
-	return 'The frame data for ' + character + "'s " + moveStrength + ' ' + specialMove + ' could not be found';
+	return 'The frame data for ' + character + "'s " + position + ' ' + normalMove + ' could not be found';
 }
 
 /**
@@ -838,13 +719,12 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
  * @param {*} lookupVSystem - A V-System Modifier to make sure we look up the VT or VS version of a move
  * @param {*} moveModifier - This can be the move's Strength (for special moves LMH) or move position (for normal moves Standing, Crouching, Jumping)
  */
-function createMoveOutput(moveJson, character, move, defaultFrameType, lookupVSystem, moveModifier) {
-	let defaultFrameType = frameType !== ' ' ? frameType : 'Startup';
+function createMoveOutput(moveJson, character, move, defaultFrameType, vSystem, moveModifier) {
 	const lookupFrameType = frameTypeMapping[defaultFrameType];
-
+	const lookupVSystem = vSystemMapping[vSystem];
 	console.log(character, move, moveModifier, lookupFrameType, lookupVSystem);
 
-	if (frameType == 'On Hit' || frameType == 'On Block') {
+	if (defaultFrameType == 'On Hit' || defaultFrameType == 'On Block') {
 		const frameNumber = moveJson[lookupFrameType] <= 0 ? moveJson[lookupFrameType] : 'plus ' + moveJson[lookupFrameType];
 		const outputWithVSystem =
 			character + 's ' + moveModifier + ' ' + move + ' is ' + frameNumber + ' frames ' + defaultFrameType + ' with ' + vSystem;
@@ -864,9 +744,9 @@ function createMoveOutput(moveJson, character, move, defaultFrameType, lookupVSy
  * @param {JSON} characterJson - The JSON representation of the character
  */
 function lookupMoveByCommand(moveCommand, character) {
-	const data = fs.readFileSync('Character Moves/' + character + '.json');
+	const data = fs.readFileSync('Model/' + character + '.json');
 	if (!data) {
-		console.log('File: Character Moves/' + character + '.json could not be found');
+		console.log('File: Model/' + character + '.json could not be found');
 		return 'There was a problem retrieving frame data for ' + character + '. You can try another character until this is resolved.';
 	}
 	let jsonData = JSON.parse(data);
@@ -888,7 +768,6 @@ exports.handler = skillBuilder
 		AMAZON_CancelIntent_Handler,
 		AMAZON_HelpIntent_Handler,
 		AMAZON_StopIntent_Handler,
-		HelloWorldIntent_Handler,
 		AMAZON_NavigateHomeIntent_Handler,
 		GetSpecialMoveFrames_Handler,
 		GetNormalMoveFrames_Handler,

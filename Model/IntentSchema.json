@@ -16,19 +16,6 @@
 					"samples": []
 				},
 				{
-					"name": "HelloWorldIntent",
-					"slots": [],
-					"samples": [
-						"hello",
-						"how are you",
-						"say hi world",
-						"say hi",
-						"hi",
-						"say hello world",
-						"say hello"
-					]
-				},
-				{
 					"name": "AMAZON.NavigateHomeIntent",
 					"samples": []
 				},
@@ -112,6 +99,7 @@
 						}
 					],
 					"samples": [
+						"How many frames is {Character} {NormalMove} {FrameType}",
 						"Whats {Character} {Position} {NormalMove} {FrameType}",
 						"How many {FrameType} is {Character} {Position} {NormalMove}",
 						"How many frames is {Character} {Position} {NormalMove}",
@@ -621,17 +609,9 @@
 						},
 						{
 							"name": {
-								"value": "EX Hadoken Level 1",
+								"value": "Hadoken Level 1",
 								"synonyms": [
-									"Level 1 EX Hadoken"
-								]
-							}
-						},
-						{
-							"name": {
-								"value": "EX Hadoken Level 2",
-								"synonyms": [
-									"Level 2 Hadoken"
+									"Level 1 Hadoken"
 								]
 							}
 						},
@@ -1142,11 +1122,6 @@
 						{
 							"name": {
 								"value": "Thunder Clap Level 3"
-							}
-						},
-						{
-							"name": {
-								"value": "Thunder Clap"
 							}
 						},
 						{
@@ -1986,22 +1961,7 @@
 						},
 						{
 							"name": {
-								"value": "Shukumyo"
-							}
-						},
-						{
-							"name": {
-								"value": "Idaten"
-							}
-						},
-						{
-							"name": {
 								"value": "Bushin Seiryukyaku"
-							}
-						},
-						{
-							"name": {
-								"value": "Karura Tenzan"
 							}
 						},
 						{
@@ -2517,16 +2477,6 @@
 						},
 						{
 							"name": {
-								"value": "Ashura Senku (Forward)"
-							}
-						},
-						{
-							"name": {
-								"value": "Ashura Senku (Back)"
-							}
-						},
-						{
-							"name": {
 								"value": "Airborne Ashura Senku (Forward)"
 							}
 						},
@@ -2674,22 +2624,22 @@
 						},
 						{
 							"name": {
-								"value": "Heart Raid(Hold)"
+								"value": "Heart Raid (Hold)"
 							}
 						},
 						{
 							"name": {
-								"value": "Heart Raid(Hold-Forward Movement)"
+								"value": "Heart Raid (Hold-Forward Movement)"
 							}
 						},
 						{
 							"name": {
-								"value": "Heart Raid(Hold-Backwards Movement)"
+								"value": "Heart Raid (Hold-Backwards Movement)"
 							}
 						},
 						{
 							"name": {
-								"value": "Heart Raid(Hold Cancel)"
+								"value": "Heart Raid (Hold Cancel)"
 							}
 						},
 						{
@@ -2866,7 +2816,7 @@
 						},
 						{
 							"name": {
-								"value": "Tanden Maneuver Additional Control (Forward)"
+								"value": "Tanden Maneuver Additional Control (forward)"
 							}
 						},
 						{
@@ -2886,7 +2836,7 @@
 						},
 						{
 							"name": {
-								"value": "Tanden Maneuver Additional Control (down-Forward)"
+								"value": "Tanden Maneuver Additional Control (down-forward)"
 							}
 						},
 						{
@@ -2927,6 +2877,1441 @@
 						{
 							"name": {
 								"value": "Hell's Gate"
+							}
+						},
+						{
+							"name": {
+								"value": "Abi Hammer"
+							}
+						},
+						{
+							"name": {
+								"value": "Abi Lift"
+							}
+						},
+						{
+							"name": {
+								"value": "Abi Blaster"
+							}
+						},
+						{
+							"name": {
+								"value": "Zugaihasatsu"
+							}
+						},
+						{
+							"name": {
+								"value": "Tenha"
+							}
+						},
+						{
+							"name": {
+								"value": "Sekiseiken"
+							}
+						},
+						{
+							"name": {
+								"value": "Chop"
+							}
+						},
+						{
+							"name": {
+								"value": "Lariat"
+							}
+						},
+						{
+							"name": {
+								"value": "Bull Slider"
+							}
+						},
+						{
+							"name": {
+								"value": "Bull Charge"
+							}
+						},
+						{
+							"name": {
+								"value": "Bull Drop"
+							}
+						},
+						{
+							"name": {
+								"value": "Psycho Axe"
+							}
+						},
+						{
+							"name": {
+								"value": "Rock Crusher"
+							}
+						},
+						{
+							"name": {
+								"value": "Amazon River Run"
+							}
+						},
+						{
+							"name": {
+								"value": "Supprise Forward"
+							}
+						},
+						{
+							"name": {
+								"value": "Supprise Back"
+							}
+						},
+						{
+							"name": {
+								"value": "Surprise Forward"
+							}
+						},
+						{
+							"name": {
+								"value": "Surprise Back"
+							}
+						},
+						{
+							"name": {
+								"value": "Lift Upper"
+							}
+						},
+						{
+							"name": {
+								"value": "Knee Bullet"
+							}
+						},
+						{
+							"name": {
+								"value": "Senenshu"
+							}
+						},
+						{
+							"name": {
+								"value": "Tsuitotsuken"
+							}
+						},
+						{
+							"name": {
+								"value": "Hakkei"
+							}
+						},
+						{
+							"name": {
+								"value": "Kakurakukyaku"
+							}
+						},
+						{
+							"name": {
+								"value": "Tenkukyaku"
+							}
+						},
+						{
+							"name": {
+								"value": "Yokusenkyaku"
+							}
+						},
+						{
+							"name": {
+								"value": "Axel Knuckle"
+							}
+						},
+						{
+							"name": {
+								"value": "Hammer Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Yoga Upper"
+							}
+						},
+						{
+							"name": {
+								"value": "Yoga Anvil"
+							}
+						},
+						{
+							"name": {
+								"value": "Divine Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Harai-Geri"
+							}
+						},
+						{
+							"name": {
+								"value": "Chikara-Ashi"
+							}
+						},
+						{
+							"name": {
+								"value": "Psycho Spitze"
+							}
+						},
+						{
+							"name": {
+								"value": "Blaukraehe"
+							}
+						},
+						{
+							"name": {
+								"value": "Nirenko"
+							}
+						},
+						{
+							"name": {
+								"value": "Wild President"
+							}
+						},
+						{
+							"name": {
+								"value": "Strong President"
+							}
+						},
+						{
+							"name": {
+								"value": "Crash President"
+							}
+						},
+						{
+							"name": {
+								"value": "Cryo Drop Elbow"
+							}
+						},
+						{
+							"name": {
+								"value": "Pyro Quarrel Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Cryo Rise Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Knee Bazooka"
+							}
+						},
+						{
+							"name": {
+								"value": "Rolling Sobat"
+							}
+						},
+						{
+							"name": {
+								"value": "Reverse Spin Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Burn Straight"
+							}
+						},
+						{
+							"name": {
+								"value": "Spinning Back Knuckle"
+							}
+						},
+						{
+							"name": {
+								"value": "Full Bullet Magnum"
+							}
+						},
+						{
+							"name": {
+								"value": "Guile High Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Agemen"
+							}
+						},
+						{
+							"name": {
+								"value": "Kobekudaki"
+							}
+						},
+						{
+							"name": {
+								"value": "Sazan"
+							}
+						},
+						{
+							"name": {
+								"value": "Bonshogeri"
+							}
+						},
+						{
+							"name": {
+								"value": "Senkaikyaku"
+							}
+						},
+						{
+							"name": {
+								"value": "Korenzan"
+							}
+						},
+						{
+							"name": {
+								"value": "Kikokuduki"
+							}
+						},
+						{
+							"name": {
+								"value": "Tsumujigari"
+							}
+						},
+						{
+							"name": {
+								"value": "Inazuma Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Thunder Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Thunder Kick (Feint)"
+							}
+						},
+						{
+							"name": {
+								"value": "Chin Buster"
+							}
+						},
+						{
+							"name": {
+								"value": "Blizzard Heel"
+							}
+						},
+						{
+							"name": {
+								"value": "Sniping Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Step Elbow"
+							}
+						},
+						{
+							"name": {
+								"value": "Elbow Crush"
+							}
+						},
+						{
+							"name": {
+								"value": "Knee Slide"
+							}
+						},
+						{
+							"name": {
+								"value": "Divine Retribution"
+							}
+						},
+						{
+							"name": {
+								"value": "Judgment Of Anubis"
+							}
+						},
+						{
+							"name": {
+								"value": "Chopping Assault"
+							}
+						},
+						{
+							"name": {
+								"value": "Jumping Sobat"
+							}
+						},
+						{
+							"name": {
+								"value": "Side Knee Attack"
+							}
+						},
+						{
+							"name": {
+								"value": "Step Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Opening Dagger"
+							}
+						},
+						{
+							"name": {
+								"value": "Opening Dagger (Hold Button)"
+							}
+						},
+						{
+							"name": {
+								"value": "Lady Mika"
+							}
+						},
+						{
+							"name": {
+								"value": "Passion Press"
+							}
+						},
+						{
+							"name": {
+								"value": "Flap Spin"
+							}
+						},
+						{
+							"name": {
+								"value": "Beak Assault"
+							}
+						},
+						{
+							"name": {
+								"value": "Collarbone Breaker"
+							}
+						},
+						{
+							"name": {
+								"value": "Solar Plexus Strike"
+							}
+						},
+						{
+							"name": {
+								"value": "Axe Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Tiger Heavy Elbow"
+							}
+						},
+						{
+							"name": {
+								"value": "Step High Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Step Low Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Floral Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Furiko Upper"
+							}
+						},
+						{
+							"name": {
+								"value": "Chin Buster Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Step Shoot"
+							}
+						},
+						{
+							"name": {
+								"value": "Hazard Blow"
+							}
+						},
+						{
+							"name": {
+								"value": "Head Hunter"
+							}
+						},
+						{
+							"name": {
+								"value": "Turning Slicer"
+							}
+						},
+						{
+							"name": {
+								"value": "Quarrel Punch"
+							}
+						},
+						{
+							"name": {
+								"value": "Quarrel Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Terrible Smash"
+							}
+						},
+						{
+							"name": {
+								"value": "Mercury Shard"
+							}
+						},
+						{
+							"name": {
+								"value": "Buster Claw"
+							}
+						},
+						{
+							"name": {
+								"value": "Head Butt"
+							}
+						},
+						{
+							"name": {
+								"value": "Knee Hammer"
+							}
+						},
+						{
+							"name": {
+								"value": "Nouten Wari"
+							}
+						},
+						{
+							"name": {
+								"value": "Kubi Kudaki"
+							}
+						},
+						{
+							"name": {
+								"value": "Abi Scissor"
+							}
+						},
+						{
+							"name": {
+								"value": "Vroom Vroom"
+							}
+						},
+						{
+							"name": {
+								"value": "Bang Bang"
+							}
+						},
+						{
+							"name": {
+								"value": "Abi Twist"
+							}
+						},
+						{
+							"name": {
+								"value": "Tenmakujinkyaku"
+							}
+						},
+						{
+							"name": {
+								"value": "Kongoken"
+							}
+						},
+						{
+							"name": {
+								"value": "Kikokurenzan"
+							}
+						},
+						{
+							"name": {
+								"value": "Flying Cross Chop"
+							}
+						},
+						{
+							"name": {
+								"value": "Hard Smasher (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Hard Smasher (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Hard Smasher (4)"
+							}
+						},
+						{
+							"name": {
+								"value": "Hard Pressure (4)"
+							}
+						},
+						{
+							"name": {
+								"value": "OTB"
+							}
+						},
+						{
+							"name": {
+								"value": "Under Impact (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Under Impact (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Stomping Combo (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Turn Punch (Level 1)"
+							}
+						},
+						{
+							"name": {
+								"value": "Turn Punch (Level 2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Turn Punch (Level 3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Booger"
+							}
+						},
+						{
+							"name": {
+								"value": "Bad Hammer"
+							}
+						},
+						{
+							"name": {
+								"value": "Hell Attack"
+							}
+						},
+						{
+							"name": {
+								"value": "Shadow Axe"
+							}
+						},
+						{
+							"name": {
+								"value": "Raging Bash (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Raging Bash (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Lightning Dance"
+							}
+						},
+						{
+							"name": {
+								"value": "Lift Combination"
+							}
+						},
+						{
+							"name": {
+								"value": "Yosokyaku"
+							}
+						},
+						{
+							"name": {
+								"value": "Yosokyaku (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Yosokyaku (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Wall Jump"
+							}
+						},
+						{
+							"name": {
+								"value": "Crack Combination"
+							}
+						},
+						{
+							"name": {
+								"value": "Crime Combination"
+							}
+						},
+						{
+							"name": {
+								"value": "Air Raid Punch"
+							}
+						},
+						{
+							"name": {
+								"value": "Air Raid Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Burst Shot"
+							}
+						},
+						{
+							"name": {
+								"value": "Slip Jab"
+							}
+						},
+						{
+							"name": {
+								"value": "Crime Blow"
+							}
+						},
+						{
+							"name": {
+								"value": "Final Combination"
+							}
+						},
+						{
+							"name": {
+								"value": "Final Combo Throw"
+							}
+						},
+						{
+							"name": {
+								"value": "Bad Spray"
+							}
+						},
+						{
+							"name": {
+								"value": "Axel Knuckle (WHILE HOLDING PIPE)"
+							}
+						},
+						{
+							"name": {
+								"value": "Thrust kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Drill Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Yoga Fire (VS2 Ver.)"
+							}
+						},
+						{
+							"name": {
+								"value": "Flying Sumo Press"
+							}
+						},
+						{
+							"name": {
+								"value": "Tokoshizume"
+							}
+						},
+						{
+							"name": {
+								"value": "Tsurane Harite"
+							}
+						},
+						{
+							"name": {
+								"value": "Hirate"
+							}
+						},
+						{
+							"name": {
+								"value": "Psycho Shoot"
+							}
+						},
+						{
+							"name": {
+								"value": "Zweitrit"
+							}
+						},
+						{
+							"name": {
+								"value": "Psycho Seele"
+							}
+						},
+						{
+							"name": {
+								"value": "Luftjagd"
+							}
+						},
+						{
+							"name": {
+								"value": "Senpukuga (Prone)"
+							}
+						},
+						{
+							"name": {
+								"value": "Senpukuga (Attack)"
+							}
+						},
+						{
+							"name": {
+								"value": "Flying President"
+							}
+						},
+						{
+							"name": {
+								"value": "Message To The People Pattern 1"
+							}
+						},
+						{
+							"name": {
+								"value": "Message To The People Pattern 2"
+							}
+						},
+						{
+							"name": {
+								"value": "Message To The People Pattern 3"
+							}
+						},
+						{
+							"name": {
+								"value": "Message To The People (Cancel)"
+							}
+						},
+						{
+							"name": {
+								"value": "G Smash Over Level 3"
+							}
+						},
+						{
+							"name": {
+								"value": "G Smash Under Level 3"
+							}
+						},
+						{
+							"name": {
+								"value": "G Burst Level 3"
+							}
+						},
+						{
+							"name": {
+								"value": "G Spin Kick Level 3"
+							}
+						},
+						{
+							"name": {
+								"value": "G Impact Level 1"
+							}
+						},
+						{
+							"name": {
+								"value": "G Impact Level 2"
+							}
+						},
+						{
+							"name": {
+								"value": "G Impact Level 3"
+							}
+						},
+						{
+							"name": {
+								"value": "G Charge"
+							}
+						},
+						{
+							"name": {
+								"value": "G Explosion"
+							}
+						},
+						{
+							"name": {
+								"value": "G Rage"
+							}
+						},
+						{
+							"name": {
+								"value": "Guilty Straight"
+							}
+						},
+						{
+							"name": {
+								"value": "Penalty Break"
+							}
+						},
+						{
+							"name": {
+								"value": "Drake Fang"
+							}
+						},
+						{
+							"name": {
+								"value": "Tall Edge"
+							}
+						},
+						{
+							"name": {
+								"value": "Bullet Revolver"
+							}
+						},
+						{
+							"name": {
+								"value": "Swing Out"
+							}
+						},
+						{
+							"name": {
+								"value": "Taurus Combination"
+							}
+						},
+						{
+							"name": {
+								"value": "Nobusuma"
+							}
+						},
+						{
+							"name": {
+								"value": "Shinten (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Shinten (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Yagurakuzushi"
+							}
+						},
+						{
+							"name": {
+								"value": "Gogasha (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Gogasha (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Shakunage"
+							}
+						},
+						{
+							"name": {
+								"value": "Sasanaki"
+							}
+						},
+						{
+							"name": {
+								"value": "Tobikura"
+							}
+						},
+						{
+							"name": {
+								"value": "Aoji"
+							}
+						},
+						{
+							"name": {
+								"value": "Kyoretsushu"
+							}
+						},
+						{
+							"name": {
+								"value": "Enkushu"
+							}
+						},
+						{
+							"name": {
+								"value": "Sekiei Gozanken"
+							}
+						},
+						{
+							"name": {
+								"value": "Airborne Hadoken"
+							}
+						},
+						{
+							"name": {
+								"value": "Tenmakujinkyaku脚"
+							}
+						},
+						{
+							"name": {
+								"value": "Kikokuretsuzan"
+							}
+						},
+						{
+							"name": {
+								"value": "波Hadoken"
+							}
+						},
+						{
+							"name": {
+								"value": "Ku-Renge"
+							}
+						},
+						{
+							"name": {
+								"value": "Chin Buster 2nd"
+							}
+						},
+						{
+							"name": {
+								"value": "Lion Breaker"
+							}
+						},
+						{
+							"name": {
+								"value": "Isicle Stamp"
+							}
+						},
+						{
+							"name": {
+								"value": "Frost Spike (1)"
+							}
+						},
+						{
+							"name": {
+								"value": "Frost Spike (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "White Out (1)"
+							}
+						},
+						{
+							"name": {
+								"value": "White Out (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "White Pressure"
+							}
+						},
+						{
+							"name": {
+								"value": "Cold Low (1)"
+							}
+						},
+						{
+							"name": {
+								"value": "Cold Low (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Brinicle (1)"
+							}
+						},
+						{
+							"name": {
+								"value": "Brinicle (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Snow Grain (1)"
+							}
+						},
+						{
+							"name": {
+								"value": "Snow Grain (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "White Spear (1)"
+							}
+						},
+						{
+							"name": {
+								"value": "White Spear (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "V"
+							}
+						},
+						{
+							"name": {
+								"value": "Frost Touch - Low"
+							}
+						},
+						{
+							"name": {
+								"value": "Frost Touch - Mid"
+							}
+						},
+						{
+							"name": {
+								"value": "Frost Touch - High"
+							}
+						},
+						{
+							"name": {
+								"value": "Silver Edge"
+							}
+						},
+						{
+							"name": {
+								"value": "Frost Spike (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "White Out (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Cold Low (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Brinicle (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Snow Grain (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "White Spear (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Twist Barrage"
+							}
+						},
+						{
+							"name": {
+								"value": "Dual Crash"
+							}
+						},
+						{
+							"name": {
+								"value": "Thunder Clap Level 1"
+							}
+						},
+						{
+							"name": {
+								"value": "Linear Movement - Avante (Movement)"
+							}
+						},
+						{
+							"name": {
+								"value": "Linear Movement - Avante (Attack)"
+							}
+						},
+						{
+							"name": {
+								"value": "Quick Side-Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Spin Drive"
+							}
+						},
+						{
+							"name": {
+								"value": "Street-Style Set"
+							}
+						},
+						{
+							"name": {
+								"value": "Carry Bonus"
+							}
+						},
+						{
+							"name": {
+								"value": "Drop Target"
+							}
+						},
+						{
+							"name": {
+								"value": "Khamun Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "VL Judgement Of Thoth"
+							}
+						},
+						{
+							"name": {
+								"value": "VM Judgement Of Thoth"
+							}
+						},
+						{
+							"name": {
+								"value": "VH Judgement Of Thoth"
+							}
+						},
+						{
+							"name": {
+								"value": "VProphecy Of Thoth"
+							}
+						},
+						{
+							"name": {
+								"value": "Rapid Punch"
+							}
+						},
+						{
+							"name": {
+								"value": "Rapid Kick"
+							}
+						},
+						{
+							"name": {
+								"value": "Wind Shear (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Wind Shear (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Down Burst"
+							}
+						},
+						{
+							"name": {
+								"value": "(Raptor/Bullet) Combination (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Raptor Combination (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Bullet Combination (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Road of the Sun"
+							}
+						},
+						{
+							"name": {
+								"value": "Sacrificial Altar (2)"
+							}
+						},
+						{
+							"name": {
+								"value": "Sacrificial Altar (3)"
+							}
+						},
+						{
+							"name": {
+								"value": "Messenger Of Chaos"
+							}
+						},
+						{
+							"name": {
+								"value": "Whiplash"
+							}
+						},
+						{
+							"name": {
+								"value": "Slap & Smash"
+							}
+						},
+						{
+							"name": {
+								"value": "Slap & Slash"
+							}
+						},
+						{
+							"name": {
+								"value": "Dive Bomb"
+							}
+						},
+						{
+							"name": {
+								"value": "Passion Rope Throw"
+							}
+						},
+						{
+							"name": {
+								"value": "Stomp Chop"
+							}
+						},
+						{
+							"name": {
+								"value": "Shooting Start Combo"
+							}
+						},
+						{
+							"name": {
+								"value": "Jodan Nirengeki"
+							}
+						},
+						{
+							"name": {
+								"value": "Jodan Sanrengeki"
+							}
+						},
+						{
+							"name": {
+								"value": "Twin Claw"
+							}
+						},
+						{
+							"name": {
+								"value": "Tanden Combination"
+							}
+						},
+						{
+							"name": {
+								"value": "Shoot Slicer"
+							}
+						},
+						{
+							"name": {
+								"value": "Fatal Rush"
+							}
+						},
+						{
+							"name": {
+								"value": "Killer Straight"
+							}
+						},
+						{
+							"name": {
+								"value": "Break Rush"
+							}
+						},
+						{
+							"name": {
+								"value": "Reverse claw"
+							}
+						},
+						{
+							"name": {
+								"value": "Matador Flash"
+							}
+						},
+						{
+							"name": {
+								"value": "Matador Flash (Attack)"
+							}
+						},
+						{
+							"name": {
+								"value": "Flash Arch - Rossa (Stance)"
+							}
+						},
+						{
+							"name": {
+								"value": "Flash Arch - Rossa (Attack)"
+							}
+						},
+						{
+							"name": {
+								"value": "Flash Arch - Granate"
+							}
+						},
+						{
+							"name": {
+								"value": "Flying Body Press"
+							}
+						},
+						{
+							"name": {
+								"value": "Flyng Headbutt"
+							}
+						},
+						{
+							"name": {
+								"value": "Kaeshi Saiha"
+							}
+						},
+						{
+							"name": {
+								"value": "Kaeshi Urasaiha"
+							}
+						},
+						{
+							"name": {
+								"value": "Kagerou"
+							}
+						},
+						{
+							"name": {
+								"value": "Urakagerou"
+							}
+						},
+						{
+							"name": {
+								"value": "Sekibu No Jin"
+							}
+						},
+						{
+							"name": {
+								"value": "Hakuso No Jin"
+							}
+						},
+						{
+							"name": {
+								"value": "Sankaku Tobi"
+							}
+						},
+						{
+							"name": {
+								"value": "Hassou Tobi"
+							}
+						},
+						{
+							"name": {
+								"value": "Bushin Shidenkyaku"
+							}
+						},
+						{
+							"name": {
+								"value": "Bushin Soukosou"
+							}
+						},
+						{
+							"name": {
+								"value": "Bushin Gokusanken - Ni"
+							}
+						},
+						{
+							"name": {
+								"value": "Bushin Gokusanken - San"
+							}
+						},
+						{
+							"name": {
+								"value": "Bushin Gokusanken - Shu"
+							}
+						},
+						{
+							"name": {
+								"value": "Bushin Gokusanage"
+							}
+						},
+						{
+							"name": {
+								"value": "Bushin Seiryukyaku"
 							}
 						}
 					]
