@@ -258,7 +258,7 @@
         "moveType": "Special Moves"
       },
       "Quarrel Kick": {
-        "moveCommand": "Down forward Roundhouse",
+        "moveCommand": "Down Forward Roundhouse",
         "startUpFrames": "15",
         "activeFrames": "4",
         "recoveryFrames": "18",

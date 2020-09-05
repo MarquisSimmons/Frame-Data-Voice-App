@@ -203,7 +203,7 @@
     },
     "Special Moves": {
       "Divine Retribution": {
-        "moveCommand": "Forward forward",
+        "moveCommand": "Forward Forward",
         "startUpFrames": "27",
         "activeFrames": "2",
         "recoveryFrames": "23",
@@ -215,7 +215,7 @@
         "moveType": "Special Moves"
       },
       "Judgment Of Anubis": {
-        "moveCommand": "Down forward foward",
+        "moveCommand": "Down Forward foward",
         "startUpFrames": "11",
         "activeFrames": "11",
         "recoveryFrames": "18",

@@ -257,7 +257,7 @@
         "moveType": "Special Moves"
       },
       "Turning Slicer": {
-        "moveCommand": "Down forward Roundhouse",
+        "moveCommand": "Down Forward Roundhouse",
         "startUpFrames": "23",
         "activeFrames": "3",
         "recoveryFrames": "15",
@@ -508,7 +508,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "Tanden Maneuver Additional Control (forward)": {
+      "Tanden Maneuver Additional Control (Forward)": {
         "moveCommand": "",
         "startUpFrames": "7",
         "activeFrames": "150",
@@ -556,7 +556,7 @@
         "moveProperties": "High",
         "moveType": "Special Moves"
       },
-      "Tanden Maneuver Additional Control (down-forward)": {
+      "Tanden Maneuver Additional Control (down-Forward)": {
         "moveCommand": "",
         "startUpFrames": "7",
         "activeFrames": "150",
@@ -800,7 +800,7 @@
         "moveProperties": "High",
         "moveType": "V-System"
       },
-      "Tanden Maneuver Movement (forward)": {
+      "Tanden Maneuver Movement (Forward)": {
         "moveCommand": "",
         "startUpFrames": "7",
         "activeFrames": "150",
@@ -848,7 +848,7 @@
         "moveProperties": "High",
         "moveType": "V-System"
       },
-      "Tanden Maneuver Movement (down-forward)": {
+      "Tanden Maneuver Movement (down-Forward)": {
         "moveCommand": "",
         "startUpFrames": "7",
         "activeFrames": "150",

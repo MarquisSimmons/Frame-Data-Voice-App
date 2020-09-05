@@ -437,7 +437,7 @@
     },
     "Special Moves": {
       "Opening Dagger": {
-        "moveCommand": "Down forward Fierce",
+        "moveCommand": "Down Forward Fierce",
         "startUpFrames": "23",
         "activeFrames": "3",
         "recoveryFrames": "23",
@@ -449,7 +449,7 @@
         "moveType": "Special Moves"
       },
       "V-Opening Dagger": {
-        "moveCommand": "Down forward Fierce",
+        "moveCommand": "Down Forward Fierce",
         "startUpFrames": "23",
         "activeFrames": "3",
         "recoveryFrames": "24",
@@ -461,7 +461,7 @@
         "moveType": "Special Moves"
       },
       "V-Opening Dagger (Hold Button)": {
-        "moveCommand": "Down forward Fierce",
+        "moveCommand": "Down Forward Fierce",
         "startUpFrames": "38",
         "activeFrames": "3",
         "recoveryFrames": "18",

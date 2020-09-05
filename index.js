@@ -168,15 +168,6 @@ const GetSpecialMoveFrames_Handler = {
 			specialMoveName = slotValues.SpecialMove.resolved;
 		}
 		if (slotValues.SpecialMove.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			// if (slotValues.SpecialMove.heardAs.includes('v skill') || slotValues.SpecialMove.heardAs.includes('v trigger')) {
-			// 	let separateMoves = stripVSystemFromMove(slotValues.SpecialMove.heardAs);
-			// 	if (separateMoves.length === 2) {
-			// 		specialMoveName = separateMoves[0]; // TODO: Some how convert this value to the a valid slot value
-			// 		vSystem = separateMoves[1];
-			// 		say = retrieveSpecialMoveFrameData(characterName, specialMoveName, moveStrength, frameType, vSystem);
-			// 		return responseBuilder.speak(say).getResponse();
-			// 	}
-			// }
 			console.log('***** consider adding "' + slotValues.SpecialMove.heardAs + '" to the custom slot type used by slot SpecialMove! ');
 			say =
 				'Frame data for, ' +
@@ -532,7 +523,7 @@ const moveStrengthMapping = {
 	Light: 'L',
 	Medium: 'M',
 	Heavy: 'H',
-	'E.X': 'EX',
+	'E.X.': 'EX',
 };
 const frameTypeMapping = {
 	'On Hit': 'framesOnHit',
@@ -717,12 +708,12 @@ function getPreviousSpeechOutput(attrs) {
  */
 function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, frameType, vSystem) {
 	// Retrieve the character's move file from the Model
-	let fullMoveLookup = ' ';
+	let fullMoveLookup = '';
 	let defaultFrameType = frameType !== ' ' ? frameType : 'Startup';
+	let move = undefined;
 
 	const lookupVSystem = vSystemMapping[vSystem];
 	let lookupMoveStrength = moveStrengthMapping[moveStrength];
-	const lookupFrameType = frameTypeMapping[defaultFrameType];
 
 	const data = fs.readFileSync('Model/' + character + '.json');
 	if (!data) {
@@ -752,38 +743,12 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
 			fullMoveLookup = lookupMoveStrength ? lookupVSystem + lookupMoveStrength + ' ' + specialMove : lookupVSystem + specialMove;
 			break;
 	}
-	let move = characterSpecialMoveList[fullMoveLookup];
-
-	console.log(character, specialMove, moveStrength, lookupFrameType, lookupVSystem);
+	move = characterSpecialMoveList[fullMoveLookup];
 
 	// Case we find the move successfully with all of the necessary slots filled out
 	if (move) {
 		console.log(character + "'s " + fullMoveLookup + ' found.');
-		if (frameType == 'On Hit' || frameType == 'On Block') {
-			const frameNumber = move[lookupFrameType] <= 0 ? move[lookupFrameType] : 'plus ' + move[lookupFrameType];
-			const outputWithVSystem =
-				character + 's ' + moveStrength + ' ' + specialMove + ' is ' + frameNumber + ' frames ' + defaultFrameType + ' with ' + vSystem;
-			const output = character + 's ' + moveStrength + ' ' + specialMove + ' is ' + frameNumber + ' frames ' + defaultFrameType;
-			return lookupVSystem ? outputWithVSystem : output;
-		}
-		else {
-			const outputWithVSystem =
-				character +
-				's ' +
-				moveStrength +
-				' ' +
-				specialMove +
-				' has ' +
-				move[lookupFrameType] +
-				' ' +
-				defaultFrameType +
-				' frames with ' +
-				vSystem;
-
-			const output =
-				character + 's ' + moveStrength + ' ' + specialMove + ' has ' + move[lookupFrameType] + ' ' + defaultFrameType + ' frames.';
-			return lookupVSystem ? outputWithVSystem : output;
-		}
+		return createMoveOutput(move, character, specialMove, defaultFrameType, lookupVSystem, moveStrength);
 	}
 	else if (!lookupMoveStrength) {
 		console.log(character + "'s " + fullMoveLookup + ' not found. Looking up move again with move strength');
@@ -807,31 +772,7 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
 		move = characterSpecialMoveList[fullMoveLookup];
 		if (move) {
 			console.log(character + "'s " + fullMoveLookup + ' found after adding move strength.');
-			if (frameType == 'On Hit' || frameType == 'On Block') {
-				const frameNumber = move[lookupFrameType] <= 0 ? move[lookupFrameType] : 'plus ' + move[lookupFrameType];
-				const outputWithVSystem =
-					character + 's ' + moveStrength + ' ' + specialMove + ' is ' + frameNumber + ' frames ' + defaultFrameType + ' with ' + vSystem;
-				const output = character + 's ' + moveStrength + ' ' + specialMove + ' is ' + frameNumber + ' frames ' + defaultFrameType;
-				return lookupVSystem ? outputWithVSystem : output;
-			}
-			else {
-				const outputWithVSystem =
-					character +
-					's ' +
-					moveStrength +
-					' ' +
-					specialMove +
-					' has ' +
-					move[lookupFrameType] +
-					' ' +
-					defaultFrameType +
-					' frames with ' +
-					vSystem;
-
-				const output =
-					character + 's ' + moveStrength + ' ' + specialMove + ' has ' + move[lookupFrameType] + ' ' + defaultFrameType + ' frames.';
-				return lookupVSystem ? outputWithVSystem : output;
-			}
+			return createMoveOutput(move, character, specialMove, defaultFrameType, lookupVSystem, moveStrength);
 		}
 	}
 	console.log(character + "'s " + fullMoveLookup + ' not found');
@@ -848,11 +789,97 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
  */
 function retrieveNormalMoveFrameData(character, normalMove, position, frameType, vSystem) {
 	// Retrieve the character's move file from the Model
-	fs.readFile('Model/' + character + '.json', (err, data) => {
-		if (err) throw err;
-		let returnedData = JSON.parse(data);
-		let characterSpecialMoveList = returnedData[character];
+	let fullMoveLookup = '';
+	let defaultFrameType = frameType !== ' ' ? frameType : 'Startup';
+	let defaultPosition = position !== ' ' ? position : 'Standing';
+	let move = undefined;
+
+	const lookupVSystem = vSystemMapping[vSystem];
+	let lookupNormalMove = normalMoveMapping[normalMove];
+	const standardPositions = [ 'Standing', 'Jumping', 'Crouching' ];
+	const uniqueMovePositions = [ 'Down Back', 'Down Forward', 'Back', 'Forward' ];
+
+	const data = fs.readFileSync('Model/' + character + '.json');
+	if (!data) {
+		console.log('File: Model/' + character + '.json could not be found');
+		return 'There was a problem retrieving frame data for ' + character + '. You can try another character until this is resolved.';
+	}
+
+	let returnedData = JSON.parse(data);
+	const characterNormalMoveList = returnedData[character]['Normal Moves'];
+	// Simple case where we are looking up a typical normal move by its move name
+	if (standardPositions.includes(defaultPosition)) {
+		fullMoveLookup = lookupVSystem ? lookupVSystem + defaultPosition + ' ' + lookupNormalMove : defaultPosition + ' ' + lookupNormalMove;
+		move = characterNormalMoveList[fullMoveLookup];
+	}
+	else if (normalMove == 'Sweep') {
+		fullMoveLookup = lookupVSystem ? lookupVSystem + ' ' + lookupNormalMove : lookupNormalMove;
+		move = characterNormalMoveList[fullMoveLookup];
+	}
+	else if (uniqueMovePositions.includes(defaultPosition)) {
+		// We look up the move by its command here
+		const moveCommand = defaultPosition + ' ' + normalMove;
+		move = lookupMoveByCommand(moveCommand, character);
+	}
+	if (move) {
+		console.log(character + "'s " + fullMoveLookup + ' found.');
+		return createMoveOutput(move, character, normalMove, defaultFrameType, lookupVSystem, defaultPosition);
+	}
+	console.log(character + "'s " + fullMoveLookup + ' not found');
+	return 'The frame data for ' + character + "'s " + moveStrength + ' ' + specialMove + ' could not be found';
+}
+
+/**
+ * Takes in a move attribute and creates an speech output for Alexa to say to the user
+ * @param {JSON} moveJson - The character's move object we will use to look up the frame data
+ * @param {*} character - The character who move data we are returning
+ * @param {*} move - The normal or special move we are looking up
+ * @param {*} defaultFrameType - The type of frames we want (Startup, Recovery, On Block etc.) This is set to Startup by default
+ * @param {*} lookupVSystem - A V-System Modifier to make sure we look up the VT or VS version of a move
+ * @param {*} moveModifier - This can be the move's Strength (for special moves LMH) or move position (for normal moves Standing, Crouching, Jumping)
+ */
+function createMoveOutput(moveJson, character, move, defaultFrameType, lookupVSystem, moveModifier) {
+	let defaultFrameType = frameType !== ' ' ? frameType : 'Startup';
+	const lookupFrameType = frameTypeMapping[defaultFrameType];
+
+	console.log(character, move, moveModifier, lookupFrameType, lookupVSystem);
+
+	if (frameType == 'On Hit' || frameType == 'On Block') {
+		const frameNumber = moveJson[lookupFrameType] <= 0 ? moveJson[lookupFrameType] : 'plus ' + moveJson[lookupFrameType];
+		const outputWithVSystem =
+			character + 's ' + moveModifier + ' ' + move + ' is ' + frameNumber + ' frames ' + defaultFrameType + ' with ' + vSystem;
+		const output = character + 's ' + moveModifier + ' ' + move + ' is ' + frameNumber + ' frames ' + defaultFrameType;
+		return lookupVSystem ? outputWithVSystem : output;
+	}
+	else {
+		const outputWithVSystem =
+			character + 's ' + moveModifier + ' ' + move + ' has ' + moveJson[lookupFrameType] + ' ' + defaultFrameType + ' frames with ' + vSystem;
+		const output = character + 's ' + moveModifier + ' ' + move + ' has ' + moveJson[lookupFrameType] + ' ' + defaultFrameType + ' frames.';
+		return lookupVSystem ? outputWithVSystem : output;
+	}
+}
+
+/**
+ * This function lookups a character's special move by its move command (ex. forward medium punch)
+ * @param {JSON} characterJson - The JSON representation of the character
+ */
+function lookupMoveByCommand(moveCommand, character) {
+	const data = fs.readFileSync('Character Moves/' + character + '.json');
+	if (!data) {
+		console.log('File: Character Moves/' + character + '.json could not be found');
+		return 'There was a problem retrieving frame data for ' + character + '. You can try another character until this is resolved.';
+	}
+	let jsonData = JSON.parse(data);
+	const specialMoves = jsonData[character]['Special Moves'];
+	let returnedMove = undefined;
+	Object.entries(specialMoves).forEach((move) => {
+		if (move[1].moveCommand === moveCommand) {
+			if (move[1]) {
+				returnedMove = move[1];
+			}
+		}
 	});
+	return returnedMove;
 }
 // 5. Exports handler function and setup ===================================================
 const skillBuilder = Alexa.SkillBuilders.custom();

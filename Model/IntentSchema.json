@@ -94,6 +94,7 @@
 							"name": "NormalMove",
 							"type": "NormalMove",
 							"samples": [
+								"{Position} {NormalMove}",
 								"{NormalMove}"
 							]
 						},
@@ -383,7 +384,11 @@
 						},
 						{
 							"name": {
-								"value": "Sakura"
+								"value": "Sakura",
+								"synonyms": [
+									"socceroos",
+									"soccer"
+								]
 							}
 						},
 						{
@@ -401,7 +406,13 @@
 						},
 						{
 							"name": {
-								"value": "Kage"
+								"value": "Kage",
+								"synonyms": [
+									"Cagie",
+									"call gate",
+									"cagey",
+									"Kah Gay"
+								]
 							}
 						},
 						{
@@ -2855,7 +2866,7 @@
 						},
 						{
 							"name": {
-								"value": "Tanden Maneuver Additional Control (forward)"
+								"value": "Tanden Maneuver Additional Control (Forward)"
 							}
 						},
 						{
@@ -2875,7 +2886,7 @@
 						},
 						{
 							"name": {
-								"value": "Tanden Maneuver Additional Control (down-forward)"
+								"value": "Tanden Maneuver Additional Control (down-Forward)"
 							}
 						},
 						{
@@ -3370,7 +3381,7 @@
 				"variations": [
 					{
 						"type": "PlainText",
-						"value": "Which normal move did you want the frames for?"
+						"value": "Which normal move did you want the frames for, for example you can say Heavy Kick, Medium Punch or Roundhouse"
 					}
 				]
 			},

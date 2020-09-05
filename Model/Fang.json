@@ -233,7 +233,7 @@
     },
     "Special Moves": {
       "Nirenko": {
-        "moveCommand": "Down forward Fierce",
+        "moveCommand": "Down Forward Fierce",
         "startUpFrames": "12",
         "activeFrames": "4",
         "recoveryFrames": "21",

@@ -294,7 +294,7 @@
         "moveType": "Special Moves"
       },
       "Guile High Kick": {
-        "moveCommand": "Down forward Roundhouse",
+        "moveCommand": "Down Forward Roundhouse",
         "startUpFrames": "11",
         "activeFrames": "2",
         "recoveryFrames": "25",

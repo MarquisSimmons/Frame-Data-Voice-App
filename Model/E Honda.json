@@ -244,7 +244,7 @@
         "moveType": "Special Moves"
       },
       "Chikara-Ashi": {
-        "moveCommand": "Down forward Roundhouse",
+        "moveCommand": "Down Forward Roundhouse",
         "startUpFrames": "20",
         "activeFrames": "6",
         "recoveryFrames": "16",

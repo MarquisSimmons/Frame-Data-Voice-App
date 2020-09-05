@@ -233,7 +233,7 @@
         "moveType": "Special Moves"
       },
       "Psycho Axe": {
-        "moveCommand": "Down forward Fierce",
+        "moveCommand": "Down Forward Fierce",
         "startUpFrames": "18",
         "activeFrames": "3",
         "recoveryFrames": "20(*25)",

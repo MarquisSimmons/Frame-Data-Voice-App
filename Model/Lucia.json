@@ -234,7 +234,7 @@
         "moveType": "Special Moves"
       },
       "Knee Slide": {
-        "moveCommand": "Down forward Short",
+        "moveCommand": "Down Forward Short",
         "startUpFrames": "8",
         "activeFrames": "8",
         "recoveryFrames": "16",

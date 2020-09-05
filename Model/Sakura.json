@@ -247,7 +247,7 @@
                 "moveType": "Special Moves"
             },
             "Chin Buster Kick": {
-                "moveCommand": "Down forward Roundhouse",
+                "moveCommand": "Down Forward Roundhouse",
                 "startUpFrames": "12",
                 "activeFrames": "3",
                 "recoveryFrames": "20",

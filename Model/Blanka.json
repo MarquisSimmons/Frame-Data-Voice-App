@@ -244,7 +244,7 @@
                 "moveType": "Special Moves"
             },
             "Amazon River Run": {
-                "moveCommand": "Down forward Fierce",
+                "moveCommand": "Down Forward Fierce",
                 "startUpFrames": "11",
                 "activeFrames": "10",
                 "recoveryFrames": "25",

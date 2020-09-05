@@ -912,7 +912,7 @@
       "[VS1] Kasatushu Level 2": {
         "moveCommand": "",
         "startUpFrames": "*39-80",
-        "activeFrames": "During forward movement + +2",
+        "activeFrames": "During Forward movement + +2",
         "recoveryFrames": "33",
         "framesOnHit": "D",
         "framesOnBlock": "-18",
@@ -924,7 +924,7 @@
       "[VS1] Kasatushu Level 2 (Instant Activation Version)": {
         "moveCommand": "",
         "startUpFrames": "*10-61",
-        "activeFrames": "During forward movement + +2",
+        "activeFrames": "During Forward movement + +2",
         "recoveryFrames": "33",
         "framesOnHit": "D",
         "framesOnBlock": "-18",

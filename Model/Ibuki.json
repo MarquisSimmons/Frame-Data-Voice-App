@@ -270,7 +270,7 @@
         "moveType": "Special Moves"
       },
       "Sazan": {
-        "moveCommand": "Down forward Forward",
+        "moveCommand": "Down Forward Forward",
         "startUpFrames": "7",
         "activeFrames": "11",
         "recoveryFrames": "14",

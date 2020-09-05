@@ -244,7 +244,7 @@
         "moveType": "Special Moves"
       },
       "Bull Slider": {
-        "moveCommand": "Down forward Fierce",
+        "moveCommand": "Down Forward Fierce",
         "startUpFrames": "19",
         "activeFrames": "6",
         "recoveryFrames": "22",

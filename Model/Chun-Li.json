@@ -462,7 +462,7 @@
     },
     "Special Moves": {
       "Senenshu": {
-        "moveCommand": "Down forward Forward",
+        "moveCommand": "Down Forward Forward",
         "startUpFrames": "26",
         "activeFrames": "2",
         "recoveryFrames": "16",
@@ -498,7 +498,7 @@
         "moveType": "Special Moves"
       },
       "Kakurakukyaku": {
-        "moveCommand": "Down forward Roundhouse",
+        "moveCommand": "Down Forward Roundhouse",
         "startUpFrames": "34",
         "activeFrames": "7",
         "recoveryFrames": "3+7 frame(s) after landing",
@@ -786,7 +786,7 @@
         "moveType": "Special Moves"
       },
       "V-Senenshu": {
-        "moveCommand": "Down forward Forward",
+        "moveCommand": "Down Forward Forward",
         "startUpFrames": "26",
         "activeFrames": "2",
         "recoveryFrames": "16",
@@ -822,7 +822,7 @@
         "moveType": "Special Moves"
       },
       "V-Kakurakukyaku": {
-        "moveCommand": "Down forward Roundhouse",
+        "moveCommand": "Down Forward Roundhouse",
         "startUpFrames": "34",
         "activeFrames": "7",
         "recoveryFrames": "3+7 frame(s) after landing",

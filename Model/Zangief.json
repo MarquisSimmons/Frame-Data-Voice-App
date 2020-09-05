@@ -679,7 +679,7 @@
         "moveProperties": "",
         "moveType": "V-System"
       },
-      "[VS1] Iron Muscle (Attack after forward walk)": {
+      "[VS1] Iron Muscle (Attack after Forward walk)": {
         "moveCommand": "",
         "startUpFrames": "9",
         "activeFrames": "5",
