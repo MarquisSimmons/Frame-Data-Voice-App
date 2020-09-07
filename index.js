@@ -502,7 +502,7 @@ function getExampleSlotValues(intentName, slotName) {
 
 	let intents = model.interactionModel.languageModel.intents;
 	for (let i = 0; i < intents.length; i++) {
-		if (intents[i].name == intentName) {
+		if (intents[i].name === intentName) {
 			let slots = intents[i].slots;
 			for (let j = 0; j < slots.length; j++) {
 				if (slots[j].name === slotName) {
@@ -685,57 +685,69 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
 	}
 
 	let returnedData = JSON.parse(data);
-	const characterNormalMoveList = returnedData[character]['Normal Moves'];
-	// Simple case where we are looking up a typical normal move by its move name
-	if (standardPositions.includes(defaultPosition)) {
-		defaultPosition = position !== ' ' ? position : 'Standing';
-		fullMoveLookup = lookupVSystem ? lookupVSystem + defaultPosition + ' ' + lookupNormalMove : defaultPosition + ' ' + lookupNormalMove;
-		move = characterNormalMoveList[fullMoveLookup];
+	if (normalMove === 'Super') {
+		// If we are looking up a C.A then ignore the position (so we wont get things like "Crouching Super")
+		defaultPosition = '';
+		const usingVTrigger = lookupVSystem ? true : false;
+		move = lookupCriticalArt(returnedData[character], usingVTrigger);
+		fullMoveLookup = usingVTrigger ? 'Critical Art during V-Trigger' : 'Critical Art';
+		normalMove = fullMoveLookup;
 	}
-	else if (normalMove == 'Sweep') {
-		fullMoveLookup = lookupVSystem ? lookupVSystem + ' ' + lookupNormalMove : lookupNormalMove;
-		move = characterNormalMoveList[fullMoveLookup];
-	}
-	else if (uniqueMovePositions.includes(defaultPosition)) {
-		// We look up the move by its command here
-		const moveCommand = defaultPosition + ' ' + normalMove;
-		fullMoveLookup = moveCommand;
-		move = lookupMoveByCommand(moveCommand.trim(), character);
+	else {
+		const characterNormalMoveList = returnedData[character]['Normal Moves'];
+		// Simple case where we are looking up a typical normal move by its move name
+		if (standardPositions.includes(defaultPosition)) {
+			defaultPosition = position !== ' ' ? position : 'Standing';
+			fullMoveLookup = lookupVSystem ? lookupVSystem + defaultPosition + ' ' + lookupNormalMove : defaultPosition + ' ' + lookupNormalMove;
+			move = characterNormalMoveList[fullMoveLookup];
+		}
+		else if (normalMove === 'Sweep') {
+			fullMoveLookup = lookupVSystem ? lookupVSystem + ' ' + lookupNormalMove : lookupNormalMove;
+			move = characterNormalMoveList[fullMoveLookup];
+		}
+		else if (uniqueMovePositions.includes(defaultPosition)) {
+			// We look up the move by its command here
+			const moveCommand = defaultPosition + ' ' + normalMove;
+			fullMoveLookup = moveCommand;
+			move = lookupMoveByCommand(moveCommand.trim(), character);
+		}
 	}
 	if (move) {
 		console.log(character + "'s " + fullMoveLookup + ' found.');
 		return createMoveOutput(move, character, normalMove, defaultFrameType, vSystem, defaultPosition);
 	}
-	console.log(character + "'s " + fullMoveLookup + ' not found');
-	return 'The frame data for ' + character + "'s " + position + ' ' + normalMove + ' could not be found';
+	else {
+		console.log(character + "'s " + fullMoveLookup + ' not found');
+		return 'The frame data for ' + character + "'s " + position + ' ' + normalMove + ' could not be found';
+	}
 }
 
 /**
  * Takes in a move attribute and creates an speech output for Alexa to say to the user
  * @param {JSON} moveJson - The character's move object we will use to look up the frame data
- * @param {*} character - The character who move data we are returning
- * @param {*} move - The normal or special move we are looking up
- * @param {*} defaultFrameType - The type of frames we want (Startup, Recovery, On Block etc.) This is set to Startup by default
- * @param {*} lookupVSystem - A V-System Modifier to make sure we look up the VT or VS version of a move
- * @param {*} moveModifier - This can be the move's Strength (for special moves LMH) or move position (for normal moves Standing, Crouching, Jumping)
+ * @param {String} character - The character who move data we are returning
+ * @param {String} move - The normal or special move we are looking up
+ * @param {String} defaultFrameType - The type of frames we want (Startup, Recovery, On Block etc.) This is set to Startup by default
+ * @param {String} lookupVSystem - A V-System Modifier to make sure we look up the VT or VS version of a move
+ * @param {String} moveModifier - This can be the move's Strength (for special moves LMH) or move position (for normal moves Standing, Crouching, Jumping)
  */
 function createMoveOutput(moveJson, character, move, defaultFrameType, vSystem, moveModifier) {
 	const lookupFrameType = frameTypeMapping[defaultFrameType];
 	const lookupVSystem = vSystemMapping[vSystem];
 	console.log(character, move, moveModifier, lookupFrameType, lookupVSystem);
 
-	if (defaultFrameType == 'On Hit' || defaultFrameType == 'On Block') {
+	if (defaultFrameType === 'On Hit' || defaultFrameType === 'On Block') {
 		const frameNumber = moveJson[lookupFrameType] <= 0 ? moveJson[lookupFrameType] : 'plus ' + moveJson[lookupFrameType];
 		const outputWithVSystem =
 			character + 's ' + moveModifier + ' ' + move + ' is ' + frameNumber + ' frames ' + defaultFrameType + ' with ' + vSystem;
 		const output = character + 's ' + moveModifier + ' ' + move + ' is ' + frameNumber + ' frames ' + defaultFrameType;
-		return lookupVSystem ? outputWithVSystem : output;
+		return lookupVSystem && !move.includes('V-Trigger') ? outputWithVSystem : output;
 	}
 	else {
 		const outputWithVSystem =
 			character + 's ' + moveModifier + ' ' + move + ' has ' + moveJson[lookupFrameType] + ' ' + defaultFrameType + ' frames with ' + vSystem;
 		const output = character + 's ' + moveModifier + ' ' + move + ' has ' + moveJson[lookupFrameType] + ' ' + defaultFrameType + ' frames.';
-		return lookupVSystem ? outputWithVSystem : output;
+		return lookupVSystem && !move.includes('V-Trigger') ? outputWithVSystem : output;
 	}
 }
 
@@ -751,15 +763,37 @@ function lookupMoveByCommand(moveCommand, character) {
 	}
 	let jsonData = JSON.parse(data);
 	const specialMoves = jsonData[character]['Special Moves'];
-	let returnedMove = undefined;
-	Object.entries(specialMoves).forEach((move) => {
-		if (move[1].moveCommand === moveCommand) {
-			if (move[1]) {
-				returnedMove = move[1];
-			}
+	let returnedMove = Object.entries(specialMoves).filter((move) => move[1].moveCommand === moveCommand)[1];
+
+	return returnedMove[1];
+}
+
+/**
+ * This function retrieves a character's Critical Art from their JSON file
+ * @param {JSON} characterJSON - The character's JSON object we will use to look up the Critical Art
+ * @param {Boolean} withVTrigger - true if we are looking for a critical art with v trigger, false if otherwise
+ */
+function lookupCriticalArt(characterJSON, withVTrigger) {
+	const criticalArt = characterJSON['Critical Art'];
+	let returnedCA = undefined;
+	if (withVTrigger) {
+		const vTriggerSuper = Object.keys(criticalArt).filter((value) => value.startsWith('V-'))[0];
+		if (vTriggerSuper) {
+			returnedCA = criticalArt[vTriggerSuper];
 		}
-	});
-	return returnedMove;
+	}
+	else if (Object.keys(criticalArt)[0]) {
+		console.log('Could not find super with V-Trigger, returning standard super');
+		// If it is a normal super ( without VT) then just grab the first one
+		// This might need to change depending on user feedback for characters like Dhalsim but until then we will keep it simple
+		const value = Object.keys(criticalArt)[0];
+		console.log('Found super: ' + value);
+		returnedCA = criticalArt[value];
+	}
+	else {
+		console.log('Could not find super');
+	}
+	return returnedCA;
 }
 // 5. Exports handler function and setup ===================================================
 const skillBuilder = Alexa.SkillBuilders.custom();

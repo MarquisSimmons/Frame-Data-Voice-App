@@ -378,18 +378,6 @@
                 "vTriggerCancelBlock": "",
                 "moveProperties": "High",
                 "moveType": "Critical Art"
-            },
-            "Psycho Barrage": {
-                "moveCommand": "",
-                "startUpFrames": "1+12",
-                "activeFrames": "14",
-                "recoveryFrames": "49",
-                "framesOnHit": "D",
-                "framesOnBlock": "-21",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Critical Art"
             }
         },
         "V-System": {
