@@ -214,13 +214,9 @@ const GetNormalMoveFrames_Handler = {
 		}
 		if (slotValues.NormalMove.ERstatus === 'ER_SUCCESS_NO_MATCH') {
 			console.log('***** consider adding "' + slotValues.NormalMove.heardAs + '" to the custom slot type used by slot NormalMove! ');
-			say =
-				'Frame data for, ' +
-				slotValues.NormalMove.heardAs +
-				' could not be found. ' +
-				'A few valid values are, ' +
-				sayArray(getExampleSlotValues('GetNormalMoveFrames', 'NormalMove'), 'or');
-			return responseBuilder.speak(say).getResponse();
+			say = 'Frame data for, ' + slotValues.NormalMove.heardAs + ' could not be found. try saying the move again';
+
+			return responseBuilder.speak(say).addElicitSlotDirective('NormalMove').getResponse();
 		}
 		//   SLOT: FrameType
 		if (slotValues.FrameType.ERstatus === 'ER_SUCCESS_MATCH') {

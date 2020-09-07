@@ -2,7 +2,7 @@
  * @author Marquis Simmons
  * This class does all of the work for actually retrieving the frame data from the Character Models
  */
-//
+
 const fs = require('fs');
 // 1. Constans that map the user inputs to what their values are in the Model files =============================================
 const moveStrengthMapping = {
@@ -198,21 +198,47 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
 function createMoveOutput(moveJson, character, move, defaultFrameType, vSystem, moveModifier) {
 	const lookupFrameType = frameTypeMapping[defaultFrameType];
 	const lookupVSystem = vSystemMapping[vSystem];
+	let frameNumber = undefined;
+	let outputWithVSystem = undefined;
+	let output = undefined;
 	console.log(character, move, moveModifier, lookupFrameType, lookupVSystem);
 
 	if (defaultFrameType === 'On Hit' || defaultFrameType === 'On Block') {
-		const frameNumber = moveJson[lookupFrameType] <= 0 ? moveJson[lookupFrameType] : 'plus ' + moveJson[lookupFrameType];
-		const outputWithVSystem =
-			character + 's ' + moveModifier + ' ' + move + ' is ' + frameNumber + ' frames ' + defaultFrameType + ' with ' + vSystem;
-		const output = character + 's ' + moveModifier + ' ' + move + ' is ' + frameNumber + ' frames ' + defaultFrameType;
-		return lookupVSystem && !move.includes('V-Trigger') ? outputWithVSystem : output;
+		if (moveJson[lookupFrameType] === '') {
+			outputWithVSystem = character + 's ' + moveModifier + ' ' + move + ' with ' + vSystem + ' does not have any frames ' + defaultFrameType;
+			output = character + 's ' + moveModifier + ' ' + move + ' does not have any frames ' + defaultFrameType;
+		}
+		else {
+			frameNumber = moveJson[lookupFrameType] <= 0 ? moveJson[lookupFrameType] : 'plus ' + moveJson[lookupFrameType];
+			outputWithVSystem =
+				character + 's ' + moveModifier + ' ' + move + ' is ' + frameNumber + ' frames ' + defaultFrameType + ' with ' + vSystem;
+			output = character + 's ' + moveModifier + ' ' + move + ' is ' + frameNumber + ' frames ' + defaultFrameType;
+		}
 	}
 	else {
-		const outputWithVSystem =
-			character + 's ' + moveModifier + ' ' + move + ' has ' + moveJson[lookupFrameType] + ' ' + defaultFrameType + ' frames with ' + vSystem;
-		const output = character + 's ' + moveModifier + ' ' + move + ' has ' + moveJson[lookupFrameType] + ' ' + defaultFrameType + ' frames.';
-		return lookupVSystem && !move.includes('V-Trigger') ? outputWithVSystem : output;
+		if (moveJson[lookupFrameType] === '') {
+			outputWithVSystem =
+				character + 's ' + moveModifier + ' ' + move + 'during ' + vSystem + ' does not have any ' + defaultFrameType + ' frames.';
+			output = character + 's ' + moveModifier + ' ' + move + ' does not have any ' + defaultFrameType + ' frames.';
+		}
+		else {
+			outputWithVSystem =
+				character +
+				's ' +
+				moveModifier +
+				' ' +
+				move +
+				' has ' +
+				moveJson[lookupFrameType] +
+				' ' +
+				defaultFrameType +
+				' frames with ' +
+				vSystem;
+			output = character + 's ' + moveModifier + ' ' + move + ' has ' + moveJson[lookupFrameType] + ' ' + defaultFrameType + ' frames.';
+		}
 	}
+
+	return lookupVSystem && !move.includes('V-Trigger') ? outputWithVSystem : output;
 }
 
 /**
