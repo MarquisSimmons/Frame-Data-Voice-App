@@ -221,7 +221,9 @@
         },
         "Special Moves": {
             "Wild President": {
-                "moveCommand": "Forward Fierce",
+                "moveCommand": [
+                    "Forward Fierce"
+                ],
                 "startUpFrames": "15",
                 "activeFrames": "3",
                 "recoveryFrames": "22",
@@ -233,7 +235,9 @@
                 "moveType": "Special Moves"
             },
             "Strong President": {
-                "moveCommand": "Back Fierce",
+                "moveCommand": [
+                    "Back Fierce"
+                ],
                 "startUpFrames": "9",
                 "activeFrames": "5",
                 "recoveryFrames": "23",
@@ -245,7 +249,9 @@
                 "moveType": "Special Moves"
             },
             "Crash President": {
-                "moveCommand": "Forward Roundhouse",
+                "moveCommand": [
+                    "Forward Roundhouse"
+                ],
                 "startUpFrames": "25",
                 "activeFrames": "2",
                 "recoveryFrames": "22",

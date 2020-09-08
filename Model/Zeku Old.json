@@ -365,7 +365,9 @@
         },
         "Special Moves": {
             "Nouten Wari": {
-                "moveCommand": "Forward Fierce",
+                "moveCommand": [
+                    "Forward Fierce"
+                ],
                 "startUpFrames": "22",
                 "activeFrames": "4",
                 "recoveryFrames": "20",

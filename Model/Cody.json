@@ -365,7 +365,9 @@
         },
         "Special Moves": {
             "Axel Knuckle": {
-                "moveCommand": "Forward Fierce",
+                "moveCommand": [
+                    "Forward Fierce"
+                ],
                 "startUpFrames": "25",
                 "activeFrames": "2",
                 "recoveryFrames": "21",
@@ -377,7 +379,9 @@
                 "moveType": "Special Moves"
             },
             "Hammer Kick": {
-                "moveCommand": "Forward Roundhouse",
+                "moveCommand": [
+                    "Forward Roundhouse"
+                ],
                 "startUpFrames": "19",
                 "activeFrames": "3",
                 "recoveryFrames": "21",

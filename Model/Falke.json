@@ -222,7 +222,9 @@
         },
         "Special Moves": {
             "Psycho Spitze": {
-                "moveCommand": "Forward Fierce",
+                "moveCommand": [
+                    "Forward Fierce"
+                ],
                 "startUpFrames": "14",
                 "activeFrames": "2",
                 "recoveryFrames": "25",
@@ -234,7 +236,9 @@
                 "moveType": "Special Moves"
             },
             "Blaukraehe": {
-                "moveCommand": "Down Forward Roundhouse",
+                "moveCommand": [
+                    "Down Forward Roundhouse"
+                ],
                 "startUpFrames": "15",
                 "activeFrames": "6",
                 "recoveryFrames": "14",

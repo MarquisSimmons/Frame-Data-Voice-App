@@ -304,7 +304,9 @@
         },
         "Special Moves": {
             "Abi Hammer": {
-                "moveCommand": "Forward Strong",
+                "moveCommand": [
+                    "Forward Strong"
+                ],
                 "startUpFrames": "21",
                 "activeFrames": "3",
                 "recoveryFrames": "23",
@@ -316,7 +318,9 @@
                 "moveType": "Special Moves"
             },
             "Abi Lift": {
-                "moveCommand": "Forward Fierce",
+                "moveCommand": [
+                    "Forward Fierce"
+                ],
                 "startUpFrames": "10",
                 "activeFrames": "5",
                 "recoveryFrames": "18",
@@ -328,7 +332,9 @@
                 "moveType": "Special Moves"
             },
             "Abi Blaster": {
-                "moveCommand": "Back Fierce",
+                "moveCommand": [
+                    "Back Fierce"
+                ],
                 "startUpFrames": "7",
                 "activeFrames": "2",
                 "recoveryFrames": "35",
@@ -388,7 +394,9 @@
                 "moveType": "Special Moves"
             },
             "V-Abi Lift": {
-                "moveCommand": "Forward Fierce",
+                "moveCommand": [
+                    "Forward Fierce"
+                ],
                 "startUpFrames": "10",
                 "activeFrames": "5",
                 "recoveryFrames": "18",
@@ -400,7 +408,9 @@
                 "moveType": "Special Moves"
             },
             "V-Abi Blaster": {
-                "moveCommand": "Back Fierce",
+                "moveCommand": [
+                    "Back Fierce"
+                ],
                 "startUpFrames": "7",
                 "activeFrames": "2",
                 "recoveryFrames": "35",

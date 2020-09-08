@@ -222,7 +222,10 @@
     },
     "Special Moves": {
       "Knee Bazooka": {
-        "moveCommand": "Back or Forward Short",
+        "moveCommand": [
+          "Forward Short",
+          "Back Short"
+        ],
         "startUpFrames": "8",
         "activeFrames": "5",
         "recoveryFrames": "20",
@@ -234,7 +237,10 @@
         "moveType": "Special Moves"
       },
       "Rolling Sobat": {
-        "moveCommand": "Back or Forward Forward",
+        "moveCommand": [
+          "Forward Forward",
+          "Back Forward"
+        ],
         "startUpFrames": "12",
         "activeFrames": "2",
         "recoveryFrames": "17(*20)",
@@ -246,7 +252,9 @@
         "moveType": "Special Moves"
       },
       "Reverse Spin Kick": {
-        "moveCommand": "Forward Roundhouse",
+        "moveCommand": [
+          "Forward Roundhouse"
+        ],
         "startUpFrames": "16",
         "activeFrames": "3",
         "recoveryFrames": "18",
@@ -258,7 +266,9 @@
         "moveType": "Special Moves"
       },
       "Burn Straight": {
-        "moveCommand": "Back Fierce",
+        "moveCommand": [
+          "Back Fierce"
+        ],
         "startUpFrames": "8",
         "activeFrames": "3",
         "recoveryFrames": "20",
@@ -270,7 +280,9 @@
         "moveType": "Special Moves"
       },
       "Spinning Back Knuckle": {
-        "moveCommand": "Forward Fierce",
+        "moveCommand": [
+          "Forward Fierce"
+        ],
         "startUpFrames": "11",
         "activeFrames": "3",
         "recoveryFrames": "16",
@@ -282,7 +294,9 @@
         "moveType": "Special Moves"
       },
       "Full Bullet Magnum": {
-        "moveCommand": "Forward Strong",
+        "moveCommand": [
+          "Forward Strong"
+        ],
         "startUpFrames": "21",
         "activeFrames": "2",
         "recoveryFrames": "19",
@@ -294,7 +308,9 @@
         "moveType": "Special Moves"
       },
       "Guile High Kick": {
-        "moveCommand": "Down Forward Roundhouse",
+        "moveCommand": [
+          "Down Forward Roundhouse"
+        ],
         "startUpFrames": "11",
         "activeFrames": "2",
         "recoveryFrames": "25",

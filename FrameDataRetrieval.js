@@ -244,6 +244,7 @@ function createMoveOutput(moveJson, character, move, defaultFrameType, vSystem, 
 /**
  * This function lookups a character's special move by its move command (ex. forward medium punch)
  * @param {JSON} characterJson - The JSON representation of the character
+ * @return The JSON representation of the move object
  */
 function lookupMoveByCommand(moveCommand, character) {
 	const data = fs.readFileSync('Model/' + character + '.json');
@@ -253,9 +254,15 @@ function lookupMoveByCommand(moveCommand, character) {
 	}
 	let jsonData = JSON.parse(data);
 	const specialMoves = jsonData[character]['Special Moves'];
-	let returnedMove = Object.entries(specialMoves).filter((move) => move[1].moveCommand === moveCommand)[1];
-
-	return returnedMove[1];
+	let foundMove = undefined;
+	Object.entries(specialMoves).forEach((move) => {
+		if (move[1].moveCommand && move[1].moveCommand.length > 0) {
+			if (move[1].moveCommand.includes(moveCommand)) {
+				foundMove = move[1];
+			}
+		}
+	});
+	return foundMove;
 }
 
 /**

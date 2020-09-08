@@ -328,7 +328,9 @@
         },
         "Special Moves": {
             "Blizzard Heel": {
-                "moveCommand": "Forward Forward",
+                "moveCommand": [
+                    "Forward Forward"
+                ],
                 "startUpFrames": "23",
                 "activeFrames": "5",
                 "recoveryFrames": "18",
@@ -340,7 +342,9 @@
                 "moveType": "Special Moves"
             },
             "Sniping Kick": {
-                "moveCommand": "Back Roundhouse",
+                "moveCommand": [
+                    "Back Roundhouse"
+                ],
                 "startUpFrames": "14",
                 "activeFrames": "3",
                 "recoveryFrames": "19",

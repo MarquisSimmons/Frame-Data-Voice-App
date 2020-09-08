@@ -1,729 +1,733 @@
 {
-  "Menat": {
-    "Fireball": "Soul Sphere",
-    "Normal Moves": {
-      "Standing LP": {
-        "startUpFrames": "5",
-        "activeFrames": "4",
-        "recoveryFrames": "8(*11)",
-        "framesOnHit": "5",
-        "framesOnBlock": "3",
-        "vTriggerCancelHit": "11",
-        "vTriggerCancelBlock": "9",
-        "moveProperties": "High",
-        "moveType": "Normal Moves"
-      },
-      "Standing MP": {
-        "startUpFrames": "6",
-        "activeFrames": "6",
-        "recoveryFrames": "20",
-        "framesOnHit": "-2",
-        "framesOnBlock": "-8",
-        "vTriggerCancelHit": "18",
-        "vTriggerCancelBlock": "12",
-        "moveProperties": "High",
-        "moveType": "Normal Moves"
-      },
-      "Standing HP": {
-        "startUpFrames": "12",
-        "activeFrames": "9",
-        "recoveryFrames": "19",
-        "framesOnHit": "-6",
-        "framesOnBlock": "-10",
-        "vTriggerCancelHit": "16",
-        "vTriggerCancelBlock": "12",
-        "moveProperties": "High",
-        "moveType": "Normal Moves"
-      },
-      "Standing LK": {
-        "startUpFrames": "3",
-        "activeFrames": "3",
-        "recoveryFrames": "10",
-        "framesOnHit": "4",
-        "framesOnBlock": "1",
-        "vTriggerCancelHit": "9",
-        "vTriggerCancelBlock": "6",
-        "moveProperties": "High",
-        "moveType": "Normal Moves"
-      },
-      "Standing MK": {
-        "startUpFrames": "8",
-        "activeFrames": "3",
-        "recoveryFrames": "16",
-        "framesOnHit": "2",
-        "framesOnBlock": "-2",
-        "vTriggerCancelHit": "14",
-        "vTriggerCancelBlock": "10",
-        "moveProperties": "High",
-        "moveType": "Normal Moves"
-      },
-      "Standing HK": {
-        "startUpFrames": "11",
-        "activeFrames": "6",
-        "recoveryFrames": "23",
-        "framesOnHit": "-4",
-        "framesOnBlock": "-8",
-        "vTriggerCancelHit": "18",
-        "vTriggerCancelBlock": "14",
-        "moveProperties": "High",
-        "moveType": "Normal Moves"
-      },
-      "Crouching LP": {
-        "startUpFrames": "4",
-        "activeFrames": "4",
-        "recoveryFrames": "8(*11)",
-        "framesOnHit": "4",
-        "framesOnBlock": "2",
-        "vTriggerCancelHit": "10",
-        "vTriggerCancelBlock": "8",
-        "moveProperties": "High",
-        "moveType": "Normal Moves"
-      },
-      "Crouching MP": {
-        "startUpFrames": "7",
-        "activeFrames": "6",
-        "recoveryFrames": "13",
-        "framesOnHit": "2",
-        "framesOnBlock": "-3",
-        "vTriggerCancelHit": "15",
-        "vTriggerCancelBlock": "10",
-        "moveProperties": "High",
-        "moveType": "Normal Moves"
-      },
-      "Crouching HP": {
-        "startUpFrames": "9",
-        "activeFrames": "5",
-        "recoveryFrames": "19",
-        "framesOnHit": "-1",
-        "framesOnBlock": "-5",
-        "vTriggerCancelHit": "17",
-        "vTriggerCancelBlock": "13",
-        "moveProperties": "High",
-        "moveType": "Normal Moves"
-      },
-      "Crouching LK": {
-        "startUpFrames": "4",
-        "activeFrames": "2",
-        "recoveryFrames": "9",
-        "framesOnHit": "4",
-        "framesOnBlock": "1",
-        "vTriggerCancelHit": "9",
-        "vTriggerCancelBlock": "6",
-        "moveProperties": "Low",
-        "moveType": "Normal Moves"
-      },
-      "Crouching MK": {
-        "startUpFrames": "7",
-        "activeFrames": "3",
-        "recoveryFrames": "14",
-        "framesOnHit": "3",
-        "framesOnBlock": "2",
-        "vTriggerCancelHit": "14",
-        "vTriggerCancelBlock": "13",
-        "moveProperties": "Low",
-        "moveType": "Normal Moves"
-      },
-      "Crouching HK": {
-        "startUpFrames": "11",
-        "activeFrames": "3",
-        "recoveryFrames": "33",
-        "framesOnHit": "D",
-        "framesOnBlock": "-16",
-        "vTriggerCancelHit": "D",
-        "vTriggerCancelBlock": "14",
-        "moveProperties": "Low",
-        "moveType": "Normal Moves"
-      },
-      "Jumping LP": {
-        "startUpFrames": "4",
-        "activeFrames": "5",
-        "recoveryFrames": "",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "Mid",
-        "moveType": "Normal Moves"
-      },
-      "Jumping MP": {
-        "startUpFrames": "8",
-        "activeFrames": "4",
-        "recoveryFrames": "",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "Mid",
-        "moveType": "Normal Moves"
-      },
-      "Jumping HP": {
-        "startUpFrames": "13",
-        "activeFrames": "4",
-        "recoveryFrames": "",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "Mid",
-        "moveType": "Normal Moves"
-      },
-      "Jumping LK": {
-        "startUpFrames": "4",
-        "activeFrames": "6",
-        "recoveryFrames": "",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "Mid",
-        "moveType": "Normal Moves"
-      },
-      "Jumping MK": {
-        "startUpFrames": "7",
-        "activeFrames": "4",
-        "recoveryFrames": "",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "Mid",
-        "moveType": "Normal Moves"
-      },
-      "Jumping HK": {
-        "startUpFrames": "9",
-        "activeFrames": "4",
-        "recoveryFrames": "",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "Mid",
-        "moveType": "Normal Moves"
-      }
-    },
-    "Special Moves": {
-      "Divine Retribution": {
-        "moveCommand": "Forward Forward",
-        "startUpFrames": "27",
-        "activeFrames": "2",
-        "recoveryFrames": "23",
-        "framesOnHit": "1",
-        "framesOnBlock": "-7",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "Mid/Mid",
-        "moveType": "Special Moves"
-      },
-      "Judgment Of Anubis": {
-        "moveCommand": "Down Forward foward",
-        "startUpFrames": "11",
-        "activeFrames": "11",
-        "recoveryFrames": "18",
-        "framesOnHit": "-6",
-        "framesOnBlock": "-10",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "Low",
-        "moveType": "Special Moves"
-      },
-      "Khamun Kick": {
-        "startUpFrames": "12",
-        "activeFrames": "Until landing",
-        "recoveryFrames": "9 frame(s) after landing",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "L Soul Sphere": {
-        "startUpFrames": "14",
-        "activeFrames": "26",
-        "recoveryFrames": "38 total frames",
-        "framesOnHit": "2",
-        "framesOnBlock": "-8",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "M Soul Sphere": {
-        "startUpFrames": "14",
-        "activeFrames": "33",
-        "recoveryFrames": "43 total frames",
-        "framesOnHit": "1",
-        "framesOnBlock": "-11",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "H Soul Sphere": {
-        "startUpFrames": "14",
-        "activeFrames": "33",
-        "recoveryFrames": "36 total frames",
-        "framesOnHit": "4",
-        "framesOnBlock": "-4",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "EX L Soul Sphere": {
-        "startUpFrames": "19",
-        "activeFrames": "21",
-        "recoveryFrames": "47 total frames",
-        "framesOnHit": "7",
-        "framesOnBlock": "3",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "EX M Soul Sphere": {
-        "startUpFrames": "10",
-        "activeFrames": "21",
-        "recoveryFrames": "51 total frames",
-        "framesOnHit": "D",
-        "framesOnBlock": "-10",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "EX H Soul Sphere": {
-        "startUpFrames": "10",
-        "activeFrames": "21",
-        "recoveryFrames": "40 total frames",
-        "framesOnHit": "0",
-        "framesOnBlock": "-9",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "L Guardian Of The Sun": {
-        "startUpFrames": "6",
-        "activeFrames": "15",
-        "recoveryFrames": "21+30 frame(s) after landing",
-        "framesOnHit": "D",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "M Guardian Of The Sun": {
-        "startUpFrames": "8",
-        "activeFrames": "15",
-        "recoveryFrames": "21+30 frame(s) after landing",
-        "framesOnHit": "D",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "H Guardian Of The Sun": {
-        "startUpFrames": "10",
-        "activeFrames": "15",
-        "recoveryFrames": "21+30 frame(s) after landing",
-        "framesOnHit": "D",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "EX Guardian Of The Sun": {
-        "startUpFrames": "6",
-        "activeFrames": "15",
-        "recoveryFrames": "21+30 frame(s) after landing",
-        "framesOnHit": "D",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "VL Judgement Of Thoth": {
-        "startUpFrames": "11",
-        "activeFrames": "",
-        "recoveryFrames": "37 total frames",
-        "framesOnHit": "23",
-        "framesOnBlock": "12",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "VM Judgement Of Thoth": {
-        "startUpFrames": "11",
-        "activeFrames": "",
-        "recoveryFrames": "37 total frames",
-        "framesOnHit": "11",
-        "framesOnBlock": "8",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "VH Judgement Of Thoth": {
-        "startUpFrames": "11",
-        "activeFrames": "",
-        "recoveryFrames": "37 total frames",
-        "framesOnHit": "8",
-        "framesOnBlock": "2",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Special Moves"
-      },
-      "VProphecy Of Thoth": {
-        "startUpFrames": "",
-        "activeFrames": "",
-        "recoveryFrames": "42 total frames",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "",
-        "moveType": "Special Moves"
-      }
-    },
-    "Critical Art": {
-      "The Nefertem": {
-        "startUpFrames": "1+3",
-        "activeFrames": "16",
-        "recoveryFrames": "65",
-        "framesOnHit": "D",
-        "framesOnBlock": "-46",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "Critical Art"
-      }
-    },
-    "V-System": {
-      "[VS1] Soul Reflect: Kamal": {
-        "startUpFrames": "9",
-        "activeFrames": "3(*8)",
-        "recoveryFrames": "37",
-        "framesOnHit": "D",
-        "framesOnBlock": "-18",
-        "vTriggerCancelHit": "D",
-        "vTriggerCancelBlock": "16",
-        "moveProperties": "High",
-        "moveType": "V-System"
-      },
-      "[VS1] Soul Reflect: Stella": {
-        "startUpFrames": "14",
-        "activeFrames": "3(*15)",
-        "recoveryFrames": "35",
-        "framesOnHit": "D",
-        "framesOnBlock": "-16",
-        "vTriggerCancelHit": "D",
-        "vTriggerCancelBlock": "16",
-        "moveProperties": "High",
-        "moveType": "V-System"
-      },
-      "[VS2] Soul Spiral": {
-        "startUpFrames": "19",
-        "activeFrames": "10",
-        "recoveryFrames": "24",
-        "framesOnHit": "D",
-        "framesOnBlock": "-14",
-        "vTriggerCancelHit": "D",
-        "vTriggerCancelBlock": "12",
-        "moveProperties": "High",
-        "moveType": "V-System"
-      },
-      "Prophecy Of Thoth": {
-        "startUpFrames": "1",
-        "activeFrames": "",
-        "recoveryFrames": "4",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "",
-        "moveType": "V-System"
-      },
-      "Left Eye Of The Lion": {
-        "startUpFrames": "",
-        "activeFrames": "",
-        "recoveryFrames": "43 total frames",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "",
-        "moveType": "V-System"
-      },
-      "Wisdom Of Thoth": {
-        "startUpFrames": "1",
-        "activeFrames": "",
-        "recoveryFrames": "4",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "",
-        "moveType": "V-System"
-      },
-      "Wisdom Of Thoth (Projectile)": {
-        "startUpFrames": "10",
-        "activeFrames": "",
-        "recoveryFrames": "",
-        "framesOnHit": "",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "High",
-        "moveType": "V-System"
-      }
-    },
-    "Normal Throws": {
-      "Overflowing Nile": {
-        "startUpFrames": "5",
-        "activeFrames": "3",
-        "recoveryFrames": "17",
-        "framesOnHit": "D",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "Throw",
-        "moveType": "Normal Throws"
-      },
-      "Pyramid Hopscotch": {
-        "startUpFrames": "5",
-        "activeFrames": "3",
-        "recoveryFrames": "17",
-        "framesOnHit": "D",
-        "framesOnBlock": "",
-        "vTriggerCancelHit": "",
-        "vTriggerCancelBlock": "",
-        "moveProperties": "Throw",
-        "moveType": "Normal Throws"
-      }
-    },
-    "NoCrystalBall": {
-      "Normal Moves": {
-        "Standing LP": {
-          "startUpFrames": "4",
-          "activeFrames": "2",
-          "recoveryFrames": "8",
-          "framesOnHit": "4",
-          "framesOnBlock": "3",
-          "vTriggerCancelHit": "8",
-          "vTriggerCancelBlock": "7",
-          "moveProperties": "High",
-          "moveType": "Normal Moves"
+    "Menat": {
+        "Fireball": "Soul Sphere",
+        "Normal Moves": {
+            "Standing LP": {
+                "startUpFrames": "5",
+                "activeFrames": "4",
+                "recoveryFrames": "8(*11)",
+                "framesOnHit": "5",
+                "framesOnBlock": "3",
+                "vTriggerCancelHit": "11",
+                "vTriggerCancelBlock": "9",
+                "moveProperties": "High",
+                "moveType": "Normal Moves"
+            },
+            "Standing MP": {
+                "startUpFrames": "6",
+                "activeFrames": "6",
+                "recoveryFrames": "20",
+                "framesOnHit": "-2",
+                "framesOnBlock": "-8",
+                "vTriggerCancelHit": "18",
+                "vTriggerCancelBlock": "12",
+                "moveProperties": "High",
+                "moveType": "Normal Moves"
+            },
+            "Standing HP": {
+                "startUpFrames": "12",
+                "activeFrames": "9",
+                "recoveryFrames": "19",
+                "framesOnHit": "-6",
+                "framesOnBlock": "-10",
+                "vTriggerCancelHit": "16",
+                "vTriggerCancelBlock": "12",
+                "moveProperties": "High",
+                "moveType": "Normal Moves"
+            },
+            "Standing LK": {
+                "startUpFrames": "3",
+                "activeFrames": "3",
+                "recoveryFrames": "10",
+                "framesOnHit": "4",
+                "framesOnBlock": "1",
+                "vTriggerCancelHit": "9",
+                "vTriggerCancelBlock": "6",
+                "moveProperties": "High",
+                "moveType": "Normal Moves"
+            },
+            "Standing MK": {
+                "startUpFrames": "8",
+                "activeFrames": "3",
+                "recoveryFrames": "16",
+                "framesOnHit": "2",
+                "framesOnBlock": "-2",
+                "vTriggerCancelHit": "14",
+                "vTriggerCancelBlock": "10",
+                "moveProperties": "High",
+                "moveType": "Normal Moves"
+            },
+            "Standing HK": {
+                "startUpFrames": "11",
+                "activeFrames": "6",
+                "recoveryFrames": "23",
+                "framesOnHit": "-4",
+                "framesOnBlock": "-8",
+                "vTriggerCancelHit": "18",
+                "vTriggerCancelBlock": "14",
+                "moveProperties": "High",
+                "moveType": "Normal Moves"
+            },
+            "Crouching LP": {
+                "startUpFrames": "4",
+                "activeFrames": "4",
+                "recoveryFrames": "8(*11)",
+                "framesOnHit": "4",
+                "framesOnBlock": "2",
+                "vTriggerCancelHit": "10",
+                "vTriggerCancelBlock": "8",
+                "moveProperties": "High",
+                "moveType": "Normal Moves"
+            },
+            "Crouching MP": {
+                "startUpFrames": "7",
+                "activeFrames": "6",
+                "recoveryFrames": "13",
+                "framesOnHit": "2",
+                "framesOnBlock": "-3",
+                "vTriggerCancelHit": "15",
+                "vTriggerCancelBlock": "10",
+                "moveProperties": "High",
+                "moveType": "Normal Moves"
+            },
+            "Crouching HP": {
+                "startUpFrames": "9",
+                "activeFrames": "5",
+                "recoveryFrames": "19",
+                "framesOnHit": "-1",
+                "framesOnBlock": "-5",
+                "vTriggerCancelHit": "17",
+                "vTriggerCancelBlock": "13",
+                "moveProperties": "High",
+                "moveType": "Normal Moves"
+            },
+            "Crouching LK": {
+                "startUpFrames": "4",
+                "activeFrames": "2",
+                "recoveryFrames": "9",
+                "framesOnHit": "4",
+                "framesOnBlock": "1",
+                "vTriggerCancelHit": "9",
+                "vTriggerCancelBlock": "6",
+                "moveProperties": "Low",
+                "moveType": "Normal Moves"
+            },
+            "Crouching MK": {
+                "startUpFrames": "7",
+                "activeFrames": "3",
+                "recoveryFrames": "14",
+                "framesOnHit": "3",
+                "framesOnBlock": "2",
+                "vTriggerCancelHit": "14",
+                "vTriggerCancelBlock": "13",
+                "moveProperties": "Low",
+                "moveType": "Normal Moves"
+            },
+            "Crouching HK": {
+                "startUpFrames": "11",
+                "activeFrames": "3",
+                "recoveryFrames": "33",
+                "framesOnHit": "D",
+                "framesOnBlock": "-16",
+                "vTriggerCancelHit": "D",
+                "vTriggerCancelBlock": "14",
+                "moveProperties": "Low",
+                "moveType": "Normal Moves"
+            },
+            "Jumping LP": {
+                "startUpFrames": "4",
+                "activeFrames": "5",
+                "recoveryFrames": "",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "Mid",
+                "moveType": "Normal Moves"
+            },
+            "Jumping MP": {
+                "startUpFrames": "8",
+                "activeFrames": "4",
+                "recoveryFrames": "",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "Mid",
+                "moveType": "Normal Moves"
+            },
+            "Jumping HP": {
+                "startUpFrames": "13",
+                "activeFrames": "4",
+                "recoveryFrames": "",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "Mid",
+                "moveType": "Normal Moves"
+            },
+            "Jumping LK": {
+                "startUpFrames": "4",
+                "activeFrames": "6",
+                "recoveryFrames": "",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "Mid",
+                "moveType": "Normal Moves"
+            },
+            "Jumping MK": {
+                "startUpFrames": "7",
+                "activeFrames": "4",
+                "recoveryFrames": "",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "Mid",
+                "moveType": "Normal Moves"
+            },
+            "Jumping HK": {
+                "startUpFrames": "9",
+                "activeFrames": "4",
+                "recoveryFrames": "",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "Mid",
+                "moveType": "Normal Moves"
+            }
         },
-        "Standing MP": {
-          "startUpFrames": "5",
-          "activeFrames": "3",
-          "recoveryFrames": "13",
-          "framesOnHit": "4",
-          "framesOnBlock": "2",
-          "vTriggerCancelHit": "14",
-          "vTriggerCancelBlock": "12",
-          "moveProperties": "High",
-          "moveType": "Normal Moves"
+        "Special Moves": {
+            "Divine Retribution": {
+                "moveCommand": [
+                    "Forward Forward"
+                ],
+                "startUpFrames": "27",
+                "activeFrames": "2",
+                "recoveryFrames": "23",
+                "framesOnHit": "1",
+                "framesOnBlock": "-7",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "Mid/Mid",
+                "moveType": "Special Moves"
+            },
+            "Judgment Of Anubis": {
+                "moveCommand": [
+                    "Down Forward Foward"
+                ],
+                "startUpFrames": "11",
+                "activeFrames": "11",
+                "recoveryFrames": "18",
+                "framesOnHit": "-6",
+                "framesOnBlock": "-10",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "Low",
+                "moveType": "Special Moves"
+            },
+            "Khamun Kick": {
+                "startUpFrames": "12",
+                "activeFrames": "Until landing",
+                "recoveryFrames": "9 frame(s) after landing",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "L Soul Sphere": {
+                "startUpFrames": "14",
+                "activeFrames": "26",
+                "recoveryFrames": "38 total frames",
+                "framesOnHit": "2",
+                "framesOnBlock": "-8",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "M Soul Sphere": {
+                "startUpFrames": "14",
+                "activeFrames": "33",
+                "recoveryFrames": "43 total frames",
+                "framesOnHit": "1",
+                "framesOnBlock": "-11",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "H Soul Sphere": {
+                "startUpFrames": "14",
+                "activeFrames": "33",
+                "recoveryFrames": "36 total frames",
+                "framesOnHit": "4",
+                "framesOnBlock": "-4",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "EX L Soul Sphere": {
+                "startUpFrames": "19",
+                "activeFrames": "21",
+                "recoveryFrames": "47 total frames",
+                "framesOnHit": "7",
+                "framesOnBlock": "3",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "EX M Soul Sphere": {
+                "startUpFrames": "10",
+                "activeFrames": "21",
+                "recoveryFrames": "51 total frames",
+                "framesOnHit": "D",
+                "framesOnBlock": "-10",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "EX H Soul Sphere": {
+                "startUpFrames": "10",
+                "activeFrames": "21",
+                "recoveryFrames": "40 total frames",
+                "framesOnHit": "0",
+                "framesOnBlock": "-9",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "L Guardian Of The Sun": {
+                "startUpFrames": "6",
+                "activeFrames": "15",
+                "recoveryFrames": "21+30 frame(s) after landing",
+                "framesOnHit": "D",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "M Guardian Of The Sun": {
+                "startUpFrames": "8",
+                "activeFrames": "15",
+                "recoveryFrames": "21+30 frame(s) after landing",
+                "framesOnHit": "D",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "H Guardian Of The Sun": {
+                "startUpFrames": "10",
+                "activeFrames": "15",
+                "recoveryFrames": "21+30 frame(s) after landing",
+                "framesOnHit": "D",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "EX Guardian Of The Sun": {
+                "startUpFrames": "6",
+                "activeFrames": "15",
+                "recoveryFrames": "21+30 frame(s) after landing",
+                "framesOnHit": "D",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "VL Judgement Of Thoth": {
+                "startUpFrames": "11",
+                "activeFrames": "",
+                "recoveryFrames": "37 total frames",
+                "framesOnHit": "23",
+                "framesOnBlock": "12",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "VM Judgement Of Thoth": {
+                "startUpFrames": "11",
+                "activeFrames": "",
+                "recoveryFrames": "37 total frames",
+                "framesOnHit": "11",
+                "framesOnBlock": "8",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "VH Judgement Of Thoth": {
+                "startUpFrames": "11",
+                "activeFrames": "",
+                "recoveryFrames": "37 total frames",
+                "framesOnHit": "8",
+                "framesOnBlock": "2",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Special Moves"
+            },
+            "VProphecy Of Thoth": {
+                "startUpFrames": "",
+                "activeFrames": "",
+                "recoveryFrames": "42 total frames",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "",
+                "moveType": "Special Moves"
+            }
         },
-        "Standing HP": {
-          "startUpFrames": "8",
-          "activeFrames": "3",
-          "recoveryFrames": "19",
-          "framesOnHit": "2",
-          "framesOnBlock": "-2",
-          "vTriggerCancelHit": "18",
-          "vTriggerCancelBlock": "14",
-          "moveProperties": "High",
-          "moveType": "Normal Moves"
+        "Critical Art": {
+            "The Nefertem": {
+                "startUpFrames": "1+3",
+                "activeFrames": "16",
+                "recoveryFrames": "65",
+                "framesOnHit": "D",
+                "framesOnBlock": "-46",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "Critical Art"
+            }
         },
-        "Standing HK": {
-          "startUpFrames": "9",
-          "activeFrames": "3",
-          "recoveryFrames": "17",
-          "framesOnHit": "7",
-          "framesOnBlock": "2",
-          "vTriggerCancelHit": "21",
-          "vTriggerCancelBlock": "16",
-          "moveProperties": "High",
-          "moveType": "Normal Moves"
+        "V-System": {
+            "[VS1] Soul Reflect: Kamal": {
+                "startUpFrames": "9",
+                "activeFrames": "3(*8)",
+                "recoveryFrames": "37",
+                "framesOnHit": "D",
+                "framesOnBlock": "-18",
+                "vTriggerCancelHit": "D",
+                "vTriggerCancelBlock": "16",
+                "moveProperties": "High",
+                "moveType": "V-System"
+            },
+            "[VS1] Soul Reflect: Stella": {
+                "startUpFrames": "14",
+                "activeFrames": "3(*15)",
+                "recoveryFrames": "35",
+                "framesOnHit": "D",
+                "framesOnBlock": "-16",
+                "vTriggerCancelHit": "D",
+                "vTriggerCancelBlock": "16",
+                "moveProperties": "High",
+                "moveType": "V-System"
+            },
+            "[VS2] Soul Spiral": {
+                "startUpFrames": "19",
+                "activeFrames": "10",
+                "recoveryFrames": "24",
+                "framesOnHit": "D",
+                "framesOnBlock": "-14",
+                "vTriggerCancelHit": "D",
+                "vTriggerCancelBlock": "12",
+                "moveProperties": "High",
+                "moveType": "V-System"
+            },
+            "Prophecy Of Thoth": {
+                "startUpFrames": "1",
+                "activeFrames": "",
+                "recoveryFrames": "4",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "",
+                "moveType": "V-System"
+            },
+            "Left Eye Of The Lion": {
+                "startUpFrames": "",
+                "activeFrames": "",
+                "recoveryFrames": "43 total frames",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "",
+                "moveType": "V-System"
+            },
+            "Wisdom Of Thoth": {
+                "startUpFrames": "1",
+                "activeFrames": "",
+                "recoveryFrames": "4",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "",
+                "moveType": "V-System"
+            },
+            "Wisdom Of Thoth (Projectile)": {
+                "startUpFrames": "10",
+                "activeFrames": "",
+                "recoveryFrames": "",
+                "framesOnHit": "",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "High",
+                "moveType": "V-System"
+            }
         },
-        "Crouching LP": {
-          "startUpFrames": "4",
-          "activeFrames": "2",
-          "recoveryFrames": "7",
-          "framesOnHit": "4",
-          "framesOnBlock": "2",
-          "vTriggerCancelHit": "7",
-          "vTriggerCancelBlock": "5",
-          "moveProperties": "High",
-          "moveType": "Normal Moves"
+        "Normal Throws": {
+            "Overflowing Nile": {
+                "startUpFrames": "5",
+                "activeFrames": "3",
+                "recoveryFrames": "17",
+                "framesOnHit": "D",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "Throw",
+                "moveType": "Normal Throws"
+            },
+            "Pyramid Hopscotch": {
+                "startUpFrames": "5",
+                "activeFrames": "3",
+                "recoveryFrames": "17",
+                "framesOnHit": "D",
+                "framesOnBlock": "",
+                "vTriggerCancelHit": "",
+                "vTriggerCancelBlock": "",
+                "moveProperties": "Throw",
+                "moveType": "Normal Throws"
+            }
         },
-        "Crouching MP": {
-          "startUpFrames": "6",
-          "activeFrames": "2",
-          "recoveryFrames": "14",
-          "framesOnHit": "4",
-          "framesOnBlock": "2",
-          "vTriggerCancelHit": "14",
-          "vTriggerCancelBlock": "12",
-          "moveProperties": "High",
-          "moveType": "Normal Moves"
-        },
-        "Crouching HP": {
-          "startUpFrames": "9",
-          "activeFrames": "4",
-          "recoveryFrames": "18",
-          "framesOnHit": "1",
-          "framesOnBlock": "-3",
-          "vTriggerCancelHit": "17",
-          "vTriggerCancelBlock": "13",
-          "moveProperties": "High",
-          "moveType": "Normal Moves"
-        },
-        "Crouching HK": {
-          "startUpFrames": "9",
-          "activeFrames": "3",
-          "recoveryFrames": "25",
-          "framesOnHit": "D",
-          "framesOnBlock": "-11",
-          "vTriggerCancelHit": "D",
-          "vTriggerCancelBlock": "11",
-          "moveProperties": "Low",
-          "moveType": "Normal Moves"
-        },
-        "Jumping LP": {
-          "startUpFrames": "4",
-          "activeFrames": "5",
-          "recoveryFrames": "",
-          "framesOnHit": "",
-          "framesOnBlock": "",
-          "vTriggerCancelHit": "",
-          "vTriggerCancelBlock": "",
-          "moveProperties": "Mid",
-          "moveType": "Normal Moves"
-        },
-        "Jumping MP": {
-          "startUpFrames": "6",
-          "activeFrames": "4",
-          "recoveryFrames": "",
-          "framesOnHit": "",
-          "framesOnBlock": "",
-          "vTriggerCancelHit": "",
-          "vTriggerCancelBlock": "",
-          "moveProperties": "Mid",
-          "moveType": "Normal Moves"
-        },
-        "Jumping HP": {
-          "startUpFrames": "9",
-          "activeFrames": "4",
-          "recoveryFrames": "",
-          "framesOnHit": "",
-          "framesOnBlock": "",
-          "vTriggerCancelHit": "",
-          "vTriggerCancelBlock": "",
-          "moveProperties": "Mid",
-          "moveType": "Normal Moves"
-        },
-        "Jumping HK": {
-          "startUpFrames": "9",
-          "activeFrames": "4",
-          "recoveryFrames": "",
-          "framesOnHit": "",
-          "framesOnBlock": "",
-          "vTriggerCancelHit": "",
-          "vTriggerCancelBlock": "",
-          "moveProperties": "Mid",
-          "moveType": "Normal Moves"
+        "NoCrystalBall": {
+            "Normal Moves": {
+                "Standing LP": {
+                    "startUpFrames": "4",
+                    "activeFrames": "2",
+                    "recoveryFrames": "8",
+                    "framesOnHit": "4",
+                    "framesOnBlock": "3",
+                    "vTriggerCancelHit": "8",
+                    "vTriggerCancelBlock": "7",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Standing MP": {
+                    "startUpFrames": "5",
+                    "activeFrames": "3",
+                    "recoveryFrames": "13",
+                    "framesOnHit": "4",
+                    "framesOnBlock": "2",
+                    "vTriggerCancelHit": "14",
+                    "vTriggerCancelBlock": "12",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Standing HP": {
+                    "startUpFrames": "8",
+                    "activeFrames": "3",
+                    "recoveryFrames": "19",
+                    "framesOnHit": "2",
+                    "framesOnBlock": "-2",
+                    "vTriggerCancelHit": "18",
+                    "vTriggerCancelBlock": "14",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Standing HK": {
+                    "startUpFrames": "9",
+                    "activeFrames": "3",
+                    "recoveryFrames": "17",
+                    "framesOnHit": "7",
+                    "framesOnBlock": "2",
+                    "vTriggerCancelHit": "21",
+                    "vTriggerCancelBlock": "16",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Crouching LP": {
+                    "startUpFrames": "4",
+                    "activeFrames": "2",
+                    "recoveryFrames": "7",
+                    "framesOnHit": "4",
+                    "framesOnBlock": "2",
+                    "vTriggerCancelHit": "7",
+                    "vTriggerCancelBlock": "5",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Crouching MP": {
+                    "startUpFrames": "6",
+                    "activeFrames": "2",
+                    "recoveryFrames": "14",
+                    "framesOnHit": "4",
+                    "framesOnBlock": "2",
+                    "vTriggerCancelHit": "14",
+                    "vTriggerCancelBlock": "12",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Crouching HP": {
+                    "startUpFrames": "9",
+                    "activeFrames": "4",
+                    "recoveryFrames": "18",
+                    "framesOnHit": "1",
+                    "framesOnBlock": "-3",
+                    "vTriggerCancelHit": "17",
+                    "vTriggerCancelBlock": "13",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Crouching HK": {
+                    "startUpFrames": "9",
+                    "activeFrames": "3",
+                    "recoveryFrames": "25",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-11",
+                    "vTriggerCancelHit": "D",
+                    "vTriggerCancelBlock": "11",
+                    "moveProperties": "Low",
+                    "moveType": "Normal Moves"
+                },
+                "Jumping LP": {
+                    "startUpFrames": "4",
+                    "activeFrames": "5",
+                    "recoveryFrames": "",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Mid",
+                    "moveType": "Normal Moves"
+                },
+                "Jumping MP": {
+                    "startUpFrames": "6",
+                    "activeFrames": "4",
+                    "recoveryFrames": "",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Mid",
+                    "moveType": "Normal Moves"
+                },
+                "Jumping HP": {
+                    "startUpFrames": "9",
+                    "activeFrames": "4",
+                    "recoveryFrames": "",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Mid",
+                    "moveType": "Normal Moves"
+                },
+                "Jumping HK": {
+                    "startUpFrames": "9",
+                    "activeFrames": "4",
+                    "recoveryFrames": "",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Mid",
+                    "moveType": "Normal Moves"
+                }
+            },
+            "Special Moves": {
+                "Soul Sphere: Ankh": {
+                    "startUpFrames": "5",
+                    "activeFrames": "Until the ball returns",
+                    "recoveryFrames": "21 total frames",
+                    "framesOnHit": "16",
+                    "framesOnBlock": "3",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Special Moves"
+                },
+                "Soul Spark": {
+                    "startUpFrames": "18",
+                    "activeFrames": "10",
+                    "recoveryFrames": "44 total frames",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "3",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Special Moves"
+                }
+            },
+            "V-System": {
+                "Soul Reflect: Kamal": {
+                    "startUpFrames": "9",
+                    "activeFrames": "3(*8)",
+                    "recoveryFrames": "25",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-6",
+                    "vTriggerCancelHit": "D",
+                    "vTriggerCancelBlock": "16",
+                    "moveProperties": "High",
+                    "moveType": "V-System"
+                },
+                "Soul Reflect: Stella": {
+                    "startUpFrames": "14",
+                    "activeFrames": "3(*15)",
+                    "recoveryFrames": "22",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-3",
+                    "vTriggerCancelHit": "D",
+                    "vTriggerCancelBlock": "16",
+                    "moveProperties": "High",
+                    "moveType": "V-System"
+                },
+                "[VS2] Soul Spiral": {
+                    "startUpFrames": "19",
+                    "activeFrames": "8",
+                    "recoveryFrames": "30",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-20",
+                    "vTriggerCancelHit": "D",
+                    "vTriggerCancelBlock": "12",
+                    "moveProperties": "High",
+                    "moveType": "V-System"
+                },
+                "[VS1] Soul Reflect: Kamal": {
+                    "startUpFrames": "9",
+                    "activeFrames": "3(*8)",
+                    "recoveryFrames": "25",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-6",
+                    "vTriggerCancelHit": "D",
+                    "vTriggerCancelBlock": "16",
+                    "moveProperties": "High",
+                    "moveType": "V-System"
+                },
+                "[VS1] Soul Reflect: Stella": {
+                    "startUpFrames": "14",
+                    "activeFrames": "3(*15)",
+                    "recoveryFrames": "22",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-3",
+                    "vTriggerCancelHit": "D",
+                    "vTriggerCancelBlock": "16",
+                    "moveProperties": "High",
+                    "moveType": "V-System"
+                }
+            }
         }
-      },
-      "Special Moves": {
-        "Soul Sphere: Ankh": {
-          "startUpFrames": "5",
-          "activeFrames": "Until the ball returns",
-          "recoveryFrames": "21 total frames",
-          "framesOnHit": "16",
-          "framesOnBlock": "3",
-          "vTriggerCancelHit": "",
-          "vTriggerCancelBlock": "",
-          "moveProperties": "High",
-          "moveType": "Special Moves"
-        },
-        "Soul Spark": {
-          "startUpFrames": "18",
-          "activeFrames": "10",
-          "recoveryFrames": "44 total frames",
-          "framesOnHit": "D",
-          "framesOnBlock": "3",
-          "vTriggerCancelHit": "",
-          "vTriggerCancelBlock": "",
-          "moveProperties": "High",
-          "moveType": "Special Moves"
-        }
-      },
-      "V-System": {
-        "Soul Reflect: Kamal": {
-          "startUpFrames": "9",
-          "activeFrames": "3(*8)",
-          "recoveryFrames": "25",
-          "framesOnHit": "D",
-          "framesOnBlock": "-6",
-          "vTriggerCancelHit": "D",
-          "vTriggerCancelBlock": "16",
-          "moveProperties": "High",
-          "moveType": "V-System"
-        },
-        "Soul Reflect: Stella": {
-          "startUpFrames": "14",
-          "activeFrames": "3(*15)",
-          "recoveryFrames": "22",
-          "framesOnHit": "D",
-          "framesOnBlock": "-3",
-          "vTriggerCancelHit": "D",
-          "vTriggerCancelBlock": "16",
-          "moveProperties": "High",
-          "moveType": "V-System"
-        },
-        "[VS2] Soul Spiral": {
-          "startUpFrames": "19",
-          "activeFrames": "8",
-          "recoveryFrames": "30",
-          "framesOnHit": "D",
-          "framesOnBlock": "-20",
-          "vTriggerCancelHit": "D",
-          "vTriggerCancelBlock": "12",
-          "moveProperties": "High",
-          "moveType": "V-System"
-        },
-        "[VS1] Soul Reflect: Kamal": {
-          "startUpFrames": "9",
-          "activeFrames": "3(*8)",
-          "recoveryFrames": "25",
-          "framesOnHit": "D",
-          "framesOnBlock": "-6",
-          "vTriggerCancelHit": "D",
-          "vTriggerCancelBlock": "16",
-          "moveProperties": "High",
-          "moveType": "V-System"
-        },
-        "[VS1] Soul Reflect: Stella": {
-          "startUpFrames": "14",
-          "activeFrames": "3(*15)",
-          "recoveryFrames": "22",
-          "framesOnHit": "D",
-          "framesOnBlock": "-3",
-          "vTriggerCancelHit": "D",
-          "vTriggerCancelBlock": "16",
-          "moveProperties": "High",
-          "moveType": "V-System"
-        }
-      }
     }
-  }
 }

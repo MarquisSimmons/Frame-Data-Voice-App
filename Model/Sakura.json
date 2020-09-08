@@ -223,7 +223,9 @@
         },
         "Special Moves": {
             "Floral Kick": {
-                "moveCommand": "Forward Forward",
+                "moveCommand": [
+                    "Forward Forward"
+                ],
                 "startUpFrames": "21",
                 "activeFrames": "2",
                 "recoveryFrames": "23",
@@ -235,7 +237,9 @@
                 "moveType": "Special Moves"
             },
             "Furiko Upper": {
-                "moveCommand": "Back Fierce",
+                "moveCommand": [
+                    "Back Fierce"
+                ],
                 "startUpFrames": "7",
                 "activeFrames": "3",
                 "recoveryFrames": "26",
@@ -247,7 +251,9 @@
                 "moveType": "Special Moves"
             },
             "Chin Buster Kick": {
-                "moveCommand": "Down Forward Roundhouse",
+                "moveCommand": [
+                    "Down Forward Roundhouse"
+                ],
                 "startUpFrames": "12",
                 "activeFrames": "3",
                 "recoveryFrames": "20",

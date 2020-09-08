@@ -232,7 +232,9 @@
         },
         "Special Moves": {
             "Rock Crusher": {
-                "moveCommand": "Forward Strong",
+                "moveCommand": [
+                    "Forward Strong"
+                ],
                 "startUpFrames": "21",
                 "activeFrames": "3",
                 "recoveryFrames": "17",
@@ -244,7 +246,9 @@
                 "moveType": "Special Moves"
             },
             "Amazon River Run": {
-                "moveCommand": "Down Forward Fierce",
+                "moveCommand": [
+                    "Down Forward Fierce"
+                ],
                 "startUpFrames": "11",
                 "activeFrames": "10",
                 "recoveryFrames": "25",
@@ -292,7 +296,9 @@
                 "moveType": "Special Moves"
             },
             "Supprise Forward": {
-                "moveCommand": "Forward Short",
+                "moveCommand": [
+                    "Forward Short"
+                ],
                 "startUpFrames": "",
                 "activeFrames": "",
                 "recoveryFrames": "28 total frames",
@@ -304,7 +310,9 @@
                 "moveType": "Special Moves"
             },
             "Supprise Back": {
-                "moveCommand": "Back Short",
+                "moveCommand": [
+                    "Back Short"
+                ],
                 "startUpFrames": "",
                 "activeFrames": "",
                 "recoveryFrames": "29 total frames",
@@ -544,7 +552,9 @@
                 "moveType": "Special Moves"
             },
             "Surprise Forward": {
-                "moveCommand": "Forward Short",
+                "moveCommand": [
+                    "Forward Short"
+                ],
                 "startUpFrames": "",
                 "activeFrames": "",
                 "recoveryFrames": "28 total frames",
@@ -556,7 +566,9 @@
                 "moveType": "Special Moves"
             },
             "Surprise Back": {
-                "moveCommand": "Back Short",
+                "moveCommand": [
+                    "Back Short"
+                ],
                 "startUpFrames": "",
                 "activeFrames": "",
                 "recoveryFrames": "29 total frames",
