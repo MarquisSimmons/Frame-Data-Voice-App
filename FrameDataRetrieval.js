@@ -40,7 +40,6 @@ const normalMoveMapping = {
 const moveSynonyms = [ 'DP', 'Fireball', 'Tatsu', 'Red Fireball' ];
 
 // 2. Functions used to retrieved the frame data from the Character's Model file =============================================
-
 /**
  * 
  * @param {String} character - The SFV character who frames we are looking up
@@ -187,6 +186,40 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
 }
 
 /**
+ * 
+ * @param {String} character - The SFV character who frames we are looking up
+ * @param {String} vSystem - The V-System we want the frame data for (V-Reversal, V-Skill, V-Trigger)
+ * @param {String} frameType - The type of frames we are looking for (Startup, Active, Recovery, On Hit, On Block) this is set to "Startup" by default
+ */
+function retrieveVSystemFrameData(character, vSystem, frameType) {
+	let defaultFrameType = frameType !== ' ' ? frameType : 'Startup';
+	const data = fs.readFileSync('Model/' + character + '.json');
+	let characterVSystemMove = undefined;
+	let move = undefined;
+
+	if (!data) {
+		console.log('File: Model/' + character + '.json could not be found');
+		return 'There was a problem retrieving frame data for ' + character + '. You can try another character until this is resolved.';
+	}
+	const returnedData = JSON.parse(data);
+	const characterVSystemList = returnedData[character]['V-System'];
+	if (vSystem === 'V-Reversal') {
+		// V-Reversals are already directly mapped to in the Character JSON file so we can retrieve the name easily.
+		characterVSystemMove = returnedData[character][vSystem];
+		console.log(vSystem + ': ' + 'has been mapped to: ' + ' ' + characterVReversal);
+	}
+	else {
+		return 'The frame data for V-Trigger and V-Skill activations have not been implemented yet. I am sorry.';
+	}
+	// Look up V-System move by its name
+	move = characterVSystemList[characterVSystemMove];
+	if (move) {
+		console.log('Frame data for ' + character + 's' + vSystem + ' has been found!');
+		return createMoveOutput(move, character, vSystem, defaultFrameType, '', '');
+	}
+	return 'The frame data for ' + character + "'s " + vSystem + ' could not be found.';
+}
+/**
  * Takes in a move attribute and creates an speech output for Alexa to say to the user
  * @param {JSON} moveJson - The character's move object we will use to look up the frame data
  * @param {String} character - The character who move data we are returning
@@ -292,4 +325,4 @@ function lookupCriticalArt(characterJSON, withVTrigger) {
 	}
 	return returnedCA;
 }
-module.exports = { retrieveNormalMoveFrameData, retrieveSpecialMoveFrameData };
+module.exports = { retrieveNormalMoveFrameData, retrieveSpecialMoveFrameData, retrieveVSystemFrameData };

@@ -539,6 +539,7 @@
                 "moveProperties": "Throw",
                 "moveType": "Normal Throws"
             }
-        }
+        },
+        "V-Reversal": "Kill Step"
     }
 }

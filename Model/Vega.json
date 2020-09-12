@@ -781,7 +781,8 @@
                 "moveProperties": "Throw",
                 "moveType": "Normal Throws"
             }
-        }
+        },
+        "V-Reversal": "Short Backlash"
     },
     "Claw Off": {
         "Normal Moves": {

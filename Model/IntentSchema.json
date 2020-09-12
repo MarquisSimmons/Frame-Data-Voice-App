@@ -33,6 +33,9 @@
 							"name": "SpecialMove",
 							"type": "SpecialMove",
 							"samples": [
+								"{MoveStrength} {SpecialMove} {VSystem} ",
+								"{SpecialMove} {VSystem}",
+								"{MoveStrength} {SpecialMove}",
 								"{SpecialMove}"
 							]
 						},
@@ -81,6 +84,8 @@
 							"name": "NormalMove",
 							"type": "NormalMove",
 							"samples": [
+								"{Position} {NormalMove} {VSystem}",
+								"{NormalMove} {VSystem}",
 								"{Position} {NormalMove}",
 								"{NormalMove}"
 							]
@@ -196,7 +201,10 @@
 						},
 						{
 							"name": {
-								"value": "Karin"
+								"value": "Karin",
+								"synonyms": [
+									"Karen"
+								]
 							}
 						},
 						{
@@ -231,6 +239,10 @@
 							"name": {
 								"value": "R Mika",
 								"synonyms": [
+									"Rainbow Mica",
+									"Rainbow Miko",
+									"Rainbow Mika",
+									"Miko",
 									"Mica",
 									"Mika"
 								]
@@ -238,7 +250,10 @@
 						},
 						{
 							"name": {
-								"value": "Rashid"
+								"value": "Rashid",
+								"synonyms": [
+									"Rasheed"
+								]
 							}
 						},
 						{
@@ -297,7 +312,11 @@
 						},
 						{
 							"name": {
-								"value": "Juri"
+								"value": "Juri",
+								"synonyms": [
+									"Jury",
+									"Jerry"
+								]
 							}
 						},
 						{
@@ -328,7 +347,12 @@
 						},
 						{
 							"name": {
-								"value": "Kolin"
+								"value": "Kolin",
+								"synonyms": [
+									"Ko lean",
+									"Colon",
+									"Colin"
+								]
 							}
 						},
 						{
@@ -357,7 +381,13 @@
 						},
 						{
 							"name": {
-								"value": "Falke"
+								"value": "Falke",
+								"synonyms": [
+									"Falls",
+									"Fall",
+									"False",
+									"Folks"
+								]
 							}
 						},
 						{
@@ -389,7 +419,11 @@
 						},
 						{
 							"name": {
-								"value": "Gill"
+								"value": "Gill",
+								"synonyms": [
+									"goes",
+									"Go"
+								]
 							}
 						},
 						{
@@ -2116,7 +2150,10 @@
 						},
 						{
 							"name": {
-								"value": "Zonk Knuckle"
+								"value": "Zonk Knuckle",
+								"synonyms": [
+									"Bingo"
+								]
 							}
 						},
 						{
@@ -2427,7 +2464,10 @@
 						},
 						{
 							"name": {
-								"value": "Tiger Knee Crush"
+								"value": "Tiger Knee Crush",
+								"synonyms": [
+									"Tiger Knee"
+								]
 							}
 						},
 						{
@@ -2609,7 +2649,10 @@
 						},
 						{
 							"name": {
-								"value": "Fire Spinner"
+								"value": "Fire Spinner",
+								"synonyms": [
+									"Burn kick"
+								]
 							}
 						},
 						{
@@ -4465,6 +4508,7 @@
 							"name": {
 								"value": "Standing",
 								"synonyms": [
+									"Standard",
 									"Stand"
 								]
 							}
@@ -4520,6 +4564,16 @@
 				{
 					"name": "VSystem",
 					"values": [
+						{
+							"name": {
+								"value": "V-Reversal",
+								"synonyms": [
+									"Vee Reversal",
+									"V. Reversal",
+									"V Reversal"
+								]
+							}
+						},
 						{
 							"name": {
 								"value": "V-Skill 2",
@@ -4782,6 +4836,10 @@
 			{
 				"id": "Elicit.Slot.535571396808.525453771178",
 				"variations": [
+					{
+						"type": "PlainText",
+						"value": "Did you want the frames for a V-Skill, V-Trigger or V-Reversal"
+					},
 					{
 						"type": "PlainText",
 						"value": "Which V-Skill or V-Trigger did you want to get the frames for?"

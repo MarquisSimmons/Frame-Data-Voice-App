@@ -262,81 +262,42 @@ const GetVSystemMoveFrames_Handler = {
 			return handlerInput.responseBuilder.addDelegateDirective(currentIntent).getResponse();
 		}
 
-		let say = 'Hello from GetVSystemMoveFrames. ';
-
-		let slotStatus = '';
-		let resolvedSlot;
+		let characterName = ' ';
+		let vSystem = ' ';
+		let frameType = ' ';
+		let say = '';
 
 		let slotValues = getSlotValues(request.intent.slots);
 		// getSlotValues returns .heardAs, .resolved, and .isValidated for each slot, according to request slot status codes ER_SUCCESS_MATCH, ER_SUCCESS_NO_MATCH, or traditional simple request slot without resolutions
 
 		// console.log('***** slotValues: ' +  JSON.stringify(slotValues, null, 2));
 		//   SLOT: Character
-		if (slotValues.Character.heardAs) {
-			slotStatus += ' slot Character was heard as ' + slotValues.Character.heardAs + '. ';
-		}
-		else {
-			slotStatus += 'slot Character is empty. ';
-		}
 		if (slotValues.Character.ERstatus === 'ER_SUCCESS_MATCH') {
-			slotStatus += 'a valid ';
-			if (slotValues.Character.resolved !== slotValues.Character.heardAs) {
-				slotStatus += 'synonym for ' + slotValues.Character.resolved + '. ';
-			}
-			else {
-				slotStatus += 'match. ';
-			}
+			characterName = slotValues.Character.resolved;
 		}
-		if (slotValues.Character.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			slotStatus += 'which did not match any slot value. ';
+		else if (slotValues.Character.ERstatus === 'ER_SUCCESS_NO_MATCH' || !slotValues.Character.heardAs) {
 			console.log('***** consider adding "' + slotValues.Character.heardAs + '" to the custom slot type used by slot Character! ');
-		}
-
-		if (slotValues.Character.ERstatus === 'ER_SUCCESS_NO_MATCH' || !slotValues.Character.heardAs) {
-			slotStatus += 'A few valid values are, ' + sayArray(getExampleSlotValues('GetVSystemMoveFrames', 'Character'), 'or');
+			say = 'There was no frame data found for ' + slotValues.Character.heardAs + '. please try saying the character name again.';
+			return responseBuilder
+				.speak(say)
+				.reprompt('please try saying the character name again.')
+				.addElicitSlotDirective('Character')
+				.getResponse();
 		}
 		//   SLOT: VSystem
-		if (slotValues.VSystem.heardAs) {
-			slotStatus += ' slot VSystem was heard as ' + slotValues.VSystem.heardAs + '. ';
-		}
-		else {
-			slotStatus += 'slot VSystem is empty. ';
-		}
 		if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_MATCH') {
-			slotStatus += 'a valid ';
-			if (slotValues.VSystem.resolved !== slotValues.VSystem.heardAs) {
-				slotStatus += 'synonym for ' + slotValues.VSystem.resolved + '. ';
-			}
-			else {
-				slotStatus += 'match. ';
-			}
+			vSystem = slotValues.VSystem.resolved;
 		}
-		if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			slotStatus += 'which did not match any slot value. ';
+		else if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_NO_MATCH' || !slotValues.VSystem.heardAs) {
 			console.log('***** consider adding "' + slotValues.VSystem.heardAs + '" to the custom slot type used by slot VSystem! ');
-		}
-
-		if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_NO_MATCH' || !slotValues.VSystem.heardAs) {
-			slotStatus += 'A few valid values are, ' + sayArray(getExampleSlotValues('GetVSystemMoveFrames', 'VSystem'), 'or');
+			say = 'There was no frame data found for ' + slotValues.VSystem.heardAs + '. please try saying the V-System type again.';
+			return responseBuilder.speak(say).reprompt('please try saying the V-System type again.').addElicitSlotDirective('VSystem').getResponse();
 		}
 		//   SLOT: FrameType
-		if (slotValues.FrameType.heardAs) {
-			slotStatus += ' slot FrameType was heard as ' + slotValues.FrameType.heardAs + '. ';
-		}
-		else {
-			slotStatus += 'slot FrameType is empty. ';
-		}
 		if (slotValues.FrameType.ERstatus === 'ER_SUCCESS_MATCH') {
-			slotStatus += 'a valid ';
-			if (slotValues.FrameType.resolved !== slotValues.FrameType.heardAs) {
-				slotStatus += 'synonym for ' + slotValues.FrameType.resolved + '. ';
-			}
-			else {
-				slotStatus += 'match. ';
-			}
+			frameType = slotValues.FrameType.resolved;
 		}
 		if (slotValues.FrameType.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			slotStatus += 'which did not match any slot value. ';
 			console.log('***** consider adding "' + slotValues.FrameType.heardAs + '" to the custom slot type used by slot FrameType! ');
 		}
 
@@ -344,7 +305,7 @@ const GetVSystemMoveFrames_Handler = {
 			slotStatus += 'A few valid values are, ' + sayArray(getExampleSlotValues('GetVSystemMoveFrames', 'FrameType'), 'or');
 		}
 
-		say += slotStatus;
+		say = frameRetriever.retrieveVSystemFrameData(characterName, vSystem, frameType);
 
 		return responseBuilder.speak(say).getResponse();
 	},
