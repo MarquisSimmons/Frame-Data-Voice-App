@@ -782,278 +782,278 @@
                 "moveType": "Normal Throws"
             }
         },
+        "Claw Off": {
+            "Normal Moves": {
+                "Standing LP": {
+                    "moveCommand": "",
+                    "startUpFrames": "3",
+                    "activeFrames": "2",
+                    "recoveryFrames": "6",
+                    "framesOnHit": "6",
+                    "framesOnBlock": "3",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Standing MP": {
+                    "moveCommand": "",
+                    "startUpFrames": "7",
+                    "activeFrames": "3",
+                    "recoveryFrames": "15",
+                    "framesOnHit": "4",
+                    "framesOnBlock": "1",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Standing HP": {
+                    "moveCommand": "",
+                    "startUpFrames": "9",
+                    "activeFrames": "2",
+                    "recoveryFrames": "21",
+                    "framesOnHit": "4",
+                    "framesOnBlock": "-1",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Crouching LP": {
+                    "moveCommand": "",
+                    "startUpFrames": "4",
+                    "activeFrames": "3",
+                    "recoveryFrames": "6",
+                    "framesOnHit": "4",
+                    "framesOnBlock": "2",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Crouching MP": {
+                    "moveCommand": "",
+                    "startUpFrames": "6",
+                    "activeFrames": "3",
+                    "recoveryFrames": "14",
+                    "framesOnHit": "4",
+                    "framesOnBlock": "2",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Crouching HP": {
+                    "moveCommand": "",
+                    "startUpFrames": "9",
+                    "activeFrames": "4",
+                    "recoveryFrames": "15",
+                    "framesOnHit": "5",
+                    "framesOnBlock": "3",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Normal Moves"
+                },
+                "Jumping LP": {
+                    "moveCommand": "",
+                    "startUpFrames": "3",
+                    "activeFrames": "5",
+                    "recoveryFrames": "",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Mid",
+                    "moveType": "Normal Moves"
+                },
+                "Jumping MP": {
+                    "moveCommand": "",
+                    "startUpFrames": "4",
+                    "activeFrames": "5",
+                    "recoveryFrames": "",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Mid",
+                    "moveType": "Normal Moves"
+                },
+                "Jumping HP": {
+                    "moveCommand": "",
+                    "startUpFrames": "7",
+                    "activeFrames": "4",
+                    "recoveryFrames": "",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Mid",
+                    "moveType": "Normal Moves"
+                }
+            },
+            "Special Moves": {
+                "Matador Blitz 2": {
+                    "moveCommand": "",
+                    "startUpFrames": "9",
+                    "activeFrames": "3",
+                    "recoveryFrames": "18",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-3",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Special Moves"
+                },
+                "Matador Blitz": {
+                    "moveCommand": "",
+                    "startUpFrames": "",
+                    "activeFrames": "",
+                    "recoveryFrames": "35",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "",
+                    "moveType": "Special Moves"
+                },
+                "Matador Blitz (Attack)": {
+                    "moveCommand": "",
+                    "startUpFrames": "22",
+                    "activeFrames": "2",
+                    "recoveryFrames": "31",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-13",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Special Moves"
+                },
+                "Flying Barcelona Attack": {
+                    "moveCommand": "",
+                    "startUpFrames": "3",
+                    "activeFrames": "6",
+                    "recoveryFrames": "31 frame(s) after landing(*9 frame(s) after landing)",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Mid",
+                    "moveType": "Special Moves"
+                },
+                "EX Flying Barcelona Attack": {
+                    "moveCommand": "",
+                    "startUpFrames": "9",
+                    "activeFrames": "Until landing",
+                    "recoveryFrames": "31 frame(s) after landing(*9 frame(s) after landing)",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Mid",
+                    "moveType": "Special Moves"
+                },
+                "L Grand Izuna Drop": {
+                    "moveCommand": "",
+                    "startUpFrames": "6",
+                    "activeFrames": "2",
+                    "recoveryFrames": "60",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Throw",
+                    "moveType": "Special Moves"
+                },
+                "M Grand Izuna Drop": {
+                    "moveCommand": "",
+                    "startUpFrames": "6",
+                    "activeFrames": "2",
+                    "recoveryFrames": "60",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Throw",
+                    "moveType": "Special Moves"
+                },
+                "H Grand Izuna Drop": {
+                    "moveCommand": "",
+                    "startUpFrames": "6",
+                    "activeFrames": "2",
+                    "recoveryFrames": "60",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Throw",
+                    "moveType": "Special Moves"
+                },
+                "EX Grand Izuna Drop": {
+                    "moveCommand": "",
+                    "startUpFrames": "6",
+                    "activeFrames": "2",
+                    "recoveryFrames": "60",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Throw",
+                    "moveType": "Special Moves"
+                },
+                "Bloody Garden Attack": {
+                    "moveCommand": "",
+                    "startUpFrames": "9",
+                    "activeFrames": "Until landing",
+                    "recoveryFrames": "31 frame(s) after landing(*9 frame(s) after landing)",
+                    "framesOnHit": "",
+                    "framesOnBlock": "",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "Mid",
+                    "moveType": "Special Moves"
+                },
+                "Sky High Claw": {
+                    "moveCommand": "",
+                    "startUpFrames": "18-31",
+                    "activeFrames": "19-22",
+                    "recoveryFrames": "8-22+1 frame(s) after landing",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-20",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Special Moves"
+                },
+                "EX Sky High Claw": {
+                    "moveCommand": "",
+                    "startUpFrames": "20-30",
+                    "activeFrames": "14",
+                    "recoveryFrames": "5-19+1 frame(s) after landing",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-15",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "Special Moves"
+                }
+            },
+            "V-System": {
+                "[VS1] Matador Turn (Hold Button)": {
+                    "moveCommand": "",
+                    "startUpFrames": "22",
+                    "activeFrames": "2",
+                    "recoveryFrames": "31",
+                    "framesOnHit": "D",
+                    "framesOnBlock": "-13",
+                    "vTriggerCancelHit": "",
+                    "vTriggerCancelBlock": "",
+                    "moveProperties": "High",
+                    "moveType": "V-System"
+                }
+            }
+        },
         "V-Reversal": "Short Backlash"
-    },
-    "Claw Off": {
-        "Normal Moves": {
-            "Standing LP": {
-                "moveCommand": "",
-                "startUpFrames": "3",
-                "activeFrames": "2",
-                "recoveryFrames": "6",
-                "framesOnHit": "6",
-                "framesOnBlock": "3",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Normal Moves"
-            },
-            "Standing MP": {
-                "moveCommand": "",
-                "startUpFrames": "7",
-                "activeFrames": "3",
-                "recoveryFrames": "15",
-                "framesOnHit": "4",
-                "framesOnBlock": "1",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Normal Moves"
-            },
-            "Standing HP": {
-                "moveCommand": "",
-                "startUpFrames": "9",
-                "activeFrames": "2",
-                "recoveryFrames": "21",
-                "framesOnHit": "4",
-                "framesOnBlock": "-1",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Normal Moves"
-            },
-            "Crouching LP": {
-                "moveCommand": "",
-                "startUpFrames": "4",
-                "activeFrames": "3",
-                "recoveryFrames": "6",
-                "framesOnHit": "4",
-                "framesOnBlock": "2",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Normal Moves"
-            },
-            "Crouching MP": {
-                "moveCommand": "",
-                "startUpFrames": "6",
-                "activeFrames": "3",
-                "recoveryFrames": "14",
-                "framesOnHit": "4",
-                "framesOnBlock": "2",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Normal Moves"
-            },
-            "Crouching HP": {
-                "moveCommand": "",
-                "startUpFrames": "9",
-                "activeFrames": "4",
-                "recoveryFrames": "15",
-                "framesOnHit": "5",
-                "framesOnBlock": "3",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Normal Moves"
-            },
-            "Jumping LP": {
-                "moveCommand": "",
-                "startUpFrames": "3",
-                "activeFrames": "5",
-                "recoveryFrames": "",
-                "framesOnHit": "",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "Mid",
-                "moveType": "Normal Moves"
-            },
-            "Jumping MP": {
-                "moveCommand": "",
-                "startUpFrames": "4",
-                "activeFrames": "5",
-                "recoveryFrames": "",
-                "framesOnHit": "",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "Mid",
-                "moveType": "Normal Moves"
-            },
-            "Jumping HP": {
-                "moveCommand": "",
-                "startUpFrames": "7",
-                "activeFrames": "4",
-                "recoveryFrames": "",
-                "framesOnHit": "",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "Mid",
-                "moveType": "Normal Moves"
-            }
-        },
-        "Special Moves": {
-            "Matador Blitz 2": {
-                "moveCommand": "",
-                "startUpFrames": "9",
-                "activeFrames": "3",
-                "recoveryFrames": "18",
-                "framesOnHit": "D",
-                "framesOnBlock": "-3",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Special Moves"
-            },
-            "Matador Blitz": {
-                "moveCommand": "",
-                "startUpFrames": "",
-                "activeFrames": "",
-                "recoveryFrames": "35",
-                "framesOnHit": "",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "",
-                "moveType": "Special Moves"
-            },
-            "Matador Blitz (Attack)": {
-                "moveCommand": "",
-                "startUpFrames": "22",
-                "activeFrames": "2",
-                "recoveryFrames": "31",
-                "framesOnHit": "D",
-                "framesOnBlock": "-13",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Special Moves"
-            },
-            "Flying Barcelona Attack": {
-                "moveCommand": "",
-                "startUpFrames": "3",
-                "activeFrames": "6",
-                "recoveryFrames": "31 frame(s) after landing(*9 frame(s) after landing)",
-                "framesOnHit": "",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "Mid",
-                "moveType": "Special Moves"
-            },
-            "EX Flying Barcelona Attack": {
-                "moveCommand": "",
-                "startUpFrames": "9",
-                "activeFrames": "Until landing",
-                "recoveryFrames": "31 frame(s) after landing(*9 frame(s) after landing)",
-                "framesOnHit": "",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "Mid",
-                "moveType": "Special Moves"
-            },
-            "L Grand Izuna Drop": {
-                "moveCommand": "",
-                "startUpFrames": "6",
-                "activeFrames": "2",
-                "recoveryFrames": "60",
-                "framesOnHit": "D",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "Throw",
-                "moveType": "Special Moves"
-            },
-            "M Grand Izuna Drop": {
-                "moveCommand": "",
-                "startUpFrames": "6",
-                "activeFrames": "2",
-                "recoveryFrames": "60",
-                "framesOnHit": "D",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "Throw",
-                "moveType": "Special Moves"
-            },
-            "H Grand Izuna Drop": {
-                "moveCommand": "",
-                "startUpFrames": "6",
-                "activeFrames": "2",
-                "recoveryFrames": "60",
-                "framesOnHit": "D",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "Throw",
-                "moveType": "Special Moves"
-            },
-            "EX Grand Izuna Drop": {
-                "moveCommand": "",
-                "startUpFrames": "6",
-                "activeFrames": "2",
-                "recoveryFrames": "60",
-                "framesOnHit": "D",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "Throw",
-                "moveType": "Special Moves"
-            },
-            "Bloody Garden Attack": {
-                "moveCommand": "",
-                "startUpFrames": "9",
-                "activeFrames": "Until landing",
-                "recoveryFrames": "31 frame(s) after landing(*9 frame(s) after landing)",
-                "framesOnHit": "",
-                "framesOnBlock": "",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "Mid",
-                "moveType": "Special Moves"
-            },
-            "Sky High Claw": {
-                "moveCommand": "",
-                "startUpFrames": "18-31",
-                "activeFrames": "19-22",
-                "recoveryFrames": "8-22+1 frame(s) after landing",
-                "framesOnHit": "D",
-                "framesOnBlock": "-20",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Special Moves"
-            },
-            "EX Sky High Claw": {
-                "moveCommand": "",
-                "startUpFrames": "20-30",
-                "activeFrames": "14",
-                "recoveryFrames": "5-19+1 frame(s) after landing",
-                "framesOnHit": "D",
-                "framesOnBlock": "-15",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "Special Moves"
-            }
-        },
-        "V-System": {
-            "[VS1] Matador Turn (Hold Button)": {
-                "moveCommand": "",
-                "startUpFrames": "22",
-                "activeFrames": "2",
-                "recoveryFrames": "31",
-                "framesOnHit": "D",
-                "framesOnBlock": "-13",
-                "vTriggerCancelHit": "",
-                "vTriggerCancelBlock": "",
-                "moveProperties": "High",
-                "moveType": "V-System"
-            }
-        }
     }
 }

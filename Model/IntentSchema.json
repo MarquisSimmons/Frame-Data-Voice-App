@@ -50,6 +50,10 @@
 						{
 							"name": "MoveStrength",
 							"type": "MoveStrength"
+						},
+						{
+							"name": "Item",
+							"type": "Items"
 						}
 					],
 					"samples": [
@@ -63,7 +67,12 @@
 						"How many frames is {Character} {MoveStrength} {SpecialMove} {VSystem}",
 						"How many frames is {Character} {SpecialMove} {VSystem}",
 						"How many frames is {Character} {MoveStrength} {SpecialMove} {VSystem} {FrameType}",
-						"Whats {Character} {MoveStrength} {SpecialMove} {FrameType} {VSystem}"
+						"Whats {Character} {MoveStrength} {SpecialMove} {FrameType} {VSystem}",
+						"How many {FrameType} is {Character} {MoveStrength} {SpecialMove} {Item}",
+						"How many frames is {Character} {MoveStrength} {SpecialMove} {Item}",
+						"How many Frames is {Character} {SpecialMove} {Item}",
+						"How many frames is {Character} {MoveStrength} {SpecialMove} {FrameType} {Item}",
+						"Whats {Character} {MoveStrength} {SpecialMove} {FrameType} {Item}"
 					]
 				},
 				{
@@ -122,34 +131,6 @@
 						"How many frames is {Character} {Position} {NormalMove} {Item}",
 						"How many frames is {Character} {NormalMove} {Item}",
 						"How many frames is {Character} {Position} {NormalMove} {Item} {FrameType}"
-					]
-				},
-				{
-					"name": "GetVSystemMoveFrames",
-					"slots": [
-						{
-							"name": "Character",
-							"type": "Character",
-							"samples": [
-								"{Character}"
-							]
-						},
-						{
-							"name": "VSystem",
-							"type": "VSystem",
-							"samples": [
-								"{VSystem}"
-							]
-						},
-						{
-							"name": "FrameType",
-							"type": "Frame"
-						}
-					],
-					"samples": [
-						"How many frames is {Character} {VSystem}",
-						"How many {FrameType} is {Character} {VSystem}",
-						"How many frames is {Character} {VSystem} {FrameType}"
 					]
 				}
 			],
@@ -4568,7 +4549,6 @@
 							"name": {
 								"value": "V-Reversal",
 								"synonyms": [
-									"Vee Reversal",
 									"V. Reversal",
 									"V Reversal"
 								]
@@ -4621,13 +4601,20 @@
 					"values": [
 						{
 							"name": {
-								"value": "without Claw"
+								"value": "without Claw",
+								"synonyms": [
+									"Claw off"
+								]
 							}
 						},
 						{
 							"name": {
 								"value": "without Orb",
 								"synonyms": [
+									"No ball",
+									"No orb",
+									"bare hand",
+									"Bare handed",
 									"without Ball",
 									"without Crystal Ball"
 								]
@@ -4644,7 +4631,10 @@
 						},
 						{
 							"name": {
-								"value": "with Claw"
+								"value": "with Claw",
+								"synonyms": [
+									"Claw on"
+								]
 							}
 						}
 					]
@@ -4693,6 +4683,13 @@
 						{
 							"name": "MoveStrength",
 							"type": "MoveStrength",
+							"confirmationRequired": false,
+							"elicitationRequired": false,
+							"prompts": {}
+						},
+						{
+							"name": "Item",
+							"type": "Items",
 							"confirmationRequired": false,
 							"elicitationRequired": false,
 							"prompts": {}
@@ -4746,38 +4743,6 @@
 						{
 							"name": "Item",
 							"type": "Items",
-							"confirmationRequired": false,
-							"elicitationRequired": false,
-							"prompts": {}
-						}
-					]
-				},
-				{
-					"name": "GetVSystemMoveFrames",
-					"confirmationRequired": false,
-					"prompts": {},
-					"slots": [
-						{
-							"name": "Character",
-							"type": "Character",
-							"confirmationRequired": false,
-							"elicitationRequired": true,
-							"prompts": {
-								"elicitation": "Elicit.Slot.35673318133.33295036285"
-							}
-						},
-						{
-							"name": "VSystem",
-							"type": "VSystem",
-							"confirmationRequired": false,
-							"elicitationRequired": true,
-							"prompts": {
-								"elicitation": "Elicit.Slot.535571396808.525453771178"
-							}
-						},
-						{
-							"name": "FrameType",
-							"type": "Frame",
 							"confirmationRequired": false,
 							"elicitationRequired": false,
 							"prompts": {}

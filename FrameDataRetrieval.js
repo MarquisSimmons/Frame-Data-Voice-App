@@ -47,8 +47,9 @@ const moveSynonyms = [ 'DP', 'Fireball', 'Tatsu', 'Red Fireball' ];
  * @param {String} moveStrength - The strength of the special move (L, M, H, EX)
  * @param {String} frameType - The type of frames we are looking for (Startup, Active, Recovery, On Hit, On Block) this is set to "Startup" by default
  * @param {String} vSystem - The V-System modifier of the move (if it is performed while V-Trigger or V-Skill is activated)
+ * @param {String} Item - If the character has an item (ex. Menat (Orb) Vega(Claw)) then we specify if we are including it or not. By default it will be included
  */
-function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, frameType, vSystem) {
+function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, frameType, vSystem, item) {
 	// Retrieve the character's move file from the Model
 	let fullMoveLookup = '';
 	let defaultFrameType = frameType !== ' ' ? frameType : 'Startup';
@@ -63,11 +64,21 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
 		return 'There was a problem retrieving frame data for ' + character + '. You can try another character until this is resolved.';
 	}
 	const returnedData = JSON.parse(data);
-	const characterSpecialMoveList = returnedData[character]['Special Moves'];
+	let characterSpecialMoveList = returnedData[character]['Special Moves'];
 
-	if (!specialMove) {
-		return 'There was no special move defined';
+	/******************* VEGA SPECIAL CASES SINCE HE HAS ITEMS ************************** */
+	if (character !== 'Vega') {
+		// Set item value to empty by default incase a user says something like "Ryu's Fierce with Claw" we can ignore that
+		item = '';
 	}
+	else {
+		let hasItem = item !== '' ? !item.includes('without') : true; // Get frame data for the character with item by default unless stated otherwise.
+		// If the user did not specify an item we will set the item string for them
+		item = item === '' && hasItem ? 'with Claw' : item;
+		characterSpecialMoveList = hasItem ? returnedData[character]['Special Moves'] : returnedData[character]['Claw Off']['Special Moves'];
+	}
+	/******************* END OF MENAT & VEGA SPECIAL CASES ************************** */
+
 	if (moveSynonyms.includes(specialMove)) {
 		// Case if the move is heard as Fireball, Tatsu, DP etc.
 		console.log(specialMove + ': ' + 'has been converted to: ' + ' ' + returnedData[character][specialMove]);
@@ -90,7 +101,7 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
 	// Case we find the move successfully with all of the necessary slots filled out
 	if (move) {
 		console.log(character + "'s " + fullMoveLookup + ' found.');
-		return createMoveOutput(move, character, specialMove, defaultFrameType, vSystem, moveStrength);
+		return createMoveOutput(move, character, specialMove, defaultFrameType, vSystem, moveStrength, item);
 	}
 	else if (!lookupMoveStrength) {
 		console.log(character + "'s " + fullMoveLookup + ' not found. Looking up move again with move strength');
@@ -114,7 +125,7 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
 		move = characterSpecialMoveList[fullMoveLookup];
 		if (move) {
 			console.log(character + "'s " + fullMoveLookup + ' found after adding move strength.');
-			return createMoveOutput(move, character, specialMove, defaultFrameType, vSystem, moveStrength);
+			return createMoveOutput(move, character, specialMove, defaultFrameType, vSystem, moveStrength, item);
 		}
 	}
 	console.log(character + "'s " + fullMoveLookup + ' not found');
@@ -128,10 +139,11 @@ function retrieveSpecialMoveFrameData(character, specialMove, moveStrength, fram
  * @param {String} position - The direction that is being held during the move (Up for Jumping, Down for Crouch, Forward, Back etc.)
  * @param {String} frameType - The type of frames we are looking for (Startup, Active, Recovery, On Hit, On Block) this is set to "Startup" by default
  * @param {String} vSystem - The V-System modifier of the move (if it is performed while V-Trigger or V-Skill is activated)
+ * @param {String} Item - If the character has an item (ex. Menat (Orb) Vega(Claw)) then we specify if we are including it or not. By default it will be included
  */
-function retrieveNormalMoveFrameData(character, normalMove, position, frameType, vSystem) {
+function retrieveNormalMoveFrameData(character, normalMove, position, frameType, vSystem, item) {
 	// Retrieve the character's move file from the Model
-	let defaultPosition = position;
+	let defaultPosition = position !== ' ' ? position : 'Standing';
 	let fullMoveLookup = '';
 	let defaultFrameType = frameType !== ' ' ? frameType : 'Startup';
 	let move = undefined;
@@ -149,6 +161,7 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
 
 	let returnedData = JSON.parse(data);
 	if (normalMove === 'Super') {
+		item = '';
 		// If we are looking up a C.A then ignore the position (so we wont get things like "Crouching Super")
 		defaultPosition = '';
 		const usingVTrigger = lookupVSystem ? true : false;
@@ -157,10 +170,32 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
 		normalMove = fullMoveLookup;
 	}
 	else {
-		const characterNormalMoveList = returnedData[character]['Normal Moves'];
+		let characterNormalMoveList = returnedData[character]['Normal Moves'];
+
+		/******************* MENAT & VEGA SPECIAL CASES SINCE THEY HAVE ITEMS ************************** */
+		if (character != 'Menat' && character != 'Vega') {
+			// Set item value to empty by default incase a user says something like "Ryu's Fierce with Claw" we can ignore that
+			item = '';
+		}
+		else {
+			let hasItem = item !== '' ? !item.includes('without') : true; // Get frame data for the character with item by default unless stated otherwise.
+			if (character === 'Menat') {
+				// If the user did not specify an item we will set the item string for them
+				item = item === '' && hasItem ? 'with Orb' : item;
+				characterNormalMoveList = hasItem ? returnedData[character]['Normal Moves'] : returnedData[character]['Bare Handed']['Normal Moves'];
+			}
+			else if (character === 'Vega') {
+				// If the user did not specify an item we will set the item string for them
+				item = item === '' && hasItem ? 'with Claw' : item;
+				characterNormalMoveList = hasItem ? returnedData[character]['Normal Moves'] : returnedData[character]['Claw Off']['Normal Moves'];
+				console.log(characterNormalMoveList);
+			}
+		}
+		/******************* END OF MENAT & VEGA SPECIAL CASES ************************** */
+
 		// Simple case where we are looking up a typical normal move by its move name
+
 		if (standardPositions.includes(defaultPosition)) {
-			defaultPosition = position !== ' ' ? position : 'Standing';
 			fullMoveLookup = lookupVSystem ? lookupVSystem + defaultPosition + ' ' + lookupNormalMove : defaultPosition + ' ' + lookupNormalMove;
 			move = characterNormalMoveList[fullMoveLookup];
 		}
@@ -177,7 +212,7 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
 	}
 	if (move) {
 		console.log(character + "'s " + fullMoveLookup + ' found.');
-		return createMoveOutput(move, character, normalMove, defaultFrameType, vSystem, defaultPosition);
+		return createMoveOutput(move, character, normalMove, defaultFrameType, vSystem, defaultPosition, item);
 	}
 	else {
 		console.log(character + "'s " + fullMoveLookup + ' not found');
@@ -227,10 +262,12 @@ function retrieveVSystemFrameData(character, vSystem, frameType) {
  * @param {String} defaultFrameType - The type of frames we want (Startup, Recovery, On Block etc.) This is set to Startup by default
  * @param {String} lookupVSystem - A V-System Modifier to make sure we look up the VT or VS version of a move
  * @param {String} moveModifier - This can be the move's Strength (for special moves LMH) or move position (for normal moves Standing, Crouching, Jumping)
+ *  @param {String} Item - If the character has an item (ex. Menat (Orb) Vega(Claw)) then we specify if we are including it or not. By default it will be inclued
  */
-function createMoveOutput(moveJson, character, move, defaultFrameType, vSystem, moveModifier) {
+function createMoveOutput(moveJson, character, move, defaultFrameType, vSystem, moveModifier, item) {
 	const lookupFrameType = frameTypeMapping[defaultFrameType];
 	const lookupVSystem = vSystemMapping[vSystem];
+	const hasItem = item !== '';
 	let frameNumber = undefined;
 	let outputWithVSystem = undefined;
 	let output = undefined;
@@ -271,7 +308,8 @@ function createMoveOutput(moveJson, character, move, defaultFrameType, vSystem, 
 		}
 	}
 
-	return lookupVSystem && !move.includes('V-Trigger') ? outputWithVSystem : output;
+	let returnedOutput = lookupVSystem && !move.includes('V-Trigger') ? outputWithVSystem : output;
+	return hasItem ? returnedOutput + ' ' + item : returnedOutput;
 }
 
 /**

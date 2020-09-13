@@ -243,7 +243,7 @@
                 "moveProperties": "",
                 "moveType": "Special Moves"
             },
-            "Hard Smasher (4)": {
+            "Hard Smasher 4": {
                 "moveCommand": "",
                 "startUpFrames": "21",
                 "activeFrames": "2",
@@ -255,7 +255,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Hard Pressure (4)": {
+            "Hard Pressure 4": {
                 "moveCommand": "",
                 "startUpFrames": "26",
                 "activeFrames": "3",
@@ -447,7 +447,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "V-Charging Buffalo (4)": {
+            "V-Charging Buffalo 4": {
                 "moveCommand": "",
                 "startUpFrames": "17",
                 "activeFrames": "6",
@@ -507,7 +507,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "V-Charging Buffalo V-Skill 2 Version (4)": {
+            "V-Charging Buffalo V-Skill 2 Version 4": {
                 "moveCommand": "",
                 "startUpFrames": "17",
                 "activeFrames": "6",
@@ -675,7 +675,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "V-Bursting Buffalo (4)": {
+            "V-Bursting Buffalo 4": {
                 "moveCommand": "",
                 "startUpFrames": "17",
                 "activeFrames": "5",
@@ -699,7 +699,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Turn Punch (Level 1)": {
+            "Turn Punch Level 1": {
                 "moveCommand": "",
                 "startUpFrames": "30",
                 "activeFrames": "2",
@@ -711,7 +711,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Turn Punch (Level 2)": {
+            "Turn Punch Level 2": {
                 "moveCommand": "",
                 "startUpFrames": "30",
                 "activeFrames": "2",
@@ -723,7 +723,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Turn Punch (Level 3)": {
+            "Turn Punch Level 3": {
                 "moveCommand": "",
                 "startUpFrames": "30",
                 "activeFrames": "2",
@@ -735,7 +735,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Turn Punch (Level 4)": {
+            "Turn Punch Level 4": {
                 "moveCommand": "",
                 "startUpFrames": "30",
                 "activeFrames": "2",
@@ -747,7 +747,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Turn Punch (Level 5)": {
+            "Turn Punch Level 5": {
                 "moveCommand": "",
                 "startUpFrames": "30",
                 "activeFrames": "2",
@@ -759,7 +759,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Turn Punch (Level 6)": {
+            "Turn Punch Level 6": {
                 "moveCommand": "",
                 "startUpFrames": "30",
                 "activeFrames": "2",
@@ -771,7 +771,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Turn Punch (Level 7)": {
+            "Turn Punch Level 7": {
                 "moveCommand": "",
                 "startUpFrames": "30",
                 "activeFrames": "2",
@@ -783,7 +783,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Turn Punch (Level 8)": {
+            "Turn Punch Level 8": {
                 "moveCommand": "",
                 "startUpFrames": "30",
                 "activeFrames": "2",
@@ -795,7 +795,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Turn Punch (Level 9)": {
+            "Turn Punch Level 9": {
                 "moveCommand": "",
                 "startUpFrames": "30",
                 "activeFrames": "2",
@@ -807,7 +807,7 @@
                 "moveProperties": "High",
                 "moveType": "Special Moves"
             },
-            "Turn Punch (FINAL)": {
+            "Turn Punch FINAL": {
                 "moveCommand": "",
                 "startUpFrames": "30",
                 "activeFrames": "2",

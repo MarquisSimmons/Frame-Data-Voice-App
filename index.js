@@ -102,6 +102,7 @@ const GetSpecialMoveFrames_Handler = {
 		let frameType = ' ';
 		let moveStrength = ' ';
 		let specialMoveName = ' ';
+		let item = '';
 
 		let say = '';
 
@@ -154,8 +155,15 @@ const GetSpecialMoveFrames_Handler = {
 
 			return responseBuilder.speak(say).addElicitSlotDirective('SpecialMove').getResponse();
 		}
+		//   SLOT: Item
+		if (slotValues.Item.ERstatus === 'ER_SUCCESS_MATCH') {
+			item = slotValues.Item.resolved;
+		}
+		if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_NO_MATCH') {
+			console.log('***** consider adding "' + slotValues.Item.heardAs + '" to the custom slot type used by slot VSystem! ');
+		}
 
-		say = frameRetriever.retrieveSpecialMoveFrameData(characterName, specialMoveName, moveStrength, frameType, vSystem);
+		say = frameRetriever.retrieveSpecialMoveFrameData(characterName, specialMoveName, moveStrength, frameType, vSystem, item);
 		return responseBuilder.speak(say).getResponse();
 	},
 };
@@ -181,6 +189,7 @@ const GetNormalMoveFrames_Handler = {
 		let frameType = ' ';
 		let position = ' ';
 		let normalMove = ' ';
+		let item = '';
 
 		let say = '';
 
@@ -234,13 +243,13 @@ const GetNormalMoveFrames_Handler = {
 		}
 		//   SLOT: Item
 		if (slotValues.Item.ERstatus === 'ER_SUCCESS_MATCH') {
-			vSystem = slotValues.Item.resolved;
+			item = slotValues.Item.resolved;
 		}
 		if (slotValues.VSystem.ERstatus === 'ER_SUCCESS_NO_MATCH') {
-			console.log('***** consider adding "' + slotValues.VSystem.heardAs + '" to the custom slot type used by slot VSystem! ');
+			console.log('***** consider adding "' + slotValues.Item.heardAs + '" to the custom slot type used by slot VSystem! ');
 		}
 
-		say = frameRetriever.retrieveNormalMoveFrameData(characterName, normalMove, position, frameType, vSystem);
+		say = frameRetriever.retrieveNormalMoveFrameData(characterName, normalMove, position, frameType, vSystem, item);
 
 		return responseBuilder.speak(say).getResponse();
 	},

@@ -512,7 +512,7 @@
                 "moveType": "Normal Throws"
             }
         },
-        "NoCrystalBall": {
+        "Bare Handed": {
             "Normal Moves": {
                 "Standing LP": {
                     "startUpFrames": "4",
