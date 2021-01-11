@@ -195,12 +195,13 @@ function retrieveNormalMoveFrameData(character, normalMove, position, frameType,
 
 		// Simple case where we are looking up a typical normal move by its move name
 
-		if (standardPositions.includes(defaultPosition)) {
-			fullMoveLookup = lookupVSystem ? lookupVSystem + defaultPosition + ' ' + lookupNormalMove : defaultPosition + ' ' + lookupNormalMove;
+		if (normalMove === 'Sweep') {
+			defaultPosition = ' ';
+			fullMoveLookup = lookupVSystem ? lookupVSystem + ' ' + lookupNormalMove : lookupNormalMove;
 			move = characterNormalMoveList[fullMoveLookup];
 		}
-		else if (normalMove === 'Sweep') {
-			fullMoveLookup = lookupVSystem ? lookupVSystem + ' ' + lookupNormalMove : lookupNormalMove;
+		else if (standardPositions.includes(defaultPosition)) {
+			fullMoveLookup = lookupVSystem ? lookupVSystem + defaultPosition + ' ' + lookupNormalMove : defaultPosition + ' ' + lookupNormalMove;
 			move = characterNormalMoveList[fullMoveLookup];
 		}
 		else if (uniqueMovePositions.includes(defaultPosition)) {
